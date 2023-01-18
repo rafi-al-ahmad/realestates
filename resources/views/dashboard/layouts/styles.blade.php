@@ -1,13 +1,3 @@
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
-
-    <title>Dashboard - Beynil</title>
-
-    <meta name="description" content="" />
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="{{url('/')}}/assets/images/favicon.ico" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -36,12 +26,4 @@
 
     <!-- Page CSS -->
     <link rel="stylesheet" href="{{url('dashboard')}}/assets/vendor/css/pages/cards-advance.css" />
-    <!-- Helpers -->
-    <script src="{{url('dashboard')}}/assets/vendor/js/helpers.js"></script>
-
-    <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
-    <!--? Template customizer: To hide customizer set displayCustomizer value false in config.js.  -->
-    <script src="{{url('dashboard')}}/assets/vendor/js/template-customizer.js"></script>
-    <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
-    <script src="{{url('dashboard')}}/assets/js/config.js"></script>
-</head>
+    @stack('style')
