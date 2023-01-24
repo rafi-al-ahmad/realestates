@@ -63,7 +63,14 @@
         $activeClass = 'active open';
         }
         }
+        } elseif (gettype($menu['slug']) === 'array') {
+        foreach ($menu['slug'] as $slug) {
+        if (str_contains($currentRouteName, $slug) and strpos($currentRouteName, $slug) === 0) {
+        $activeClass = 'active';
         }
+        }
+        }
+
         @endphp
 
         {{-- main menu --}}

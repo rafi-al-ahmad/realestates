@@ -6,8 +6,32 @@ return [
             "name" => "Dashboard",
             "icon" => "menu-icon tf-icons ti ti-smart-home",
             "slug" => "admin",
+            "route" => 'admin',
             "url" => null,
-            "route" => 'admin'
+        ],
+        [
+            "name" => "users",
+            "icon" => "menu-icon tf-icons ti ti-users",
+            "slug" => [
+                "users",
+                "users.create",
+                "users.update",
+                "users.details",
+            ],
+            "route" => 'users',
+            "url" => null,
+        ],
+        [
+            "name" => "agents",
+            "icon" => "menu-icon tf-icons ti ti-id-badge",
+            "slug" => [
+                "agents",
+                "agents.create",
+                "agents.update",
+                "agents.details",
+            ],
+            "route" => 'agents',
+            "url" => null,
         ],
         // [
         //   "name" => "Layouts",

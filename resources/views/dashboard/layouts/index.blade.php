@@ -49,6 +49,7 @@
     </div>
     <!-- / Layout wrapper -->
     @include("dashboard.layouts.scripts")
+    <x-dashboard.ui.show-messages-as-toasts />
 </body>
 
 </html>

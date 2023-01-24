@@ -20,4 +20,25 @@
 
 <!-- Main JS -->
 <script src="{{url('dashboard')}}/assets/js/main.js"></script>
+<script src="{{url('dashboard')}}/assets/vendor/libs/toastr/toastr.js"></script>
+
+<script>
+    toastr.options = {
+        "closeButton": true,
+        "debug": false,
+        "newestOnTop": false,
+        "progressBar": true,
+        "positionClass": "toast-top-right",
+        "preventDuplicates": false,
+        "onclick": null,
+        "showDuration": "200",
+        "hideDuration": "1000",
+        "timeOut": "8000",
+        "extendedTimeOut": "6000",
+        "showEasing": "swing",
+        "hideEasing": "linear",
+        "showMethod": "fadeIn",
+        "hideMethod": "fadeOut"
+    }
+</script>
 @stack('scripts')
