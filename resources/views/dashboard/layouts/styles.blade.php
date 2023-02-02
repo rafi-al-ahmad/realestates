@@ -37,6 +37,12 @@
         color: #4b465c !important;
     }
 
+    .image-square-100-cover {
+        height: 100px !important;
+        width: 100px !important;
+        object-fit: cover !important;
+    }
+
     .required:after {
         content: " *";
         color: red;

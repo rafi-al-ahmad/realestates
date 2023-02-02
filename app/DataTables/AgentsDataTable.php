@@ -2,7 +2,7 @@
 
 namespace App\DataTables;
 
-use App\Models\User;
+use App\Models\Agent;
 use App\Traits\DatatableHelpers;
 use Illuminate\Database\Eloquent\Builder as QueryBuilder;
 use Yajra\DataTables\EloquentDataTable;
@@ -13,9 +13,10 @@ use Yajra\DataTables\Html\Editor\Editor;
 use Yajra\DataTables\Html\Editor\Fields;
 use Yajra\DataTables\Services\DataTable;
 
-class UsersDataTable extends DataTable
+class AgentsDataTable extends DataTable
 {
     use DatatableHelpers;
+
     /**
      * Build DataTable class.
      *
@@ -25,7 +26,7 @@ class UsersDataTable extends DataTable
     public function dataTable(QueryBuilder $query): EloquentDataTable
     {
         return (new EloquentDataTable($query))
-            ->addColumn('action', 'dashboard.pages.users.action')
+            ->addColumn('action', 'dashboard.pages.agents.action')
             ->rawColumns([
                 'action', 'row-order', "select", 'status', 'language', 'control', 'title'
             ])
@@ -33,7 +34,7 @@ class UsersDataTable extends DataTable
                 return "";
             })
             ->editColumn('status', function ($record) {
-                return '<span class="badge ' .($record->status == 1? 'bg-label-success' : 'bg-label-danger'). '" text-capitalized>' . ($record->status == 1? __('active') : __('inactive')) .'</span>';
+                return '<span class="badge ' . ($record->status == 1 ? 'bg-label-success' : 'bg-label-danger') . '" text-capitalized>' . ($record->status == 1 ? __('active') : __('inactive')) . '</span>';
             })
             ->setRowId(function ($record) {
                 return $record->id;
@@ -45,10 +46,10 @@ class UsersDataTable extends DataTable
     /**
      * Get query source of dataTable.
      *
-     * @param \App\Models\User $model
+     * @param \App\Models\Agent $model
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function query(User $model): QueryBuilder
+    public function query(Agent $model): QueryBuilder
     {
         return $model->newQuery();
     }
@@ -61,7 +62,7 @@ class UsersDataTable extends DataTable
     public function html(): HtmlBuilder
     {
         return $this->builder()
-            ->setTableId('users-table')
+            ->setTableId('agents-table')
             ->columns($this->getColumns())
             ->minifiedAjax()
             ->dom(
@@ -87,15 +88,15 @@ class UsersDataTable extends DataTable
                 ",
                 'buttons' => [
                     [
-                        "text" => '<i class="ti ti-plus me-0 me-sm-1 ti-xs"></i><span class="d-none d-sm-inline-block">' . __("Add New User") . '</span>',
+                        "text" => '<i class="ti ti-plus me-0 me-sm-1 ti-xs"></i><span class="d-none d-sm-inline-block">' . __("Add New Agent") . '</span>',
                         "className" => 'add-new btn btn-primary ms-3',
                         "action" => "function () {
-                        window.location.href = '".route('users.create')."';
+                        window.location.href = '" . route('agents.create') . "';
                     }"
                     ]
                 ],
                 "language" => $this->getTranslations()
-            ]);
+            ]);;
     }
 
     /**
@@ -107,47 +108,47 @@ class UsersDataTable extends DataTable
     {
         return [
             Column::computed('control')
-                ->title('')
-                ->exportable(false)
-                ->printable(false)
-                ->responsivePriority(2)
-                ->searchable(false)
-                ->orderable(false)
-                ->addClass('control'),
-            Column::computed('DT_RowIndex')
-                ->title('#')
-                ->exportable(false)
-                ->printable(false)
-                ->searchable(false)
-                ->orderable(false)
-                ->addClass('text-center DT_RowIndex w-1'),
-            Column::make('name')
-                ->title(__('name'))
-                ->addClass('text-center')
-                ->orderable(false),
-            Column::make('surname')
-                ->title(__('surname'))
-                ->addClass('text-center')
-                ->orderable(false),
-            Column::make('username')
-                ->title(__('username'))
-                ->addClass('text-center')
-                ->orderable(false),
-            Column::make('email')
-                ->addClass('text-center')
-                ->title(__('email'))
-                ->orderable(false),
-            Column::make('status')
-                ->addClass('text-center')
-                ->orderable(false),
-            Column::computed('action')
-                ->addClass('text-center')
-                ->title(__('actions'))
-                ->exportable(false)
-                ->orderable(false)
-                ->printable(false)
-                ->addClass('text-center')
-                ->searchable(false),
+            ->title('')
+            ->exportable(false)
+            ->printable(false)
+            ->responsivePriority(2)
+            ->searchable(false)
+            ->orderable(false)
+            ->addClass('control'),
+        Column::computed('DT_RowIndex')
+            ->title('#')
+            ->exportable(false)
+            ->printable(false)
+            ->searchable(false)
+            ->orderable(false)
+            ->addClass('text-center DT_RowIndex w-1'),
+        Column::make('name')
+            ->title(__('name'))
+            ->addClass('text-center')
+            ->orderable(false),
+        Column::make('surname')
+            ->title(__('surname'))
+            ->addClass('text-center')
+            ->orderable(false),
+        Column::make('mobile_phone')
+            ->title(__('phone'))
+            ->addClass('text-center')
+            ->orderable(false),
+        Column::make('email')
+            ->addClass('text-center')
+            ->title(__('email'))
+            ->orderable(false),
+        Column::make('status')
+            ->addClass('text-center')
+            ->orderable(false),
+        Column::computed('action')
+            ->addClass('text-center')
+            ->title(__('actions'))
+            ->exportable(false)
+            ->orderable(false)
+            ->printable(false)
+            ->addClass('text-center')
+            ->searchable(false),
         ];
     }
 
@@ -158,6 +159,6 @@ class UsersDataTable extends DataTable
      */
     protected function filename(): string
     {
-        return 'Users_' . date('YmdHis');
+        return 'Agents_' . date('YmdHis');
     }
 }
