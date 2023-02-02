@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AgentController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
@@ -40,7 +41,7 @@ Route::group([
         Route::get('user/update/{id}', [UserController::class, 'showUpdateForm'])->name('users.update');
         Route::post('user/update/{id}', [UserController::class, 'updateUser']);
         Route::get('user/{id}', [UserController::class, 'showUserDetails'])->name('users.details');
-        Route::delete('user', [UserController::class, 'deleteAccount'])->name('users.delete');
+        Route::get('user/delete/{id}', [UserController::class, 'deleteAccount'])->name('users.delete');
 
 
         Route::get('agents', [AgentController::class, 'listAgents'])->name('agents');
@@ -49,7 +50,16 @@ Route::group([
         Route::get('agent/update/{id}', [AgentController::class, 'showUpdateForm'])->name('agents.update');
         Route::post('agent/update/{id}', [AgentController::class, 'update']);
         Route::get('user/{id}', [AgentController::class, 'showUserDetails'])->name('agents.details');
-        Route::delete('agent', [AgentController::class, 'deleteAccount'])->name('agents.delete');
+        Route::get('agent/delete/{id}', [AgentController::class, 'delete'])->name('agents.delete');
+
+
+        Route::get('categories', [CategoriesController::class, 'listCategories'])->name('categories');
+        Route::get('category/create', [CategoriesController::class, 'showCreateForm'])->name('categories.create');
+        Route::post('category/create', [CategoriesController::class, 'store']);
+        Route::get('category/update/{id}', [CategoriesController::class, 'showUpdateForm'])->name('categories.update');
+        Route::post('category/update/{id}', [CategoriesController::class, 'update']);
+        Route::get('user/{id}', [CategoriesController::class, 'showUserDetails'])->name('categories.details');
+        Route::get('category/delete/{id}', [CategoriesController::class, 'delete'])->name('categories.delete');
     });
 });
 

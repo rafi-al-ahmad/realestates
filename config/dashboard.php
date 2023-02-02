@@ -33,6 +33,18 @@ return [
             "route" => 'agents',
             "url" => null,
         ],
+        [
+            "name" => "categories",
+            "icon" => "menu-icon tf-icons ti ti-category",
+            "slug" => [
+                "categories",
+                "categories.create",
+                "categories.update",
+                "categories.details",
+            ],
+            "route" => 'categories',
+            "url" => null,
+        ],
         // [
         //   "name" => "Layouts",
         //   "icon" => "menu-icon tf-icons ti ti-layout-sidebar",

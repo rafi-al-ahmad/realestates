@@ -7,7 +7,7 @@
 
     <x-dashboard.datatable.buttons.action-button
     btnType="danger"
-    action="{{route('agents.delete')}}"
+    action="{{route('agents.delete', ['id' => $id])}}"
     icon="fa-regular fa-trash-can" />
 
 </div>

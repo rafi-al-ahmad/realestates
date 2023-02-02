@@ -2,12 +2,12 @@
 
     <x-dashboard.datatable.buttons.action-button
     btnType="light"
-    action="{{route('users.update', ['id' => $id])}}"
+    action="{{route('categories.update', ['id' => $id])}}"
     icon="far fa-edit" />
 
     <x-dashboard.datatable.buttons.action-button
     btnType="danger"
-    action="{{route('users.delete', ['id' => $id])}}"
+    action="{{route('categories.delete', ['id' => $id])}}"
     icon="fa-regular fa-trash-can" />
 
 </div>
