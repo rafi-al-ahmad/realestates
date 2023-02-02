@@ -28,4 +28,11 @@ class Category extends Model
             get: $this->getAttributeTranslation()
         );
     }
+
+    protected function parentTitle(): Attribute
+    {
+        return Attribute::make(
+            get: $this->getAttributeTranslation()
+        );
+    }
 }

@@ -19,6 +19,7 @@ class CategoriesController extends Controller
             "title.*" => ['array'],
             "title.*.translation" => ['required', 'string'],
             "title.*.language" => ['required', 'string', Rule::in(config('app.supported_locales'))],
+            "parent_id" => ['nullable', 'exists:categories,id'],
             "slug" => ['nullable', 'string'],
             "status" => ['required', "in:0,1"],
         ], $rules);
@@ -26,12 +27,14 @@ class CategoriesController extends Controller
 
     public function listCategories(CategoriesDataTable $categoriesDataTable)
     {
-        return $categoriesDataTable->render("dashboard.pages.categories.categories-listing");
+        $categories = Category::where('parent_id')->get();
+        return $categoriesDataTable->render("dashboard.pages.categories.categories-listing", ["parentCategories" => $categories]);
     }
-    public function showCreateForm(Request $request)
-    {
-        return view('dashboard.pages.categories.category-form');
-    }
+
+    // public function showCreateForm(Request $request)
+    // {
+    //     return view('dashboard.pages.categories.category-form');
+    // }
 
     public function store(Request $request)
     {
@@ -43,6 +46,7 @@ class CategoriesController extends Controller
         foreach ($data["title"] as  $title) {
             $category->setTranslation('title', $title['language'], $title["translation"]);
         }
+        $category->parent_id = $data['parent_id'] ?? null;
         $category->status = $data['status'];
         $category->slug = $data['slug'] ?? null;
         $category->save();
@@ -54,7 +58,9 @@ class CategoriesController extends Controller
     public function showUpdateForm(Request $request, $id)
     {
         $category = Category::findOrFail($id);
-        return view('dashboard.pages.categories.categories-update', ['category' => $category]);
+        $categories = Category::where('parent_id')->get();
+
+        return view('dashboard.pages.categories.categories-update', ["parentCategories" => $categories, 'category' => $category]);
     }
 
     public function update(Request $request)
@@ -70,6 +76,7 @@ class CategoriesController extends Controller
             $category->setTranslation('title', $title['language'], $title["translation"]);
         }
         $category->status = $data['status'];
+        $category->parent_id = $data['parent_id'] ?? null;
         $category->slug = $data['slug'] ?? null;
         $category->save();
 

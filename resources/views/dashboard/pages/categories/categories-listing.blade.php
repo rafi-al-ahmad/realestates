@@ -63,6 +63,15 @@ $breadcrumbItems = [
                 </select>
             </div>
             <div class="mb-3">
+                <label class="form-label">{{__("parent")}}</label>
+                <select required name="parent_id" class="form-select" aria-label="">
+                    <option value=""></option>
+                    @foreach($parentCategories as $parent)
+                    <option value="{{$parent->id}}">{{$parent->title}}</option>
+                    @endforeach
+                </select>
+            </div>
+            <div class="mb-3">
                 <label class="form-label" for="add-category-slug">{{__('slug')}}</label>
                 <input type="text" id="add-category-slug" class="form-control" name="slug" />
             </div>
@@ -110,7 +119,5 @@ $breadcrumbItems = [
             }
         }
     });
-
-
 </script>
 @endpush

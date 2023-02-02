@@ -50,7 +50,7 @@ class CategoriesDataTable extends DataTable
      */
     public function query(Category $model): QueryBuilder
     {
-        return $model->newQuery();
+        return $model->select('categories.*', 'parents.title as parent_title')->leftJoin('categories as parents', 'parents.id', '=', 'categories.parent_id');
     }
 
     /**
@@ -125,6 +125,10 @@ class CategoriesDataTable extends DataTable
                 ->addClass('text-center DT_RowIndex w-1'),
             Column::make('title')
                 ->title(__('title'))
+                ->addClass('text-center')
+                ->orderable(false),
+            Column::make('parent_title')
+                ->title(__('parent'))
                 ->addClass('text-center')
                 ->orderable(false),
             Column::make('slug')
