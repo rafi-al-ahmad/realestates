@@ -45,6 +45,62 @@ return [
             "route" => 'categories',
             "url" => null,
         ],
+        [
+            "name" => "properties",
+            "icon" => "menu-icon tf-icons ti ti-home",
+            "slug" => [
+                "properties",
+                "properties.create",
+                "properties.update",
+                "properties.details",
+                "definitions",
+                "definitions.create",
+                "definitions.update",
+                "definitions.details",
+            ],
+            "route" => 'properties',
+            "url" => null,
+            "submenu" => [
+                [
+                    "name" => "definitions",
+                    "icon" => "menu-icon tf-icons ti ti-list-details",
+                    "slug" => [
+                        "definitions",
+                        "definitions.create",
+                        "definitions.update",
+                        "definitions.details",
+                    ],
+                    "route" => 'definitions',
+                    "url" => null,
+                ],
+                // [
+                //   "url" => "/layouts/vertical",
+                //   "name" => "Vertical",
+                //   "icon" => "menu-icon tf-icons ti ti-layout-distribute-vertical",
+                //   "slug" => "layouts-vertical",
+                //   "target" => "_blank"
+                // ],
+                // [
+                //   "url" => "/layouts/fluid",
+                //   "name" => "Fluid",
+                //   "icon" => "menu-icon tf-icons ti ti-maximize",
+                //   "slug" => "layouts-fluid"
+                // ],
+                // [
+                //   "url" => "/layouts/container",
+                //   "name" => "Container",
+                //   "icon" => "menu-icon tf-icons ti ti-arrows-maximize",
+                //   "slug" => "layouts-container"
+                // ],
+                // [
+                //   "url" => "/layouts/blank",
+                //   "name" => "Blank",
+                //   "icon" => "menu-icon tf-icons ti ti-square",
+                //   "slug" => "layouts-blank",
+                //   "target" => "_blank"
+                // ]
+            ]
+        ],
         // [
         //   "name" => "Layouts",
         //   "icon" => "menu-icon tf-icons ti ti-layout-sidebar",

@@ -24,7 +24,13 @@
             $activeClass = $active;
           }
         }
-      }
+      } elseif (gettype($submenu['slug']) === 'array') {
+            foreach ($submenu['slug'] as $slug) {
+                if (str_contains($currentRouteName, $slug) and strpos($currentRouteName, $slug) === 0) {
+                    $activeClass = 'active';
+                }
+            }
+        }
     @endphp
 
       <li class="menu-item {{$activeClass}}">

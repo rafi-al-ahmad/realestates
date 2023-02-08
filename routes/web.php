@@ -4,6 +4,7 @@ use App\Http\Controllers\AgentController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DefinitionsController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -49,7 +50,6 @@ Route::group([
         Route::post('agent/create', [AgentController::class, 'store']);
         Route::get('agent/update/{id}', [AgentController::class, 'showUpdateForm'])->name('agents.update');
         Route::post('agent/update/{id}', [AgentController::class, 'update']);
-        Route::get('user/{id}', [AgentController::class, 'showUserDetails'])->name('agents.details');
         Route::get('agent/delete/{id}', [AgentController::class, 'delete'])->name('agents.delete');
 
 
@@ -58,8 +58,23 @@ Route::group([
         Route::post('category/create', [CategoriesController::class, 'store']);
         Route::get('category/update/{id}', [CategoriesController::class, 'showUpdateForm'])->name('categories.update');
         Route::post('category/update/{id}', [CategoriesController::class, 'update']);
-        Route::get('user/{id}', [CategoriesController::class, 'showUserDetails'])->name('categories.details');
         Route::get('category/delete/{id}', [CategoriesController::class, 'delete'])->name('categories.delete');
+
+
+        Route::get('properties', [PropertiesController::class, 'listProperties'])->name('properties');
+        Route::get('property/create', [PropertiesController::class, 'showCreateForm'])->name('properties.create');
+        Route::post('property/create', [PropertiesController::class, 'store']);
+        Route::get('property/update/{id}', [PropertiesController::class, 'showUpdateForm'])->name('properties.update');
+        Route::post('property/update/{id}', [PropertiesController::class, 'update']);
+        Route::get('property/delete/{id}', [PropertiesController::class, 'delete'])->name('properties.delete');
+
+
+        Route::get('definitions', [DefinitionsController::class, 'listDefinitions'])->name('definitions');
+        Route::get('definition/create', [DefinitionsController::class, 'showCreateForm'])->name('definitions.create');
+        Route::post('definition/create', [DefinitionsController::class, 'store']);
+        Route::get('definition/update/{id}', [DefinitionsController::class, 'showUpdateForm'])->name('definitions.update');
+        Route::post('definition/update/{id}', [DefinitionsController::class, 'update']);
+        Route::get('definition/delete/{id}', [DefinitionsController::class, 'delete'])->name('definitions.delete');
     });
 });
 
