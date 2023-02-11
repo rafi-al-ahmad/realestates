@@ -62,6 +62,18 @@ return [
             "url" => null,
             "submenu" => [
                 [
+                    "name" => "properties",
+                    "icon" => "menu-icon tf-icons ti ti-home",
+                    "slug" => [
+                        "properties",
+                        "properties.create",
+                        "properties.update",
+                        "properties.details",
+                    ],
+                    "route" => 'properties',
+                    "url" => null,
+                ],
+                [
                     "name" => "definitions",
                     "icon" => "menu-icon tf-icons ti ti-list-details",
                     "slug" => [

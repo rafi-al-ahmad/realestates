@@ -6,6 +6,7 @@ use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DefinitionsController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PropertiesController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -62,9 +63,9 @@ Route::group([
 
 
         Route::get('properties', [PropertiesController::class, 'listProperties'])->name('properties');
-        Route::get('property/create', [PropertiesController::class, 'showCreateForm'])->name('properties.create');
+        Route::get('property/create', [PropertiesController::class, 'showForm'])->name('properties.create');
         Route::post('property/create', [PropertiesController::class, 'store']);
-        Route::get('property/update/{id}', [PropertiesController::class, 'showUpdateForm'])->name('properties.update');
+        Route::get('property/update/{id}', [PropertiesController::class, 'showForm'])->name('properties.update');
         Route::post('property/update/{id}', [PropertiesController::class, 'update']);
         Route::get('property/delete/{id}', [PropertiesController::class, 'delete'])->name('properties.delete');
 

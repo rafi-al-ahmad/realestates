@@ -38,7 +38,7 @@ class Definition extends Model
         "property_type" => "property_type",
         "housing_type" => "housing_type",
         "feature" => "feature",
-        "advertisement_type" => "advertisement_type"
+        // "advertisement_type" => "advertisement_type"
     ];
 
 
