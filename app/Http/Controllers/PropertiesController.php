@@ -50,6 +50,8 @@ class PropertiesController extends Controller
             'bathrooms_no' => ['required', 'numeric'],
             'building_floors' => ['required', 'numeric'],
             'floor_number' => ['required', 'numeric'],
+            'photos' => ['nullable', 'array'],
+            'photos.*' => ['nullable', 'file', 'image'],
         ], $rules);
     }
 
@@ -139,6 +141,7 @@ class PropertiesController extends Controller
         $property->category_id = $data['category_id'];
         $property->agent_id = $data['agent_id'];
         $property->save();
+        $property->addMediaFromRequest('photos')->toMediaCollection('property-photos');
 
         $address = $addressController->createOrUpdate([
             'geodata' => $data['geodata'],
@@ -162,7 +165,7 @@ class PropertiesController extends Controller
     public function update(Request $request)
     {
         $data = $request->all();
-        // dd($data);
+
         $addressController = new AddressController;
         $validator = Validator::make($data, $this->propertiesValidationRules(array_merge([
             "id" => ['required', 'exists:properties']
@@ -201,6 +204,12 @@ class PropertiesController extends Controller
         $property->category_id = $data['category_id'];
         $property->agent_id = $data['agent_id'];
         $property->save();
+        
+        if (isset($data['photos'])) {
+            foreach ($data['photos'] as  $file) {
+                $property->addMedia($file)->toMediaCollection('property-photos');
+            }
+        }
 
         $address = $addressController->createOrUpdate([
             'geodata' => $data['geodata'],

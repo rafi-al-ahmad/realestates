@@ -6,10 +6,14 @@ use App\Traits\ModelTranslations;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
+use Spatie\Image\Manipulations;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
-class Property extends Model
+class Property extends Model implements HasMedia
 {
-    use HasFactory, ModelTranslations;
+    use HasFactory, ModelTranslations, InteractsWithMedia;
 
     protected $fillable = [
         "title",
@@ -83,6 +87,14 @@ class Property extends Model
         return Attribute::make(
             get: $this->getAttributeTranslation()
         );
+    }
+
+    public function registerMediaConversions(Media $media = null): void
+    {
+        $this
+            ->addMediaConversion('preview')
+            ->fit(Manipulations::FIT_CONTAIN, 300, 300)
+            ->nonQueued();
     }
 
     public function features()

@@ -374,6 +374,21 @@ $breadcrumbItems = [
 
         <div class="card mb-4">
             <div class="card-body">
+                <h4>{{__('photos')}}</h4>
+                <div action="/upload" class="dropzone needsclick" id="dropzone-multi">
+                    <div class="dz-message needsclick">
+                        {{__('Drop files here to upload')}}
+                        <span class="note needsclick">{{__('You can also click to open file browser')}}</span>
+                    </div>
+                    <div class="fallback">
+                        <input name="photos" type="file" accept="image/*" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-body">
                 <div class="row">
                     <div class="pt-4 pt-sm-0 col-sm-6 d-flex justify-content-around justify-content-sm-start">
                         <button type="button" onclick="$(this).parents('form').append('<input type=\'hidden\' name=\'toList\' value=\'1\'>').submit()" class="mx-1 btn btn-primary">{{isset($property)? __('update'):__('add')}}</button>
@@ -388,15 +403,50 @@ $breadcrumbItems = [
         </div>
     </form>
 </div>
-
 <div id="initial-coordinations" data-has-address="{{isset($property->address)}}" data-lat="{{(isset($property)? $property->address?->latitude : '')}}" data-lng="{{(isset($property)? $property->address?->longitude : '')}}"></div>
 @endsection
 
 
 @push('scripts')
 <script src="{{url('dashboard')}}/assets/vendor/libs/jquery-repeater/jquery-repeater.js"></script>
+<script src="{{url('dashboard')}}/assets/vendor/libs/dropzone/dropzone.js"></script>
+
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAX8XoECKD0-gnAaah67gR4akbUodB_8Ww&callback=initMap&v=weekly" defer></script>
 <script>
+    const previewTemplate = `<x-dashboard.ui.dropzone-preview-template />`;
+    const dropzone = new Dropzone('#dropzone-multi', {
+        previewTemplate: previewTemplate,
+        parallelUploads: 1,
+        maxFilesize: 3,
+        addRemoveLinks: true,
+        acceptedFiles: "image/*",
+        dictFallbackMessage: "{{__('Your browser does not support drag\'n\'drop file uploads.')}}",
+        dictDefaultMessage: "{{__('Drop files here to upload')}}",
+        dictFallbackText: "{{__('Please use the fallback form below to upload your files like in the olden days.')}}",
+        dictFileTooBig: "{{__('File is too big (\{\{filesize\}\}MiB). Max filesize: \{\{maxFilesize\}\}MiB.')}}",
+        dictInvalidFileType: "{{__('You can\'t upload files of this type.')}}",
+        dictResponseError: "{{__('Server responded with \{\{statusCode\}\} code.')}}",
+        dictCancelUpload: "{{__('Cancel upload')}}",
+        dictCancelUploadConfirmation: "{{__('Are you sure you want to cancel this upload?')}}",
+        dictRemoveFile: "{{__('Remove file')}}",
+        dictMaxFilesExceeded: "{{__('You can not upload any more files.')}}",
+    });
+    dropzone.on("addedfiles", () => {
+        // Input node with selected files. It will be removed from document shortly in order to
+        // give user ability to choose another set of files.
+        var input = dropzone.hiddenFileInput;
+        // Append it to form after stack become empty, because if you append it earlier
+        // it will be removed from its parent node by Dropzone.js.
+        setTimeout(() => {
+            // myForm - is form node that you want to submit.
+            $('form').append(input);
+            // Set some unique name in order to submit data.
+            input.name = "photos[]";
+        }, 0);
+    });
+
+    console.log(dropzone.options);
+
     $('.translation-repeater, .repeater-default').repeater({
         initEmpty: false,
         show: function() {
@@ -479,9 +529,9 @@ $breadcrumbItems = [
     function initMap() {
         geocoder = new google.maps.Geocoder();
         const initialMarkerPosition = $("#initial-coordinations").data('has-address') == true ? {
-                lat: parseFloat($("#initial-coordinations").data('lat')),
-                lng: parseFloat($("#initial-coordinations").data('lng'))
-            } : null
+            lat: parseFloat($("#initial-coordinations").data('lat')),
+            lng: parseFloat($("#initial-coordinations").data('lng'))
+        } : null
         // The location of Uluru
         const uluru = {
             lat: 38.96574162457226,
@@ -489,8 +539,8 @@ $breadcrumbItems = [
         };
         // The map, centered at Uluru
         const map = new google.maps.Map(document.getElementById("map"), {
-            zoom:  initialMarkerPosition != null ? 14 : 6,
-            center: initialMarkerPosition != null ? initialMarkerPosition: uluru,
+            zoom: initialMarkerPosition != null ? 14 : 6,
+            center: initialMarkerPosition != null ? initialMarkerPosition : uluru,
         });
         // The marker, positioned at Uluru
         marker = new google.maps.Marker({
@@ -579,4 +629,8 @@ $breadcrumbItems = [
         });
     }
 </script>
+@endpush
+@push('scripts')
+<link rel="stylesheet" href="{{url('dashboard')}}/assets/vendor/libs/dropzone/dropzone.css" />
+
 @endpush
