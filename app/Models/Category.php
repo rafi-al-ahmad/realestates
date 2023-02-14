@@ -6,10 +6,12 @@ use App\Traits\ModelTranslations;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
 
-class Category extends Model
+class Category extends Model implements HasMedia
 {
-    use HasFactory, ModelTranslations;
+    use HasFactory, ModelTranslations, InteractsWithMedia;
 
     protected $fillable = [
         "title",
@@ -35,4 +37,13 @@ class Category extends Model
             get: $this->getAttributeTranslation()
         );
     }
+
+    public function image()
+    {
+        if (isset($this->media[0])) {
+            return $this->media[0];
+        }
+        return null;
+    }
+    
 }

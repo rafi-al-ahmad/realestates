@@ -63,8 +63,12 @@ $breadcrumbItems = [
                 </select>
             </div>
             <div class="mb-3">
+                <label class="form-label" for="add-category-image">{{__('image')}}</label>
+                <input type="file" accept="image/*" id="add-category-image" class="form-control" name="image" />
+            </div>
+            <div class="mb-3">
                 <label class="form-label">{{__("parent")}}</label>
-                <select required name="parent_id" class="form-select" aria-label="">
+                <select name="parent_id" class="form-select" aria-label="">
                     <option value=""></option>
                     @foreach($parentCategories as $parent)
                     <option value="{{$parent->id}}">{{$parent->title}}</option>

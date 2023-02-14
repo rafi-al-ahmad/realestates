@@ -21,6 +21,7 @@ class CategoriesController extends Controller
             "title.*.language" => ['required', 'string', Rule::in(config('app.supported_locales'))],
             "parent_id" => ['nullable', 'exists:categories,id'],
             "slug" => ['nullable', 'string'],
+            "image" => ['nullable', 'file', 'image'],
             "status" => ['required', "in:0,1"],
         ], $rules);
     }
@@ -49,6 +50,9 @@ class CategoriesController extends Controller
         $category->parent_id = $data['parent_id'] ?? null;
         $category->status = $data['status'];
         $category->slug = $data['slug'] ?? null;
+        if (isset($data['image'])) {
+            $category->addMediaFromRequest('image')->toMediaCollection('category-image');
+        }
         $category->save();
 
         return back()->with('success', __("new record added successfully"));
@@ -78,6 +82,10 @@ class CategoriesController extends Controller
         $category->status = $data['status'];
         $category->parent_id = $data['parent_id'] ?? null;
         $category->slug = $data['slug'] ?? null;
+        if (isset($data['image'])) {
+            $category->image()?->delete();
+            $category->addMediaFromRequest('image')->toMediaCollection('category-image');
+        }
         $category->save();
 
         return (isset($data['toList']) ? redirect(route('categories')) : back()->with('success', __("record updated successfully")));
@@ -85,7 +93,9 @@ class CategoriesController extends Controller
 
     public function delete($id)
     {
-        $res = Category::findOrFail($id)->delete();
+        $category = Category::findOrFail($id);
+        $category->image()?->delete();
+        $res = $category->delete();
 
         if ($res > 0) {
             return back()->with('success', __("record deleted successfully"));
