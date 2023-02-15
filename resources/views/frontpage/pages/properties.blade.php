@@ -87,7 +87,7 @@
                 <div class="row">
                     @foreach($properties->items() as $property)
                     <div class="col-md-6 col-lg-6">
-                        <div class="feat_property home7 style4">
+                        <div class="feat_property home7 style4" onclick="window.location = `{{route('home.property', [$property->id])}}`">
                             <div class="thumb">
                                 <div class="fp_single_item_slider">
                                     @if($property->media?->toArray())

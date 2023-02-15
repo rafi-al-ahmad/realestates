@@ -159,6 +159,10 @@ class HomeController extends Controller
             $query->where('agent_id', $request->agent_id);
         }
 
+        if ($request->has('category_id')) {
+            $query->where('category_id', $request->category_id);
+        }
+
         // if ($request->has('min_size') and $request->min_size != NULL) {
         //     $query->where('square', '>=', $request->min_size);
         // }

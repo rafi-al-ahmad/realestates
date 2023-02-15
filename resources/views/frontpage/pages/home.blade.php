@@ -206,7 +206,7 @@
             @if($wideCategoryDesign)
             <div class="col-lg-4 col-xl-4">
                 <div class="properti_city home5">
-                    <div class="thumb"><img style="height: 350px; object-fit: cover;" class="img-fluid w100" src="{{ ($category->image()) != null? ($category->image()?->getUrl()) : url('assets/frontpage/images/categories/category361x350.png')}}" alt="category361x350.png"></div>
+                    <div class="thumb" onclick="window.location = `{{route('home.filter', ['category_id' => $category->id])}}`"><img style="height: 350px; object-fit: cover;" class="img-fluid w100" src="{{ ($category->image()) != null? ($category->image()?->getUrl()) : url('assets/frontpage/images/categories/category361x350.png')}}" alt="category361x350.png"></div>
                     <div class="overlay">
                         <div class="details">
                             <div class="left">
@@ -219,8 +219,8 @@
             </div>
             @else
             <div class="col-lg-8 col-xl-8">
-                <div class="properti_city home5">
-                    <div class="thumb"><img style="height: 350px; object-fit: cover;" class="img-fluid w100" src="{{ ($category->image()) != null? ($category->image()?->getUrl()) : url('assets/frontpage/images/categories/categories-default748x350.png')}}" alt="categories-default748x350.png"></div>
+                <div class="properti_city home5" >
+                    <div class="thumb" onclick="window.location = `{{route('home.filter', ['category_id' => $category->id])}}`"><img style="height: 350px; object-fit: cover;" class="img-fluid w100" src="{{ ($category->image()) != null? ($category->image()?->getUrl()) : url('assets/frontpage/images/categories/categories-default748x350.png')}}" alt="categories-default748x350.png"></div>
                     <div class="overlay">
                         <div class="details">
                             <div class="left">
