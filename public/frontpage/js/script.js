@@ -814,14 +814,14 @@
     /*  One-Grid-Owl-carousel  */
     if($('.fp_single_item_slider').length){
         $('.fp_single_item_slider').owlCarousel({
-            loop:true,
+            loop:false,
             margin:15,
-            dots: false,
+            dots: true,
             nav:true,
             rtl:false,
-            autoplayHoverPause:false,
-            autoplay: false,
-            smartSpeed: 2000,
+            autoplayHoverPause:true,
+            autoplay: true,
+            smartSpeed: 600,
             singleItem: true,
             navText: [
               '<i class="flaticon-left-arrow-1"></i>',

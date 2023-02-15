@@ -45,5 +45,11 @@ class Category extends Model implements HasMedia
         }
         return null;
     }
-    
+
+
+    public function properties()
+    {
+        return $this->hasMany(Property::class, 'category_id', 'id');
+    }
+
 }

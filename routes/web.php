@@ -82,3 +82,7 @@ Route::group([
 
 Route::get('login', [LoginController::class, "showLoginForm"])->name('login');
 Route::post("login", [LoginController::class, "login"]);
+
+Route::get('/', [HomeController::class, "index"])->name('home');
+Route::get('/properties', [HomeController::class, "filter"])->name('home.filter');
+Route::get('/property/{id}', [HomeController::class, "showProperty"])->name('home.property');

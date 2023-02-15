@@ -93,7 +93,7 @@ class Property extends Model implements HasMedia
     {
         $this
             ->addMediaConversion('preview')
-            ->fit(Manipulations::FIT_CONTAIN, 300, 300)
+            ->fit(Manipulations::FIT_CONTAIN, 500, 500)
             ->nonQueued();
     }
 
@@ -138,4 +138,31 @@ class Property extends Model implements HasMedia
     {
         return $this->hasOne(Category::class, 'id', 'category_id');
     }
+
+    
+    public function getImagesAttribute()
+    {
+        $modelMedia = [];
+
+        foreach ($this->media as $key => $mediaItem) {
+            $modelMedia[$key]['id'] = $mediaItem->id;
+            $modelMedia[$key]['file_name'] = $mediaItem->file_name;
+            $modelMedia[$key]['mime_type'] = $mediaItem->mime_type;
+            $modelMedia[$key]['size'] = $mediaItem->size;
+            $modelMedia[$key]['url'] = $mediaItem->getUrl();
+            $modelMedia[$key]['srcset'] = $mediaItem->getSrcset();
+        }
+
+        return $modelMedia;
+    }
+
+    public function image()
+    {
+        if (isset($this->media[0])) {
+            return $this->media[0];
+        }
+        return null;
+    }
+
+
 }

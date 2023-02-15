@@ -22,7 +22,7 @@ $breadcrumbItems = [
         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body mx-0 flex-grow-0 pt-0 h-100">
-        <form class=" pt-0" method="POST" action="{{route('categories.create')}}">
+        <form class=" pt-0" method="POST" action="{{route('categories.create')}}"  enctype="multipart/form-data">
             @csrf
             <div class="mb-3">
                 <label class="form-label required" for="add-category-title">{{__('title')}}</label>

@@ -445,7 +445,6 @@ $breadcrumbItems = [
         }, 0);
     });
 
-    console.log(dropzone.options);
 
     $('.translation-repeater, .repeater-default').repeater({
         initEmpty: false,
