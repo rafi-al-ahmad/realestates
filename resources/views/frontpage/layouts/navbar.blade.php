@@ -12,7 +12,7 @@
                     <span class="icon-bar"></span>
                 </button>
             </div>
-            <a href="{{url('frontpage')}}" class="navbar_brand float-left dn-smd">
+            <a href="{{route('home')}}" class="navbar_brand float-left dn-smd">
                 <img class="logo1 img-fluid" style="height: 60px;" src="{{url('/')}}/assets/frontpage/images/logo/{{ request()->route()->getName() == 'home' ?'beynil-logo-white.png' : 'logo.png'}}" alt="header-logo.png">
                 <img class="logo2 img-fluid" style="height: 60px;" src="{{url('/')}}/assets/frontpage/images/logo/logo.png" alt="header-logo2.png">
             </a>
@@ -24,7 +24,7 @@
                     <a href="{{route('home.filter')}}"><span class="title">{{__('Listing')}}</span></a>
                 </li>
                 <li class="last">
-                    <a><span class="title">{{__('Contact')}}</span></a>
+                    <a href="{{route('home.contact')}}"><span class="title">{{__('Contact')}}</span></a>
                 </li>
 
             </ul>
@@ -53,10 +53,10 @@
                 <a href="{{route('home')}}"><span class="title">{{__('Home')}}</span></a>
             </li>
             <li>
-                <a href="{{route('home.filter')}}"><span class="title">{{__('Listing')}}</span></a>
+                <a><span class="title">{{__('Listing')}}</span></a>
             </li>
             <li class="last">
-                <a><span class="title">{{__('Contact')}}</span></a>
+                <a href="{{route('home.contact')}}"><span class="title">{{__('Contact')}}</span></a>
             </li>
         </ul>
     </nav>

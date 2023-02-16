@@ -299,4 +299,9 @@ class HomeController extends Controller
             return redirect(route('home'));
         }
     }
+
+    public function shoContactUsPage()
+    {
+        return view('frontpage.pages.contact-us');
+    }
 }

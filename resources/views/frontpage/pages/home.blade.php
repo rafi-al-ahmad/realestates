@@ -219,7 +219,7 @@
             </div>
             @else
             <div class="col-lg-8 col-xl-8">
-                <div class="properti_city home5" >
+                <div class="properti_city home5">
                     <div class="thumb" onclick="window.location = `{{route('home.filter', ['category_id' => $category->id])}}`"><img style="height: 350px; object-fit: cover;" class="img-fluid w100" src="{{ ($category->image()) != null? ($category->image()?->getUrl()) : url('assets/frontpage/images/categories/categories-default748x350.png')}}" alt="categories-default748x350.png"></div>
                     <div class="overlay">
                         <div class="details">
@@ -546,6 +546,25 @@
     </div>
 </section> -->
 
+
+<!-- Start Partners -->
+<section class="start-partners home5 pt50 pb50">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="start_partner tac-smd">
+                    <h2>Interested to Buy, Rent a Property?</h2>
+                    <p>Check our property listing, we are offering you the very best properties</p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="parner_reg_btn home5 text-right tac-smd">
+                    <a class="btn" href="{{route('home.filter')}}">{{__('Brows Properties')}}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 @endsection
 @push('style')

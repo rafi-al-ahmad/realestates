@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="keywords" content="advanced custom search, agency, agent, business, clean, corporate, directory, google maps, homes, idx agent, listing properties, membership packages, property, real broker, real estate, real estate agent, real estate agency, realtor">
-    <meta name="description" content="FindHouse - Real Estate HTML Template">
+    <meta name="description" content="{{env('APP_NAME')}} - Real Estate Platform">
     <meta name="CreativeLayers" content="ATFN">
 
     <title>@yield('title') - {{env('APP_NAME')}}</title>

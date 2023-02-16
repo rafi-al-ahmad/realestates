@@ -3,25 +3,20 @@
         <section class="footer_one home5">
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 pr0 pl0">
+                    <div class="col-sm-6 col-md-6 col-lg-3 col-xl-3">
+                        <div class="footer_about_widget home5 pl-0">
+                        <img class="logo1 img-fluid" style="height: 60px;" src="{{url('/')}}/assets/frontpage/images/logo/beynil-logo-white.png" alt="header-logo.png">
+                        <p>Beynil.com is a reliable and prestigious real estate agency established to meet the needs of people such as houses, land, shops, offices, and also to provide consultancy to those who want to evaluate their real estate profitably.</p>
+                            
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-6 col-lg-3 col-xl-3 p-3 pr0  pt-3">
                         <div class="footer_about_widget home5">
                             <h4>About US</h4>
                             <p>We’re reimagining how you buy, sell and rent. It’s now easier to get into a place you love. So let’s do this, together.</p>
                         </div>
                     </div>
-                    <!-- <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
-                        <div class="footer_qlink_widget home5">
-                            <h4>Quick Links</h4>
-                            <ul class="list-unstyled">
-                                <li><a href="{{url('frontpage')}}/#">About Us</a></li>
-                                <li><a href="{{url('frontpage')}}/#">Terms & Conditions</a></li>
-                                <li><a href="{{url('frontpage')}}/#">User’s Guide</a></li>
-                                <li><a href="{{url('frontpage')}}/#">Support Center</a></li>
-                                <li><a href="{{url('frontpage')}}/#">Press Info</a></li>
-                            </ul>
-                        </div>
-                    </div> -->
-                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                    <div class="col-sm-6 col-md-6 col-lg-3 col-xl-3 pt-3 px-0">
                         <div class="footer_contact_widget home5">
                             <h4>Contact Us</h4>
                             <ul class="list-unstyled">
@@ -32,7 +27,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                    <div class="col-sm-6 col-md-6 col-lg-3 col-xl-3 pt-3">
                         <div class="footer_social_widget home5">
                             <h4>Follow us</h4>
                             <ul class="mb30">
@@ -73,7 +68,7 @@
                     </div>
                     <div class="col-lg-6 col-xl-6">
                         <div class="copyright-widget home5 text-right">
-                            <p>© {{\Carbon\Carbon::now()->format('Y')}} <a class="color-danger" target="blank" href="https://oneitsol.com">One IT Solution</a>. Made with love.</p>
+                            <p>© {{\Carbon\Carbon::now()->format('Y')}} <a class="color-white" target="blank" href="https://oneitsol.com">One IT Solution</a>. Made with love.</p>
                         </div>
                     </div>
                 </div>

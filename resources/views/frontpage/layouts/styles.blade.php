@@ -5,8 +5,8 @@
 <link rel="stylesheet" href="{{url('frontpage')}}/css/responsive.css">
 
 <!-- Favicon -->
-<link href="{{url('/')}}/assets/images/favicon.ico" sizes="128x128" rel="shortcut icon" type="image/x-icon" />
-<link href="{{url('/')}}/assets/images/favicon.ico" sizes="128x128" rel="shortcut icon" />
+<link href="{{url('/')}}/assets/frontpage/images/favicon.ico" sizes="128x128" rel="shortcut icon" type="image/x-icon" />
+<link href="{{url('/')}}/assets/frontpage/images/favicon.ico" sizes="128x128" rel="shortcut icon" />
 
 <style>
     .home5_bgi5 {
@@ -61,6 +61,74 @@
     .mbp_pagination ul.page_navigation li.active .page-link {
         background-color: #dcbe7d;
         color: #ffffff;
+    }
+
+    header.header-nav.menu_style_home_one .ace-responsive-menu li a {
+        color: #484848;
+    }
+
+    header.header-nav.menu_style_home_one a.navbar_brand span,
+    header.header-nav.menu_style_home_three a.navbar_brand span,
+    header.header-nav.menu_style_home_five a.navbar_brand span {
+        color: #484848;
+    }
+
+    .inner_page_breadcrumb {
+        background-image: url("{{url('assets/frontpage/images/contact-us/1.png')}}");
+        background-repeat: no-repeat;
+        height: 410px;
+        position: relative;
+    }
+
+    .form_grid .contact_form button {
+        background-color: #dabd7b;
+    }
+
+    .btn-thm:hover,
+    .btn-thm:active,
+    .btn-thm:focus {
+        background-color: #ffffff;
+        border-color: #8a917e;
+    }
+
+    .bgc-thm {
+        background-color: #dbba76 !important;
+    }
+
+    .parner_reg_btn a.btn {
+        background-color: rgb(35 39 51);
+    }
+
+    .btn-thm2 {
+        background-color: #ff787c;
+        border-color: #dbba76;
+        color: #fffdfa;
+
+    }
+
+    .parner_reg_btn a.btn:hover,
+    .parner_reg_btn a.btn:active,
+    .parner_reg_btn a.btn:focus {
+        background-color: #ffffff;
+        color: #232733;
+    }
+
+    .btn-thm2:hover,
+    .btn-thm2:active,
+    .btn-thm2:focus {
+        background-color: #ffffff;
+        border-color: #232733;
+        color: #232733;
+    }
+
+    .text-thm {
+        color: #013e6b !important;
+    }
+
+    .btn-thm:hover,
+    .btn-thm:active,
+    .btn-thm:focus {
+        color: #232733;
     }
 </style>
 @stack('style')
