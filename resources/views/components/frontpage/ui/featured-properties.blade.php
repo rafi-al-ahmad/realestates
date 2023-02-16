@@ -1,6 +1,6 @@
     <div class="terms_condition_widget">
         <h4 class="title">{{__('Featured Properties')}}</h4>
-        <div class="sidebar_feature_property_slider">
+        <div class="@if(count($properties) >1) sidebar_feature_property_slider @endif">
             @foreach($properties as $property)
             <div class="item">
                 <div class="feat_property home7">
