@@ -130,5 +130,24 @@
     .btn-thm:focus {
         color: #232733;
     }
+
+    .start-partners.home5 {
+        background-image: -moz-linear-gradient(0deg, rgb(218 185 118) 0%, rgb(222 193 132) 100%);
+        background-image: -webkit-linear-gradient(0deg, rgb(218 185 118) 0%, rgb(222 193 132) 100%);
+        background-image: -ms-linear-gradient(0deg, rgb(218 185 118) 0%, rgb(222 193 132) 100%);
+    }
+
+    .parner_reg_btn.home5 a.btn {
+        background-color: #ffffff;
+        color: #232733;
+    }
+
+    .parner_reg_btn.home5 a.btn:hover,
+    .parner_reg_btn.home5 a.btn:active,
+    .parner_reg_btn.home5 a.btn:focus {
+        background-color: #232733;
+        border: 1px solid #ffffff;
+        color: #ffffff;
+    }
 </style>
 @stack('style')

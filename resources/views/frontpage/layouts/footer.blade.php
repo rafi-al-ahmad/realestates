@@ -13,7 +13,7 @@
                     <div class="col-sm-6 col-md-6 col-lg-3 col-xl-3 p-3 pr0  pt-3">
                         <div class="footer_about_widget home5">
                             <h4>About US</h4>
-                            <p>We’re reimagining how you buy, sell and rent. It’s now easier to get into a place you love. So let’s do this, together.</p>
+                            <p style="line-height: 1.3;">We’re reimagining how you buy, sell and rent. It’s now easier to get into a place you love. So let’s do this, together.</p>
                         </div>
                     </div>
                     <div class="col-sm-6 col-md-6 col-lg-3 col-xl-3 pt-3 px-0">
