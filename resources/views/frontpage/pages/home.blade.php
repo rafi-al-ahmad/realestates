@@ -269,7 +269,7 @@
                                         <li class="list-inline-item"><a href="">{{$property->propertyType->title}}</a></li>
                                         <li class="list-inline-item"><a href="">{{__('Featured')}}</a></li>
                                     </ul>
-                                    <a class="fp_price" href="">₺{{$property->price_tl}}<small></small></a>
+                                    <a class="fp_price" href="">₺{{number_format($property->price_tl, 2, ',', '.')}}<small></small></a>
                                 </div>
                             </div>
                             <div class="details">

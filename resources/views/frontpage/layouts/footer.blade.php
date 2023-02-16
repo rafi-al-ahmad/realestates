@@ -6,13 +6,13 @@
                     <div class="col-sm-6 col-md-6 col-lg-3 col-xl-3">
                         <div class="footer_about_widget home5 pl-0">
                         <img class="logo1 img-fluid" style="height: 60px;" src="{{url('/')}}/assets/frontpage/images/logo/beynil-logo-white.png" alt="header-logo.png">
-                        <p style="line-height: 1.3;">Beynil.com is a reliable and prestigious real estate agency established to meet the needs of people such as houses, land, shops, offices, and also to provide consultancy to those who want to evaluate their real estate profitably.</p>
+                        <p style="line-height: 1.3;" class="pt-2">Beynil.com is a reliable and prestigious real estate agency established to meet the needs of people such as houses, land, shops, offices, and also to provide consultancy to those who want to evaluate their real estate profitably.</p>
                             
                         </div>
                     </div>
-                    <div class="col-sm-6 col-md-6 col-lg-3 col-xl-3 p-3 pr0  pt-3">
-                        <div class="footer_about_widget home5">
-                            <h4>About US</h4>
+                    <div class="col-sm-6 col-md-6 col-lg-3 col-xl-3 pt-3 pr0  pt-3">
+                        <div class="footer_about_widget home5 pl-0">
+                            <h4>About Us</h4>
                             <p >We’re reimagining how you buy, sell and rent. It’s now easier to get into a place you love. So let’s do this, together.</p>
                         </div>
                     </div>
@@ -27,9 +27,9 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-md-6 col-lg-3 col-xl-3 px-0 pt-3">
+                    <div class="col-sm-6 col-md-6 col-lg-3 col-xl-3 px-md-0 pt-3">
                         <div class="footer_social_widget home5">
-                            <h4>Follow us</h4>
+                            <h4>Follow Us</h4>
                             <ul class="mb30">
                                 <li class="list-inline-item"><a href="https://www.facebook.com/beynil.realestate"><i class="fa fa-facebook"></i></a></li>
                                 <li class="list-inline-item"><a href="https://www.instagram.com/beynil.yatirim/"><i class="fa fa-instagram"></i></a></li>

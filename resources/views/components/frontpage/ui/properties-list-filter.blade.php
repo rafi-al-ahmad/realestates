@@ -1,5 +1,6 @@
 <div class="sidebar_listing_list">
     <div class="sidebar_advanced_search_widget">
+    <h4 class="mb25 d-md-none">Advanced Search <a class="filter_closed_btn float-right" href="#"><small>Hide Filter</small> <span class="flaticon-close"></span></a></h4>
         <form method="get" id="filter-form">
             @foreach(request()->all() as $key => $value)
             <input type="hidden" name="{{$key}}" value="{{$value}}">

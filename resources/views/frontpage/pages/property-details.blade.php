@@ -8,7 +8,7 @@
                 <div class="row m0">
                     <div class="col-lg-12 p0">
                         <div class="spls_style_one pr1 1px">
-                            <img class="img-fluid w100" src="{{isset($property->media[0]) ? $property->media[0]?->getUrl() : url('frontpage/images/property/ls1.jpg')}}" alt="ls1.jpg">
+                            <img class="img-fluid w100" src="{{isset($property->media[0]) ? $property->media[0]?->getUrl() : url('assets/frontpage/images/properties/959x600.jpg')}}" alt="959x600.jpg">
                         </div>
                     </div>
                 </div>
@@ -17,24 +17,27 @@
                 <div class="row m0">
                     <div class="col-sm-6 col-lg-6 p0">
                         <div class="spls_style_one">
-                            <a class="popup-img" href="{{isset($property->media[1]) ? $property->media[1]?->getUrl() : url('frontpage/images/property/ls2.jpg')}}"><img class="img-fluid w100" src="{{isset($property->media[1]) ? $property->media[1]?->getUrl() : url('frontpage/images/property/ls2.jpg')}}" alt="ls2.jpg"></a>
+                            <a class="popup-img" href="{{isset($property->media[1]) ? $property->media[1]?->getUrl() : url('assets/frontpage/images/properties/480x300.jpg')}}"><img class="img-fluid w100" src="{{isset($property->media[1]) ? $property->media[1]?->getUrl() : url('assets/frontpage/images/properties/480x300.jpg')}}" alt="ls2.jpg"></a>
                         </div>
                     </div>
                     <div class="col-sm-6 col-lg-6 p0">
                         <div class="spls_style_one">
-                            <a class="popup-img" href="{{isset($property->media[2]) ? $property->media[2]?->getUrl() : url('frontpage/images/property/ls3.jpg')}}"><img class="img-fluid w100" src="{{isset($property->media[2]) ? $property->media[2]?->getUrl() : url('frontpage/images/property/ls3.jpg')}}" alt="ls3.jpg"></a>
+                            <a class="popup-img" href="{{isset($property->media[2]) ? $property->media[2]?->getUrl() : url('assets/frontpage/images/properties/480x300.jpg')}}"><img class="img-fluid w100" src="{{isset($property->media[2]) ? $property->media[2]?->getUrl() : url('assets/frontpage/images/properties/480x300.jpg')}}" alt="ls3.jpg"></a>
                         </div>
                     </div>
                     <div class="col-sm-6 col-lg-6 p0">
                         <div class="spls_style_one">
-                            <a class="popup-img" href="{{isset($property->media[3]) ? $property->media[3]?->getUrl() : url('frontpage/images/property/ls4.jpg')}}"><img class="img-fluid w100" src="{{isset($property->media[3]) ? $property->media[3]?->getUrl() : url('frontpage/images/property/ls4.jpg')}}" alt="ls4.jpg"></a>
+                            <a class="popup-img" href="{{isset($property->media[3]) ? $property->media[3]?->getUrl() : url('assets/frontpage/images/properties/480x300.jpg')}}"><img class="img-fluid w100" src="{{isset($property->media[3]) ? $property->media[3]?->getUrl() : url('assets/frontpage/images/properties/480x300.jpg')}}" alt="ls4.jpg"></a>
                         </div>
                     </div>
                     <div class="col-sm-6 col-lg-6 p0">
                         <div class="spls_style_one">
-                            <a class="popup-img" href="{{isset($property->media[4]) ? $property->media[4]?->getUrl() : url('frontpage/images/property/ls5.jpg')}}"><img class="img-fluid w100" src="{{isset($property->media[4]) ? $property->media[4]?->getUrl() : url('frontpage/images/property/ls5.jpg')}}" alt="ls5.jpg"></a>
+                            <a class="popup-img" href="{{isset($property->media[4]) ? $property->media[4]?->getUrl() : url('assets/frontpage/images/properties/480x300.jpg')}}"><img class="img-fluid w100" src="{{isset($property->media[4]) ? $property->media[4]?->getUrl() : url('assets/frontpage/images/properties/480x300.jpg')}}" alt="ls5.jpg"></a>
                         </div>
                     </div>
+                    @for($i = 5; $i < count($property->media); $i++)
+                    <a class="popup-img" href="{{isset($property->media[$i]) ? $property->media[$i]?->getUrl() : url('assets/frontpage/images/properties/480x300.jpg')}}"></a>
+                    @endfor
                 </div>
             </div>
         </div>
@@ -45,7 +48,7 @@
         <div class="row listing_single_row">
             <div class="col-sm-6 col-lg-7 col-xl-8">
                 <div class="single_property_title">
-                    <a href="{{url('frontpage/images/property/ls1.jpg')}}" class="upload_btn popup-img"><span class="flaticon-photo-camera"></span> View Photos</a>
+                    <a href="{{isset($property->media[0]) ? $property->media[0]?->getUrl() : url('assets/frontpage/images/properties/959x600.jpg')}}" class="upload_btn popup-img"><span class="flaticon-photo-camera"></span> View Photos</a>
                 </div>
             </div>
             <!-- <div class="col-sm-6 col-lg-5 col-xl-4">
@@ -78,7 +81,7 @@
                             </div>
                             <div class="single_property_social_share style2">
                                 <div class="price">
-                                    <h2>{{$property->price_tl}}</h2>
+                                    <h2>₺{{number_format($property->price_tl, 2, ',', '.')}}</h2>
                                 </div>
                             </div>
                         </div>
@@ -87,10 +90,10 @@
                         <div class="listing_single_description style2">
                             <div class="lsd_list">
                                 <ul class="mb0">
-                                    <li class="list-inline-item"><a href="#">{{$property->propertyType->title}}</a></li>
-                                    <li class="list-inline-item"><a href="{{url('frontpage')}}/#">{{__('Beds')}}: {{ $property->bedrooms_no}}</a></li>
-                                    <li class="list-inline-item"><a href="{{url('frontpage')}}/#">{{__('Baths')}}: {{ $property->bathrooms_no}}</a></li>
-                                    <li class="list-inline-item"><a href="{{url('frontpage')}}/#">{{__('Square')}} m<sup>2</sup>: {{$property->gross_area}}</a></li>
+                                    <li class="list-inline-item"><a href="">{{$property->propertyType->title}}</a></li>
+                                    <li class="list-inline-item"><a href="">{{__('Beds')}}: {{ $property->bedrooms_no}}</a></li>
+                                    <li class="list-inline-item"><a href="">{{__('Baths')}}: {{ $property->bathrooms_no}}</a></li>
+                                    <li class="list-inline-item"><a href="">{{__('Square')}} m<sup>2</sup>: {{$property->gross_area}}</a></li>
                                 </ul>
                             </div>
                             <h4 class="mb30">{{__('Description')}}</h4>
@@ -134,7 +137,7 @@
                                             <p><span>{{$property->id}}</span></p>
                                         </li>
                                         <li>
-                                            <p><span>₺{{$property->price}}</span></p>
+                                            <p><span>₺{{number_format($property->price_tl, 2, ',', '.')}}</span></p>
                                         </li>
                                         <li>
                                             <p><span>{{$property->gross_area}}</span></p>
