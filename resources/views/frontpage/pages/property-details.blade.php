@@ -1,7 +1,7 @@
 @extends('frontpage.layouts.index')
 @section('content')
 
-<div class="single_page_listing_style">
+<div class="single_page_listing_style" style="width: 96.6%;">
     <div class="container-fluid p0">
         <div class="row">
             <div class="col-sm-6 col-lg-6 p0">
