@@ -336,7 +336,7 @@
     /*  Testimonial-Slider-Owl-carousel  */
     if($('.feature_property_slider').length){
         $('.feature_property_slider').owlCarousel({
-            loop:true,
+            loop:false,
             margin:30,
             dots:true,
             nav:false,
@@ -381,7 +381,7 @@
     /*  Testimonial-Slider-Owl-carousel  */
     if($('.testimonial_grid_slider').length){
         $('.testimonial_grid_slider').owlCarousel({
-            loop:true,
+            loop:false,
             margin:15,
             dots:true,
             nav:false,
@@ -423,7 +423,7 @@
     /*  Team-Slider-Owl-carousel  */
     if($('.team_slider').length){
         $('.team_slider').owlCarousel({
-            loop:true,
+            loop:false,
             margin:30,
             dots:false,
             nav:true,
@@ -475,7 +475,7 @@
     /*  Best-Property-Slider-Owl-carousel  */
     if($('.best_property_slider').length){
         $('.best_property_slider').owlCarousel({
-            loop:true,
+            loop:false,
             margin:30,
             dots:true,
             nav:false,
@@ -527,7 +527,7 @@
     /*  Team-Slider-Owl-carousel  */
     if($('.feature_property_home3_slider').length){
         $('.feature_property_home3_slider').owlCarousel({
-            loop:true,
+            loop:false,
             margin:30,
             dots:false,
             nav:true,
@@ -579,7 +579,7 @@
     /*  Team-Slider-Owl-carousel  */
     if($('.feature_property_home6_slider').length){
         $('.feature_property_home6_slider').owlCarousel({
-            loop:true,
+            loop:false,
             margin:30,
             dots:false,
             nav:true,
@@ -631,7 +631,7 @@
     /*  Team-Slider-Owl-carousel  */
     if($('.our_agents_home6_slider').length){
         $('.our_agents_home6_slider').owlCarousel({
-            loop:true,
+            loop:false,
             margin:30,
             dots:false,
             nav:true,
@@ -683,7 +683,7 @@
     /*  Testimonial-Slider-Owl-carousel  */
     if($('.testimonial_slider_home9').length){
         $('.testimonial_slider_home9').owlCarousel({
-            loop:true,
+            loop:false,
             margin:30,
             dots:true,
             nav:false,
@@ -729,7 +729,7 @@
     if($('.sidebar_feature_property_slider').length){
         $('.sidebar_feature_property_slider').owlCarousel({
             animateIn: 'fadeIn',
-            loop:true,
+            loop:false,
             margin:15,
             dots:true,
             nav:true,
@@ -772,7 +772,7 @@
     if($('.listing_single_property_slider').length){
         $('.listing_single_property_slider').owlCarousel({
             animateIn: 'fadeIn',
-            loop:true,
+            loop:false,
             margin:2,
             dots:false,
             nav:true,
@@ -856,7 +856,7 @@
     /*  Expert-Freelancer-Owl-carousel  */
     if ($(".banner-style-one").length) {
         $(".banner-style-one").owlCarousel({
-            loop: true,
+            loop: false,
             items: 1,
             margin: 0,
             dots: true,
@@ -880,7 +880,7 @@
     /*  Team-Slider-Owl-carousel  */
     if($('.single_product_slider').length){
         $('.single_product_slider').owlCarousel({
-            loop:true,
+            loop:false,
             margin:30,
             dots:true,
             nav:false,
