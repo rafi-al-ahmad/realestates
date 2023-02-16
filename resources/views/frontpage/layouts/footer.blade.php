@@ -16,7 +16,7 @@
                             <p >We’re reimagining how you buy, sell and rent. It’s now easier to get into a place you love. So let’s do this, together.</p>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-md-6 col-lg-3 col-xl-3 pt-3 px-0">
+                    <div class="col-sm-6 col-md-6 col-lg-3 col-xl-3 pt-3 ">
                         <div class="footer_contact_widget home5">
                             <h4>Contact Us</h4>
                             <ul class="list-unstyled">
@@ -27,7 +27,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-md-6 col-lg-3 col-xl-3 pt-3">
+                    <div class="col-sm-6 col-md-6 col-lg-3 col-xl-3 px-0 pt-3">
                         <div class="footer_social_widget home5">
                             <h4>Follow us</h4>
                             <ul class="mb30">
