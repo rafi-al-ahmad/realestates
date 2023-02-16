@@ -53,7 +53,7 @@
                 <a href="{{route('home')}}"><span class="title">{{__('Home')}}</span></a>
             </li>
             <li>
-                <a><span class="title">{{__('Listing')}}</span></a>
+                <a href="{{route('home.filter')}}"><span class="title">{{__('Listing')}}</span></a>
             </li>
             <li class="last">
                 <a href="{{route('home.contact')}}"><span class="title">{{__('Contact')}}</span></a>
