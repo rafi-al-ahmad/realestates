@@ -6,14 +6,14 @@
                     <div class="col-sm-6 col-md-6 col-lg-3 col-xl-3">
                         <div class="footer_about_widget home5 pl-0">
                         <img class="logo1 img-fluid" style="height: 60px;" src="{{url('/')}}/assets/frontpage/images/logo/beynil-logo-white.png" alt="header-logo.png">
-                        <p>Beynil.com is a reliable and prestigious real estate agency established to meet the needs of people such as houses, land, shops, offices, and also to provide consultancy to those who want to evaluate their real estate profitably.</p>
+                        <p style="line-height: 1.3;">Beynil.com is a reliable and prestigious real estate agency established to meet the needs of people such as houses, land, shops, offices, and also to provide consultancy to those who want to evaluate their real estate profitably.</p>
                             
                         </div>
                     </div>
                     <div class="col-sm-6 col-md-6 col-lg-3 col-xl-3 p-3 pr0  pt-3">
                         <div class="footer_about_widget home5">
                             <h4>About US</h4>
-                            <p style="line-height: 1.3;">We’re reimagining how you buy, sell and rent. It’s now easier to get into a place you love. So let’s do this, together.</p>
+                            <p >We’re reimagining how you buy, sell and rent. It’s now easier to get into a place you love. So let’s do this, together.</p>
                         </div>
                     </div>
                     <div class="col-sm-6 col-md-6 col-lg-3 col-xl-3 pt-3 px-0">
