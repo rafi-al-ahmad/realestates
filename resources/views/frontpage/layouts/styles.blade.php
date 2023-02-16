@@ -63,10 +63,6 @@
         color: #ffffff;
     }
 
-    header.header-nav.menu_style_home_one .ace-responsive-menu li a {
-        color: #484848;
-    }
-
     header.header-nav.menu_style_home_one a.navbar_brand span,
     header.header-nav.menu_style_home_three a.navbar_brand span,
     header.header-nav.menu_style_home_five a.navbar_brand span {
@@ -148,6 +144,19 @@
         background-color: #232733;
         border: 1px solid #ffffff;
         color: #ffffff;
+    }
+
+    #open.flaticon-filter-results-button:before,
+    #open.flaticon-close:before,
+    #open2.flaticon-filter-results-button:before,
+    #open2.flaticon-close:before {
+        background-color: #dbba73;
+    }
+
+    #main .filteropen,
+    #main2 .filteropen2,
+    #main2 .filter_open_btn {
+        background-color: #e6c985;
     }
 </style>
 @stack('style')

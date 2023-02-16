@@ -131,6 +131,17 @@ class HomeController extends Controller
             $type_id = explode(",", $request->type_id);
             $query->whereIn('type_id', $type_id);
         }
+        if ($request->sortBy  and $request->sortBy != NULL) {
+            if ( $request->sortBy == 1) {
+                $query->orderBy('price_tl', 'asc');
+            } elseif ( $request->sortBy == 2) {
+                $query->orderBy('price_tl', 'desc');
+            } elseif ( $request->sortBy == 3) {
+                $query->orderBy('id', 'desc');
+            } elseif ( $request->sortBy == 4) {
+                $query->orderBy('id', 'asc');
+            }
+        }
 
         if ($request->features and  $request->features != NULL) {
             $features = $request->features;

@@ -70,10 +70,10 @@
                                             <span class="shrtby">{{__('Sort by:')}}</span>
                                             <select class="selectpicker show-tick" name="sortBy" onchange="$('#sortForm').submit()">
                                                 <option value="0" class="w-100">--</option>
-                                                <option value="1" class="w-100">{{__('price (low price first)')}}</option>
-                                                <option value="2" class="w-100">{{__('price (heigh price first)')}}</option>
-                                                <option value="3" class="w-100">{{__('date (newer first)')}}</option>
-                                                <option value="4" class="w-100">{{__('date (older first)')}}</option>
+                                                <option value="1" {{request()->sortBy == 1 ? 'selected' : ''}} class="w-100">{{__('price (low price first)')}}</option>
+                                                <option value="2" {{request()->sortBy == 2 ? 'selected' : ''}} class="w-100">{{__('price (heigh price first)')}}</option>
+                                                <option value="3" {{request()->sortBy == 3 ? 'selected' : ''}} class="w-100">{{__('date (newer first)')}}</option>
+                                                <option value="4" {{request()->sortBy == 4 ? 'selected' : ''}} class="w-100">{{__('date (older first)')}}</option>
                                             </select>
                                         </li>
                                     </ul>
@@ -96,7 +96,7 @@
                                     @endforeach
                                     @else
                                     <div class="item">
-                                        <img style="height: 230px" class="img-whp" src="{{url('frontpage/images/property/fp1.jpg')}}">
+                                        <img style="height: 230px" class="img-whp" src="{{url('assets/frontpage/images/properties/480x300.jpg')}}">
                                     </div>
                                     @endif
                                 </div>
