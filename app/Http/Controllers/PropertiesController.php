@@ -141,7 +141,11 @@ class PropertiesController extends Controller
         $property->category_id = $data['category_id'];
         $property->agent_id = $data['agent_id'];
         $property->save();
-        $property->addMediaFromRequest('photos')->toMediaCollection('property-photos');
+        if ($request->has('photos')) {
+            foreach ($request->photos as $photo) {
+                $property->addMedia($photo)->toMediaCollection('property-photos');
+            }
+        }
 
         $address = $addressController->createOrUpdate([
             'geodata' => $data['geodata'],
@@ -204,7 +208,7 @@ class PropertiesController extends Controller
         $property->category_id = $data['category_id'];
         $property->agent_id = $data['agent_id'];
         $property->save();
-        
+
         if (isset($data['photos'])) {
             foreach ($data['photos'] as  $file) {
                 $property->addMedia($file)->toMediaCollection('property-photos');
