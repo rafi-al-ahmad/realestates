@@ -258,7 +258,7 @@
                 </div>
             </div>
             <div class="col-lg-12">
-                <div class="@if(count($featuredProperties) >1) sidebar_feature_property_slider @endif">
+                <div class=" feature_property_slider">
                     @foreach($featuredProperties as $property)
                     <div class="item">
                         <div class="feat_property" onclick="window.location = `{{route('home.property', [$property->id])}}`">
