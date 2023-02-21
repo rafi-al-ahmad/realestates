@@ -46,6 +46,18 @@ return [
             "url" => null,
         ],
         [
+            "name" => "cities",
+            "icon" => "menu-icon tf-icons ti ti-map-pin",
+            "slug" => [
+                "cities",
+                "cities.create",
+                "cities.update",
+                "cities.details",
+            ],
+            "route" => 'cities',
+            "url" => null,
+        ],
+        [
             "name" => "properties",
             "icon" => "menu-icon tf-icons ti ti-home",
             "slug" => [

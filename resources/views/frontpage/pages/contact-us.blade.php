@@ -9,10 +9,10 @@
 				<div class="col-xl-6">
 					<div class="breadcrumb_content">
 						<ol class="breadcrumb">
-						    <li class="breadcrumb-item"><a href="#">Home</a></li>
-						    <li class="breadcrumb-item active" aria-current="page">Contact</li>
+						    <li class="breadcrumb-item"><a href="#">{{__('Home')}}</a></li>
+						    <li class="breadcrumb-item active" aria-current="page">{{__('Contact')}}</li>
 						</ol>
-						<h4 class="breadcrumb_title">Contact Us</h4>
+						<h4 class="breadcrumb_title">{{__('Contact Us')}}</h4>
 					</div>
 				</div>
 			</div>
@@ -25,8 +25,8 @@
 			<div class="row">
 				<div class="col-lg-7 col-xl-8">
 					<div class="form_grid">
-						<h4 class="mb5">Send Us An Email</h4>
-						<p>Thank you for visiting our page, and we hope that you liked property listing that we are offering you. In the case that you have different inquiry or more questions don’t  hesitate to contact us.</p>
+						<h4 class="mb5">{{__('Send Us An Email')}}</h4>
+						<p>{{__('Thank you for visiting our page, and we hope that you liked property listing that we are offering you. In the case that you have different inquiry or more questions don’t  hesitate to contact us.')}}</p>
 			            <form class="contact_form" id="contact_form" name="contact_form" action="#" method="post" novalidate="novalidate">
 							<div class="row">
 				                <div class="col-md-6">
@@ -63,21 +63,21 @@
 				</div>
 				<div class="col-lg-5 col-xl-4">
 					<div class="contact_localtion">
-						<h4>Contact Us</h4>
-						<p>We’re reimagining how you buy, sell and rent. It’s now easier to get into a place you love. So let’s do this, together.</p>
+						<h4>{{__('Contact Us')}}</h4>
+						<p>{{__('We’re reimagining how you buy, sell and rent. It’s now easier to get into a place you love. So let’s do this, together.')}}</p>
 						<div class="content_list">
-							<h5>Address</h5>
+							<h5>{{__('Address')}}</h5>
 							<p>İzmir Yolu Cd No:76, Bursa <br>Turkey, 16130</p>
 						</div>
 						<div class="content_list">
-							<h5>Phone</h5>
+							<h5>{{__('Phone')}}</h5>
 							<p>+90 224 452 20 06</p>
 						</div>
 						<div class="content_list">
-							<h5>Mail</h5>
+							<h5>{{__('Mail')}}</h5>
 							<p>info@beynil.com</p>
 						</div>
-						<h5>Follow Us</h5>
+						<h5>{{__('Follow Us')}}</h5>
 						<ul class="contact_form_social_area">
 							<li class="list-inline-item"><a href="https://www.facebook.com/beynil.realestate"><i class="fa fa-facebook"></i></a></li>
 							<li class="list-inline-item"><a href="https://www.instagram.com/beynil.yatirim/"><i class="fa fa-instagram"></i></a></li>
@@ -103,8 +103,8 @@
 			<div class="row">
 				<div class="col-lg-8">
 					<div class="start_partner tac-smd">
-                    <h2>Interested to Buy, Rent a Property?</h2>
-                    <p>Check our property listing, we are offering you the very best properties</p>
+                    <h2>{{__('Interested to Buy, Rent a Property?')}}</h2>
+                    <p>{{__('Check our property listing, we are offering you the very best properties')}}</p>
                 </div>
 				</div>
 				<div class="col-lg-4">

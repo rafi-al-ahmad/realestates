@@ -26,6 +26,15 @@
                 <li class="last">
                     <a href="{{route('home.contact')}}"><span class="title">{{__('Contact')}}</span></a>
                 </li>
+                <li class="list-inline-item home5 float-right">
+                    <a href="#"><span class="title text-uppercase">{{app()->currentLocale()}}</span></a>
+                    <ul style="margin-left: -30px !important">
+                        @foreach(config('app.supported_locales') ?? [] as $locale)
+                        <li class="text-uppercase" style="width: 90px;"><a href="{{route('language.set', ['locale' => $locale])}}">{{$locale}}</a></li>
+                        @endforeach
+                    </ul>
+                </li>
+
 
             </ul>
         </nav>
@@ -57,6 +66,14 @@
             </li>
             <li class="last">
                 <a href="{{route('home.contact')}}"><span class="title">{{__('Contact')}}</span></a>
+            </li>
+            <li>
+                <a href="#"><span class="title text-uppercase">{{app()->currentLocale()}}</span></a>
+                <ul>
+                    @foreach(config('app.supported_locales') ?? [] as $locale)
+                    <li class="text-uppercase"><a href="{{route('language.set', ['locale' => $locale])}}">{{$locale}}</a></li>
+                    @endforeach
+                </ul>
             </li>
         </ul>
     </nav>

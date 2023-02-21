@@ -48,7 +48,7 @@
         <div class="row listing_single_row">
             <div class="col-sm-6 col-lg-7 col-xl-8">
                 <div class="single_property_title">
-                    <a href="{{isset($property->media[0]) ? $property->media[0]?->getUrl() : url('assets/frontpage/images/properties/959x600.jpg')}}" class="upload_btn popup-img"><span class="flaticon-photo-camera"></span> View Photos</a>
+                    <a href="{{isset($property->media[0]) ? $property->media[0]?->getUrl() : url('assets/frontpage/images/properties/959x600.jpg')}}" class="upload_btn popup-img"><span class="flaticon-photo-camera"></span> {{__('View Photos')}}</a>
                 </div>
             </div>
             <!-- <div class="col-sm-6 col-lg-5 col-xl-4">
@@ -260,7 +260,7 @@
                         <div class="application_statics mt30">
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <h4 class="mb-4">Features</h4>
+                                    <h4 class="mb-4">{{__('Features')}}</h4>
                                 </div>
                                 @foreach($features as $group => $featureGroup)
                                 @if($group != 0)
@@ -288,7 +288,7 @@
                     </div>
                     <div class="col-lg-12">
                         <div class="application_statics mt30">
-                            <h4 class="mb30">Location <small class="float-right">{{$property->address?->address}}</small></h4>
+                            <h4 class="mb30">{{__('Location')}} <small class="float-right">{{$property->address?->address}}</small></h4>
                             <div class="property_video p0">
                                 <div class="thumb">
                                     <div class="col-12 mb-3">
@@ -566,14 +566,14 @@
                 <div class="sidebar_listing_list">
                     <div class="sidebar_advanced_search_widget">
                         <div class="sl_creator">
-                            <h4 class="mb25">Listed By</h4>
+                            <h4 class="mb25">{{__('Listed By')}}</h4>
                             <div class="media">
                                 <img class="mr-3" style="height: 90px; width: 90px;" src="{{$property->agent->photo != null ? (Storage::url($property->agent->photo)) : url('assets/frontpage/images/agents/av-man.png')}}" alt="{{__('agent image')}}">
                                 <div class="media-body">
                                     <h5 class="mt-0 mb0">{{$property->agent?->name}} {{$property->agent?->surname}}</h5>
                                     <p class="mb0">{{$property->agent?->mobile_phone}}</p>
                                     <p class="mb0">{{$property->agent?->email}}</p>
-                                    <a class="text-thm" href="{{route('home.filter', ['agent_id' => $property->agent?->id ])}}">View My Listing</a>
+                                    <a class="text-thm" href="{{route('home.filter', ['agent_id' => $property->agent?->id ])}}">{{__('View My Listing')}}</a>
                                 </div>
                             </div>
                         </div>

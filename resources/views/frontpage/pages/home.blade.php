@@ -8,9 +8,9 @@
             <div class="col-lg-7">
                 <div class="home_content home5">
                     <div class="home-text home5">
-                        <h2 class="fz55">Find Your Dream Home</h2>
-                        <p class="discounts_para fz18 color-white">We’re reimagining how you buy, sell and rent. It’s now easier to get into a place you love. So let’s do this, together.</p>
-                        <h4>What are you looking for?</h4>
+                        <h2 class="fz55">{{__('Find Your Dream Home')}}</h2>
+                        <p class="discounts_para fz18 color-white">{{__('We’re reimagining how you buy, sell and rent. It’s now easier to get into a place you love. So let’s do this, together.')}}</p>
+                        <h4>{{__('What are you looking for?')}}</h4>
                         <ul class="mb0">
                             <li class="list-inline-item">
                                 <div class="icon_home5">
@@ -186,6 +186,68 @@
     </div>
 </section>
 
+@if(isset($citiesByProperties))
+<!-- Property cities -->
+<section id="feature-property" class="feature-property">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3">
+                <div class="main-title text-center">
+                    <h2>{{__('Find Properties in These Cities')}}</h2>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            @php
+            $wideCityDesign = true;
+            $wideCityDesignStatus = 0;
+            @endphp
+            @foreach($citiesByProperties as $city)
+            @if($wideCityDesign)
+            <div class="col-lg-4 col-xl-4"  onclick="window.location = `{{route('home.filter', ['city_id' => $city->id])}}`">
+                <div class="properti_city home5">
+                    <div class="thumb"><img style="height: 350px; object-fit: cover;" class="img-fluid w100" src="{{ ($city->image()) != null? ($city->image()?->getUrl()) : url('assets/frontpage/images/categories/city361x350.png')}}" alt="city361x350.png"></div>
+                    <div class="overlay">
+                        <div class="details">
+                            <div class="left">
+                                <h4>{{$city->name}}</h4>
+                            </div>
+                            <p>{{__(':num properties' ,['num' => $city->properties_count])}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @else
+            <div class="col-lg-8 col-xl-8"  onclick="window.location = `{{route('home.filter', ['city_id' => $city->id])}}`">
+                <div class="properti_city home5">
+                    <div class="thumb"><img style="height: 350px; object-fit: cover;" class="img-fluid w100" src="{{ ($city->image()) != null? ($city->image()?->getUrl()) : url('assets/frontpage/images/categories/categories-default748x350.png')}}" alt="categories-default748x350.png"></div>
+                    <div class="overlay">
+                        <div class="details">
+                            <div class="left">
+                                <h4>{{$city->name}}</h4>
+                            </div>
+                            <p>{{__(':num properties' ,['num' => count($city->properties_count)])}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @endif
+            @php
+            if($wideCityDesignStatus == 0){
+            $wideCityDesign = !$wideCityDesign;
+            }
+            if($wideCityDesignStatus == 2){
+            $wideCityDesign = !$wideCityDesign;
+            $wideCityDesignStatus = 0;
+            }
+            $wideCityDesignStatus++;
+            @endphp
+            @endforeach
+        </div>
+    </div>
+</section>
+@endif
 <!-- Property categories -->
 <section id="feature-property" class="feature-property">
     <div class="container">
@@ -306,8 +368,8 @@
         <div class="row">
             <div class="col-lg-6 offset-lg-3">
                 <div class="main-title text-center">
-                    <h2>Why Choose Us</h2>
-                    <p>We provide full service at every step.</p>
+                    <h2>{{__('Why Choose Us')}}</h2>
+                    <p>{{__('We provide full service at every step.')}}</p>
                 </div>
             </div>
         </div>
@@ -318,8 +380,8 @@
                         <span class="flaticon-high-five"></span>
                     </div>
                     <div class="details">
-                        <h4>Trusted By Thousands</h4>
-                        <p>The reason behind our success lies behind our dedicated team of expert agents, that are carefully engaging with all requirements in order to give the very best property solution to our dear customer.</p>
+                        <h4>{{__('Trusted By Thousands')}}</h4>
+                        <p>{{__('The reason behind our success lies behind our dedicated team of expert agents, that are carefully engaging with all requirements in order to give the very best property solution to our dear customer.')}}</p>
                     </div>
                 </div>
             </div>
@@ -329,8 +391,8 @@
                         <span class="flaticon-home-1"></span>
                     </div>
                     <div class="details">
-                        <h4>Wide Range Of Properties</h4>
-                        <p>Beynil is a reliable and prestigious real estate agency established to meet the needs of people offering wide range of properties in the categories of apartments, villas, plots, shops, offices and many more.</p>
+                        <h4>{{__('Wide Range Of Properties')}}</h4>
+                        <p>{{__('Beynil is a reliable and prestigious real estate agency established to meet the needs of people offering wide range of properties in the categories of apartments, villas, plots, shops, offices and many more.')}}</p>
                     </div>
                 </div>
             </div>
@@ -340,7 +402,7 @@
                         <span class="flaticon-profit"></span>
                     </div>
                     <div class="details">
-                        <h4>Investment Consulting</h4>
+                        <h4>{{__('Investment Consulting')}}</h4>
                         <p>Beynil is for all of their prospects offering wide range of investment consulting, evaluation of their real estate profitability, guide into obtaining Turkish citizenship and many more on demand.</p>
                     </div>
                 </div>
@@ -553,8 +615,8 @@
         <div class="row">
             <div class="col-lg-8">
                 <div class="start_partner tac-smd">
-                    <h2>Interested to Buy, Rent a Property?</h2>
-                    <p>Check our property listing, we are offering you the very best properties</p>
+                    <h2>{{__('Interested to Buy, Rent a Property?')}}</h2>
+                    <p>{{__('Check our property listing, we are offering you the very best properties')}}</p>
                 </div>
             </div>
             <div class="col-lg-4">

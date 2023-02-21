@@ -50,10 +50,10 @@ class CategoriesController extends Controller
         $category->parent_id = $data['parent_id'] ?? null;
         $category->status = $data['status'];
         $category->slug = $data['slug'] ?? null;
+        $category->save();
         if (isset($data['image'])) {
             $category->addMediaFromRequest('image')->toMediaCollection('category-image');
         }
-        $category->save();
 
         return back()->with('success', __("new record added successfully"));
     }

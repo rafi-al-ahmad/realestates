@@ -310,6 +310,15 @@ $breadcrumbItems = [
                         <label class="form-label required" for="property-floor_number">{{__('floor number')}}</label>
                         <input required type="number" value="{{old('floor_number') ?? (isset($property)? $property->floor_number : '')}}" name="floor_number" id="property-floor_number" class="form-control" />
                     </div>
+                    <div class="col-md-4">
+                        <label class="form-label required">{{__("city")}}</label>
+                        <select required name="city_id" class="form-select" aria-label="">
+                            <option value="">--</option>
+                            @foreach($cities as $city)
+                            <option value="{{$city->id}}" {{old('city_id') != null? (old('city_id') == $city->id ? "selected": "") :  (isset($property)? ($property->city_id  == $city->id ? 'selected' : "") :'')}}>{{__($city->name)}}</option>
+                            @endforeach
+                        </select>
+                    </div>
                 </div>
             </div>
         </div>

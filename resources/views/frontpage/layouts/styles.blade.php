@@ -158,5 +158,10 @@
     #main2 .filter_open_btn {
         background-color: #e6c985;
     }
+
+    header.header-nav.menu_style_home_one .ace-responsive-menu>li>ul.sub-menu,
+    header.header-nav.home2.style_one .ace-responsive-menu>li>ul.sub-menu {
+        margin-left: -30px;
+    }
 </style>
 @stack('style')

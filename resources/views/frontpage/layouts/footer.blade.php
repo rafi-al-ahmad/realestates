@@ -6,19 +6,19 @@
                     <div class="col-sm-6 col-md-6 col-lg-3 col-xl-3">
                         <div class="footer_about_widget home5 pl-0">
                         <img class="logo1 img-fluid" style="height: 60px;" src="{{url('/')}}/assets/frontpage/images/logo/beynil-logo-white.png" alt="header-logo.png">
-                        <p style="line-height: 1.3;" class="pt-2">Beynil.com is a reliable and prestigious real estate agency established to meet the needs of people such as houses, land, shops, offices, and also to provide consultancy to those who want to evaluate their real estate profitably.</p>
-                            
+                        <p style="line-height: 1.3;" class="pt-2">{{__('Beynil.com is a reliable and prestigious real estate agency established to meet the needs of people such as houses, land, shops, offices, and also to provide consultancy to those who want to evaluate their real estate profitably.')}}</p>
+
                         </div>
                     </div>
                     <div class="col-sm-6 col-md-6 col-lg-3 col-xl-3 pt-3 pr0  pt-3">
                         <div class="footer_about_widget home5 pl-0">
-                            <h4>About Us</h4>
-                            <p >We’re reimagining how you buy, sell and rent. It’s now easier to get into a place you love. So let’s do this, together.</p>
+                            <h4>{{__('About Us')}}</h4>
+                            <p >{{__('We’re reimagining how you buy, sell and rent. It’s now easier to get into a place you love. So let’s do this, together.')}}</p>
                         </div>
                     </div>
                     <div class="col-sm-6 col-md-6 col-lg-3 col-xl-3 pt-3 ">
                         <div class="footer_contact_widget home5">
-                            <h4>Contact Us</h4>
+                            <h4>{{__('Contact Us')}}</h4>
                             <ul class="list-unstyled">
                                 <li><a href="">info@beynil.com</a></li>
                                 <li><a href="">İzmir Yolu Cd No:76, Bursa</a></li>
@@ -60,9 +60,9 @@
                     <div class="col-lg-6 col-xl-6">
                         <div class="footer_menu_widget home5">
                             <ul>
-                                <li class="list-inline-item"><a href="{{route('home')}}">Home</a></li>
-                                <li class="list-inline-item"><a href="{{route('home.filter')}}">Listing</a></li>
-                                <li class="list-inline-item"><a href="">Contact</a></li>
+                                <li class="list-inline-item"><a href="{{route('home')}}">{{__('Home')}}</a></li>
+                                <li class="list-inline-item"><a href="{{route('home.filter')}}">{{__('Listing')}}</a></li>
+                                <li class="list-inline-item"><a href="">{{__('Contact')}}</a></li>
                             </ul>
                         </div>
                     </div>

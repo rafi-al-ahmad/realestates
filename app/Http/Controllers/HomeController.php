@@ -5,9 +5,11 @@ namespace App\Http\Controllers;
 use App\Models\Address;
 use App\Models\Agent;
 use App\Models\Category;
+use App\Models\City;
 use App\Models\Definition;
 use App\Models\Property;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -16,6 +18,14 @@ class HomeController extends Controller
         $agents = Agent::select('id', 'name', 'surname')->where('status', 1)->get();
         $categories = Category::select('id', 'title')->where('status', 1)->get();
         $allDefinitions = Definition::select('id', 'title', 'type', 'group')->where('status', 1)->get();
+        $citiesByProperties = City::select('cities.id', 'cities.name', DB::raw('COUNT(properties.id) as properties_count'))
+        ->join('properties', 'properties.city_id', '=', 'cities.id')
+        ->groupBy('cities.id')
+        ->groupBy('cities.name')
+        ->orderBy('properties_count', 'DESC')
+        ->limit(4)
+        ->with(['media'])
+        ->get();
 
         // group features by group attribute
         $definitions = [];
@@ -52,6 +62,7 @@ class HomeController extends Controller
             "advertisementType" => $definitions['advertisement_type'] ?? [],
             "agents" => $agents,
             "categories" => $categories,
+            "citiesByProperties" => $citiesByProperties,
             "featuredProperties" => $featuredProperties,
         ]);
     }
@@ -174,49 +185,9 @@ class HomeController extends Controller
             $query->where('category_id', $request->category_id);
         }
 
-        // if ($request->has('min_size') and $request->min_size != NULL) {
-        //     $query->where('square', '>=', $request->min_size);
-        // }
-
-        // if ($request->has('max_size') and $request->max_size != NULL) {
-        //     $query->where('square', '<=', $request->max_size);
-        // }
-
-        // if ($request->has('order_by') && $request->has('order_direction')) {
-        //     !in_array($request->order_direction, ['desc', 'asc']) ? $request->order_direction = 'desc' : '';
-        //     $orderBy = null;
-
-        //     if ($request->order_by == 'price') {
-        //         $orderBy = 'price';
-        //     } elseif ($request->order_by == 'last_updated') {
-        //         $orderBy = 'updated_at';
-        //     } elseif ($request->order_by == 'size') {
-        //         $orderBy = 'square';
-        //     }
-
-        //     if ($orderBy) {
-        //         $query->orderBy($orderBy, $request->order_direction);
-        //     }
-        // }
-
 
         $properties = $query->paginate($request->limit);
-        // dd($properties->toArray());
-        //     dd([
-        //         "fragment" => $properties->fragment(),
-        //         "nextPageUrl" => $properties->nextPageUrl(),
-        //         "previousPageUrl" => $properties->previousPageUrl(),
-        //         "firstItem" => $properties->firstItem(),
-        //         "lastItem" => $properties->lastItem(),
-        //         "perPage" => $properties->perPage(),
-        //         "currentPage" => $properties->currentPage(),
-        //         "hasPages" => $properties->hasPages(),
-        //         "hasMorePages" => $properties->hasMorePages(),
-        //         "path" => $properties->path(),
-        //         "isEmpty" => $properties->isEmpty(),
-        //         "total" => $properties->total(),
-        //         "isNotEmpty" => $properties->isNotEmpty(),
-        // ]);
+
 
         $categories = Category::select('id', 'title')->where('status', 1)->with('properties')->whereHas('properties')->get();
 
@@ -240,7 +211,7 @@ class HomeController extends Controller
         $property = Property::find($id);
         $allDefinitions = Definition::select('id', 'title', 'type', 'group')->where('status', 1)->get();
 
-        // group definition by type 
+        // group definition by type
         $definitions = [];
         foreach ($allDefinitions as $definition) {
             $definitions[$definition->type][] = $definition;
@@ -255,7 +226,7 @@ class HomeController extends Controller
                 $featuresByGroup[$feature->group][] = $feature;
             }
         }
-        
+
         // group property features by group attribute
         $propertyFeaturesByGroup = [];
         foreach ($property->features ?? [] as $feature) {
@@ -266,7 +237,7 @@ class HomeController extends Controller
             }
         }
 
-        
+
         $featuredProperties = Property::where('is_featured', 1)->with([
             'media',
             'propertyType',
@@ -277,33 +248,14 @@ class HomeController extends Controller
 
         $categories = Category::select('id', 'title')->where('status', 1)->with('properties')->whereHas('properties')->get();
 
-        // dd([
-        //     "propertyType" => $definitions['property_type'] ?? [],
-        //     // "housingType" => $definitions['housing_type'] ?? [],
-        //     // "heatingType" => $definitions['heating_type'] ?? [],
-        //     // "userStatus" => $definitions['user_status'] ?? [],
-        //     "buildingAge" => $definitions['building_age'] ?? [],
-        //     // "categories" => $categories,
-        //     "propertyFeatures" => $propertyFeaturesByGroup,
-        //     "features" => $featuresByGroup,
-        //     // "advertisementType" => $definitions['advertisement_type'] ?? [],
-        //     "featuredProperties" => $featuredProperties,
-        //     // "properties" => $properties,
-        //     "property" => $property,
-        // ]);
         if ($property) {
             return view('frontpage.pages.property-details', [
                 "propertyType" => $definitions['property_type'] ?? [],
-                // "housingType" => $definitions['housing_type'] ?? [],
-                // "heatingType" => $definitions['heating_type'] ?? [],
-                // "userStatus" => $definitions['user_status'] ?? [],
                 "buildingAge" => $definitions['building_age'] ?? [],
                 "categories" => $categories,
                 "propertyFeatures" => $propertyFeaturesByGroup,
                 "features" => $featuresByGroup,
-                // "advertisementType" => $definitions['advertisement_type'] ?? [],
                 "featuredProperties" => $featuredProperties,
-                // "properties" => $properties,
                 "property" => $property,
             ]);
         } else {

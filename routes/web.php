@@ -3,9 +3,11 @@
 use App\Http\Controllers\AgentController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\CategoriesController;
+use App\Http\Controllers\CitiesController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DefinitionsController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\PropertiesController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -55,11 +57,17 @@ Route::group([
 
 
         Route::get('categories', [CategoriesController::class, 'listCategories'])->name('categories');
-        Route::get('category/create', [CategoriesController::class, 'showCreateForm'])->name('categories.create');
-        Route::post('category/create', [CategoriesController::class, 'store']);
+        Route::post('category/create', [CategoriesController::class, 'store'])->name('categories.create');
         Route::get('category/update/{id}', [CategoriesController::class, 'showUpdateForm'])->name('categories.update');
         Route::post('category/update/{id}', [CategoriesController::class, 'update']);
         Route::get('category/delete/{id}', [CategoriesController::class, 'delete'])->name('categories.delete');
+
+
+        Route::get('cities', [CitiesController::class, 'listCities'])->name('cities');
+        Route::post('city/create', [CitiesController::class, 'store'])->name('cities.create');
+        Route::get('city/update/{id}', [CitiesController::class, 'showUpdateForm'])->name('cities.update');
+        Route::post('city/update/{id}', [CitiesController::class, 'update']);
+        Route::get('city/delete/{id}', [CitiesController::class, 'delete'])->name('cities.delete');
 
 
         Route::get('properties', [PropertiesController::class, 'listProperties'])->name('properties');
@@ -87,3 +95,5 @@ Route::get('/', [HomeController::class, "index"])->name('home');
 Route::get('/properties', [HomeController::class, "filter"])->name('home.filter');
 Route::get('/contact', [HomeController::class, "shoContactUsPage"])->name('home.contact');
 Route::get('/property/{id}', [HomeController::class, "showProperty"])->name('home.property');
+
+Route::get('language/set/{locale}', [LanguageController::class, "setUserLangCookie"])->name('language.set');

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\DataTables\PropertiesDataTable;
 use App\Models\Agent;
 use App\Models\Category;
+use App\Models\City;
 use App\Models\Definition;
 use App\Models\Property;
 use Illuminate\Http\Request;
@@ -64,6 +65,7 @@ class PropertiesController extends Controller
     {
         $agents = Agent::select('id', 'name', 'surname')->where('status', 1)->get();
         $categories = Category::select('id', 'title')->where('status', 1)->get();
+        $cities = City::select('id', 'name')->where('status', 1)->get();
         $allDefinitions = Definition::select('id', 'title', 'type', 'group')->where('status', 1)->get();
 
         // group features by group attribute
@@ -98,6 +100,7 @@ class PropertiesController extends Controller
             "advertisementType" => $definitions['advertisement_type'] ?? [],
             "agents" => $agents,
             "categories" => $categories,
+            "cities" => $cities,
             "property" => $property
         ]);
     }
@@ -140,7 +143,10 @@ class PropertiesController extends Controller
         $property->property_type_id = $data['property_type'];
         $property->category_id = $data['category_id'];
         $property->agent_id = $data['agent_id'];
+        $property->city_id = $data['city_id'] ?? null;
+
         $property->save();
+
         if ($request->has('photos')) {
             foreach ($request->photos as $photo) {
                 $property->addMedia($photo)->toMediaCollection('property-photos');
@@ -207,6 +213,8 @@ class PropertiesController extends Controller
         $property->property_type_id = $data['property_type'];
         $property->category_id = $data['category_id'];
         $property->agent_id = $data['agent_id'];
+        $property->city_id = $data['city_id'] ?? null;
+
         $property->save();
 
         if (isset($data['photos'])) {
@@ -214,6 +222,7 @@ class PropertiesController extends Controller
                 $property->addMedia($file)->toMediaCollection('property-photos');
             }
         }
+
 
         $address = $addressController->createOrUpdate([
             'geodata' => $data['geodata'],
