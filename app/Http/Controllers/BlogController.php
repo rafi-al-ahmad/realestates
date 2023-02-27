@@ -11,6 +11,7 @@ use App\Models\Property;
 use App\Models\PropertyFeatures;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
 

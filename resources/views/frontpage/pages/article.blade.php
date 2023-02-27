@@ -36,9 +36,9 @@
                         </div>
                     </div>
                 </div>
-                @if($recentArticles != null)
+                @if($recentArticles?->toArray())
                 <div class="row">
-                    <div class="col-lg-12 mb20">
+                    <div class="col-lg-12 mb20 mt-5">
                         <h4>{{__('Read More')}}</h4>
                     </div>
                     @foreach($recentArticles as $article)
