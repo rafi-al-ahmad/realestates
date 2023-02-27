@@ -10,7 +10,7 @@
     <meta name="description" content="" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="{{url('/')}}/assets/images/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="{{url('/')}}/favicon.ico" />
 
     @include("dashboard.layouts.styles")
 
