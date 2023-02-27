@@ -9,7 +9,7 @@
 				<div class="col-xl-6">
 					<div class="breadcrumb_content">
 						<ol class="breadcrumb">
-						    <li class="breadcrumb-item"><a href="#">{{__('Home')}}</a></li>
+						    <li class="breadcrumb-item"><a href="{{route('home')}}">{{__('Home')}}</a></li>
 						    <li class="breadcrumb-item active" aria-current="page">{{__('Contact')}}</li>
 						</ol>
 						<h4 class="breadcrumb_title">{{__('Contact Us')}}</h4>
@@ -31,30 +31,30 @@
 							<div class="row">
 				                <div class="col-md-6">
 				                    <div class="form-group">
-										<input id="form_name" name="form_name" class="form-control" required="required" type="text" placeholder="Name">
+										<input id="form_name" name="form_name" class="form-control" required="required" type="text" placeholder="{{__('Name')}}">
 									</div>
 				                </div>
 				                <div class="col-md-6">
 				                    <div class="form-group">
-				                    	<input id="form_email" name="form_email" class="form-control required email" required="required" type="email" placeholder="Email">
+				                    	<input id="form_email" name="form_email" class="form-control required email" required="required" type="email" placeholder="{{__('Email')}}">
 				                    </div>
 				                </div>
 				                <div class="col-md-6">
 				                    <div class="form-group">
-				                    	<input id="form_phone" name="form_phone" class="form-control required phone" required="required" type="phone" placeholder="Phone">
+				                    	<input id="form_phone" name="form_phone" class="form-control required phone" required="required" type="phone" placeholder="{{__('Phone')}}">
 				                    </div>
 				                </div>
 				                <div class="col-md-6">
 				                    <div class="form-group">
-					                    <input id="form_subject" name="form_subject" class="form-control required" required="required" type="text" placeholder="Subject">
+					                    <input id="form_subject" name="form_subject" class="form-control required" required="required" type="text" placeholder="{{__('Subject')}}">
 									</div>
 				                </div>
 				                <div class="col-sm-12">
 		                            <div class="form-group">
-		                                <textarea id="form_message" name="form_message" class="form-control required" rows="8" required="required" placeholder="Your Message"></textarea>
+		                                <textarea id="form_message" name="form_message" class="form-control required" rows="8" required="required" placeholder="{{__('Your Message')}}"></textarea>
 		                            </div>
 				                    <div class="form-group mb0">
-					                    <button type="button" class="btn btn-lg btn-thm">Send Message</button>
+					                    <button type="button" class="btn btn-lg btn-thm">{{__('Send Message')}}</button>
 				                    </div>
 				                </div>
 			                </div>

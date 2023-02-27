@@ -29,7 +29,7 @@
                     </div>
                     <div class="col-sm-6 col-md-6 col-lg-3 col-xl-3 px-md-0 pt-3">
                         <div class="footer_social_widget home5">
-                            <h4>Follow Us</h4>
+                            <h4>{{__('Follow Us')}}</h4>
                             <ul class="mb30">
                                 <li class="list-inline-item"><a href="https://www.facebook.com/beynil.realestate"><i class="fa fa-facebook"></i></a></li>
                                 <li class="list-inline-item"><a href="https://www.instagram.com/beynil.yatirim/"><i class="fa fa-instagram"></i></a></li>
@@ -62,7 +62,8 @@
                             <ul>
                                 <li class="list-inline-item"><a href="{{route('home')}}">{{__('Home')}}</a></li>
                                 <li class="list-inline-item"><a href="{{route('home.filter')}}">{{__('Listing')}}</a></li>
-                                <li class="list-inline-item"><a href="">{{__('Contact')}}</a></li>
+                                <li class="list-inline-item"><a href="{{route('home.contact')}}">{{__('Contact')}}</a></li>
+                                <li class="list-inline-item"><a href="{{route('home.blog')}}">{{__('Blog')}}</a></li>
                             </ul>
                         </div>
                     </div>

@@ -49,10 +49,10 @@ class PropertiesDataTable extends DataTable
                 return $record->housingType?->title;
             })
             ->editColumn('agent', function ($record) {
-                return $record->agent?->name .' '. $record->agent?->surname;
+                return $record->agent?->name . ' ' . $record->agent?->surname;
             })
             ->setRowId(function ($record) {
-                return $this->type."-".$record->id;
+                return $this->type . "-" . $record->id;
             })
             ->addIndexColumn();
     }
@@ -168,6 +168,7 @@ class PropertiesDataTable extends DataTable
                 ->addClass('text-center')
                 ->orderable(false),
             Column::make('status')
+                ->title(__('status'))
                 ->addClass('text-center')
                 ->orderable(false),
             Column::computed('action')

@@ -139,7 +139,7 @@ class Property extends Model implements HasMedia
         return $this->hasOne(Category::class, 'id', 'category_id');
     }
 
-    
+
     public function getImagesAttribute()
     {
         $modelMedia = [];
@@ -164,5 +164,15 @@ class Property extends Model implements HasMedia
         return null;
     }
 
+    public static function getActiveFeatured($limit = 9)
+    {
+        return static::where('is_featured', 1)->where('status', 1)->with([
+            'media',
+            'propertyType',
+            'housingType',
+            'address',
+            'agent',
+        ])->limit($limit)->get();
+    }
 
 }

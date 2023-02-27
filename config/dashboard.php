@@ -3,7 +3,7 @@
 return [
     "menu" => [
         [
-            "name" => "Dashboard",
+            "name" => "dashboard",
             "icon" => "menu-icon tf-icons ti ti-smart-home",
             "slug" => "admin",
             "route" => 'admin',
@@ -43,6 +43,18 @@ return [
                 "categories.details",
             ],
             "route" => 'categories',
+            "url" => null,
+        ],
+        [
+            "name" => "blog",
+            "icon" => "menu-icon tf-icons ti ti-article",
+            "slug" => [
+                "blogs",
+                "blogs.create",
+                "blogs.update",
+                "blogs.details",
+            ],
+            "route" => 'blogs',
             "url" => null,
         ],
         [

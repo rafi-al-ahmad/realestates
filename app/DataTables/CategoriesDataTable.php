@@ -131,11 +131,12 @@ class CategoriesDataTable extends DataTable
                 ->title(__('parent'))
                 ->addClass('text-center')
                 ->orderable(false),
-            Column::make('slug')
+                Column::make('slug')
                 ->title(__('slug'))
                 ->addClass('text-center')
                 ->orderable(false),
-            Column::make('status')
+                Column::make('status')
+                ->title(__('status'))
                 ->addClass('text-center')
                 ->orderable(false),
             Column::computed('action')

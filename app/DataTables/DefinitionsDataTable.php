@@ -36,7 +36,7 @@ class DefinitionsDataTable extends DataTable
                 return '<span class="badge ' . ($record->status == 1 ? 'bg-label-success' : 'bg-label-danger') . '" text-capitalized>' . ($record->status == 1 ? __('active') : __('inactive')) . '</span>';
             })
             ->setRowId(function ($record) {
-                return $this->type."-".$record->id;
+                return $this->type . "-" . $record->id;
             })
             ->addIndexColumn();
     }
@@ -60,12 +60,12 @@ class DefinitionsDataTable extends DataTable
     public function html(): HtmlBuilder
     {
         return $this->builder()
-            ->setTableId('definitions-table-'.$this->type)
+            ->setTableId('definitions-table-' . $this->type)
             ->columns($this->getColumns())
             ->minifiedAjax()
             ->ajax([
                 'data' => 'function(data) {
-                    data.type = "'.$this->type.'"
+                    data.type = "' . $this->type . '"
                 }'
             ])
             ->dom(
@@ -136,6 +136,7 @@ class DefinitionsDataTable extends DataTable
                 ->addClass('text-center')
                 ->orderable(false),
             Column::make('status')
+                ->title(__('status'))
                 ->addClass('text-center')
                 ->orderable(false),
             Column::computed('action')

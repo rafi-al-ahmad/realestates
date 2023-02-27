@@ -139,6 +139,7 @@ class UsersDataTable extends DataTable
                 ->orderable(false),
             Column::make('status')
                 ->addClass('text-center')
+                ->title(__('status'))
                 ->orderable(false),
             Column::computed('action')
                 ->addClass('text-center')

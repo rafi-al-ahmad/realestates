@@ -136,19 +136,7 @@
                     @endforeach
 
                     <div class="col-lg-12 mt20">
-                        <div class="mbp_pagination">
-                            <ul class="page_navigation">
-                                <li class="page-item {{$properties->previousPageUrl()? '':'disabled'}}">
-                                    <a class="page-link" href="{{$properties->previousPageUrl()}}" tabindex="-1" aria-disabled="true"> <span class="flaticon-left-arrow"></span> Prev</a>
-                                </li>
-                                @for($i = 0, $page = 1; $i < $properties->total(); $page++ , $i += $properties->perPage())
-                                    <li class="page-item {{$properties->currentPage() == $page? 'active ':''}}"><a class="page-link" href="{{$properties->url($page)}}">{{$page}}</a></li>
-                                    @endfor
-                                    <li class="page-item {{$properties->nextPageUrl()? '':'disabled'}}">
-                                        <a class="page-link" href="{{$properties->nextPageUrl()}}"><span class="flaticon-right-arrow"></span></a>
-                                    </li>
-                            </ul>
-                        </div>
+                        <x-frontpage.ui.paginator :pagination="$properties" />
                     </div>
                 </div>
             </div>

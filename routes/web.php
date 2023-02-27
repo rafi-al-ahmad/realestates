@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AgentController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\CitiesController;
 use App\Http\Controllers\DashboardController;
@@ -9,6 +10,7 @@ use App\Http\Controllers\DefinitionsController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\PropertiesController;
+use App\Http\Controllers\TinymceController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -84,6 +86,20 @@ Route::group([
         Route::get('definition/update/{id}', [DefinitionsController::class, 'showUpdateForm'])->name('definitions.update');
         Route::post('definition/update/{id}', [DefinitionsController::class, 'update']);
         Route::get('definition/delete/{id}', [DefinitionsController::class, 'delete'])->name('definitions.delete');
+
+
+
+        Route::get("blogs", [BlogController::class, "index"])->name('blogs');
+        Route::get("blog/create", [BlogController::class, "showForm"])->name('blogs.create');
+        Route::post("blog/create", [BlogController::class, "create"])->name('blogs.create');
+        Route::get("blog/{id}/update", [BlogController::class, "showForm"])->name('blogs.update');
+        Route::post("blog/{id}/update", [BlogController::class, "update"]);
+        Route::get("blog/delete/{id}", [BlogController::class, "delete"])->name('blogs.delete');
+
+
+        Route::post("tinymce/image/upload", [TinymceController::class, "upload"])->name('tinymce.upload');
+        Route::post("tinymce/image/delete", [TinymceController::class, "delete"])->name('tinymce.delete');
+
     });
 });
 
@@ -95,5 +111,7 @@ Route::get('/', [HomeController::class, "index"])->name('home');
 Route::get('/properties', [HomeController::class, "filter"])->name('home.filter');
 Route::get('/contact', [HomeController::class, "shoContactUsPage"])->name('home.contact');
 Route::get('/property/{id}', [HomeController::class, "showProperty"])->name('home.property');
+Route::get('/blog', [BlogController::class, "showBlog"])->name('home.blog');
+Route::get('/blog/{id}', [BlogController::class, "showArticle"])->name('home.blog.article');
 
 Route::get('language/set/{locale}', [LanguageController::class, "setUserLangCookie"])->name('language.set');

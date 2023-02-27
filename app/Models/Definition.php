@@ -48,4 +48,17 @@ class Definition extends Model
             get: $this->getAttributeTranslation()
         );
     }
+
+    public static function getActiveByType()
+    {
+        $allActiveDefinitions = Definition::select('id', 'title', 'type', 'group')->where('status', 1)->get();
+
+        // group definition by type
+        $definitions = [];
+        foreach ($allActiveDefinitions as $definition) {
+            $definitions[$definition->type][] = $definition;
+        }
+
+        return $definitions;
+    }
 }

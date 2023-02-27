@@ -8,6 +8,8 @@ use App\Models\Category;
 use App\Models\City;
 use App\Models\Definition;
 use App\Models\Property;
+use App\Models\PropertyFeatures;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -209,43 +211,11 @@ class HomeController extends Controller
     public function showProperty($id)
     {
         $property = Property::find($id);
-        $allDefinitions = Definition::select('id', 'title', 'type', 'group')->where('status', 1)->get();
 
-        // group definition by type
-        $definitions = [];
-        foreach ($allDefinitions as $definition) {
-            $definitions[$definition->type][] = $definition;
-        }
-
-        // group features by group attribute
-        $featuresByGroup = [];
-        foreach ($property->features ?? [] as $feature) {
-            if ($feature->group == null) {
-                $featuresByGroup[0][] = $feature;
-            } else {
-                $featuresByGroup[$feature->group][] = $feature;
-            }
-        }
-
-        // group property features by group attribute
-        $propertyFeaturesByGroup = [];
-        foreach ($property->features ?? [] as $feature) {
-            if ($feature->group == null) {
-                $propertyFeaturesByGroup[0][] = $feature;
-            } else {
-                $propertyFeaturesByGroup[$feature->group][] = $feature;
-            }
-        }
-
-
-        $featuredProperties = Property::where('is_featured', 1)->with([
-            'media',
-            'propertyType',
-            'housingType',
-            'address',
-            'agent',
-        ])->limit(9)->get();
-
+        $definitions = Definition::getActiveByType();
+        $featuresByGroup = PropertyFeatures::getFeaturesByGroup($definitions['features'] ?? new Collection());
+        $propertyFeaturesByGroup = PropertyFeatures::getFeaturesByGroup($property->features);
+        $featuredProperties = Property::getActiveFeatured();
         $categories = Category::select('id', 'title')->where('status', 1)->with('properties')->whereHas('properties')->get();
 
         if ($property) {

@@ -403,7 +403,7 @@
                     </div>
                     <div class="details">
                         <h4>{{__('Investment Consulting')}}</h4>
-                        <p>Beynil is for all of their prospects offering wide range of investment consulting, evaluation of their real estate profitability, guide into obtaining Turkish citizenship and many more on demand.</p>
+                        <p>{{__('Beynil is for all of their prospects offering wide range of investment consulting, evaluation of their real estate profitability, guide into obtaining Turkish citizenship and many more on demand.')}}</p>
                     </div>
                 </div>
             </div>

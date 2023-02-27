@@ -163,5 +163,9 @@
     header.header-nav.home2.style_one .ace-responsive-menu>li>ul.sub-menu {
         margin-left: -30px;
     }
+
+    header.header-nav.menu_style_home_one .ace-responsive-menu li a {
+        color: {{(Route::currentRouteName() == 'home') ? '#ffffff' : '#484848'}};
+    }
 </style>
 @stack('style')
