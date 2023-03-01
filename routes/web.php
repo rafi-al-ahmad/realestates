@@ -113,5 +113,6 @@ Route::get('/contact', [HomeController::class, "shoContactUsPage"])->name('home.
 Route::get('/property/{id}', [HomeController::class, "showProperty"])->name('home.property');
 Route::get('/blog', [BlogController::class, "showBlog"])->name('home.blog');
 Route::get('/blog/{id}', [BlogController::class, "showArticle"])->name('home.blog.article');
+Route::get('/agents', [AgentController::class, "showAgents"])->name('home.agents');
 
 Route::get('language/set/{locale}', [LanguageController::class, "setUserLangCookie"])->name('language.set');

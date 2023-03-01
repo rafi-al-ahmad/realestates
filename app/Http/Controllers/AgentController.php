@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use App\DataTables\AgentsDataTable;
 use App\Models\Agent;
+use App\Models\Category;
+use App\Models\Definition;
+use App\Models\Property;
+use App\Models\PropertyFeatures;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
@@ -98,7 +102,7 @@ class AgentController extends Controller
         if (isset($data['languages'])) {
             $languages = [];
             foreach ($data['languages'] as $lang) {
-                    $languages[] = $lang['language-name'];
+                $languages[] = $lang['language-name'];
             }
             $agent->languages = $languages;
         }
@@ -119,4 +123,22 @@ class AgentController extends Controller
         }
     }
 
+    public function showAgents()
+    {
+        $agents = Agent::where('status', 1)->with('listingNumber')->paginate(6);
+        $definitions = Definition::getActiveByType();
+        $featuresByGroup = PropertyFeatures::getFeaturesByGroup($definitions['feature'] ?? []);
+        $featuredProperties = Property::getActiveFeatured();
+        $categories = Category::select('id', 'title')->where('status', 1)->with('properties')->whereHas('properties')->get();
+
+
+        return view('frontpage.pages.agents', [
+            "agents" => $agents,
+            "propertyType" => $definitions['property_type'] ?? [],
+            "buildingAge" => $definitions['building_age'] ?? [],
+            "categories" => $categories,
+            "features" => $featuresByGroup,
+            "featuredProperties" => $featuredProperties,
+        ]);
+    }
 }

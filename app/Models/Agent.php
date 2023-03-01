@@ -24,4 +24,12 @@ class Agent extends Model
     protected $casts = [
         "languages" => "array",
     ];
+
+    protected $with = [];
+
+
+    public function listingNumber()
+    {
+        return $this->hasMany(Property::class);
+    }
 }
