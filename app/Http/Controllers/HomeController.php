@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Address;
 use App\Models\Agent;
+use App\Models\Article;
 use App\Models\Category;
 use App\Models\City;
 use App\Models\Definition;
@@ -21,13 +22,15 @@ class HomeController extends Controller
         $categories = Category::select('id', 'title')->where('status', 1)->get();
         $allDefinitions = Definition::select('id', 'title', 'type', 'group')->where('status', 1)->get();
         $citiesByProperties = City::select('cities.id', 'cities.name', DB::raw('COUNT(properties.id) as properties_count'))
-        ->join('properties', 'properties.city_id', '=', 'cities.id')
-        ->groupBy('cities.id')
-        ->groupBy('cities.name')
-        ->orderBy('properties_count', 'DESC')
-        ->limit(4)
-        ->with(['media'])
-        ->get();
+            ->join('properties', 'properties.city_id', '=', 'cities.id')
+            ->groupBy('cities.id')
+            ->groupBy('cities.name')
+            ->orderBy('properties_count', 'DESC')
+            ->limit(4)
+            ->with(['media'])
+            ->get();
+
+        $articles = Article::where('status', 1)->limit(3)->get();
 
         // group features by group attribute
         $definitions = [];
@@ -66,6 +69,7 @@ class HomeController extends Controller
             "categories" => $categories,
             "citiesByProperties" => $citiesByProperties,
             "featuredProperties" => $featuredProperties,
+            "articles" => $articles,
         ]);
     }
 
@@ -127,6 +131,10 @@ class HomeController extends Controller
             });
         }
 
+        if ($request->housing_type and $request->housing_type != NULL) {
+            $query->where('housing_type_id', $request->housing_type);
+        }
+
         if ($request->property_type and $request->property_type != NULL) {
             $query->where('property_type_id', $request->property_type);
         }
@@ -145,13 +153,13 @@ class HomeController extends Controller
             $query->whereIn('type_id', $type_id);
         }
         if ($request->sortBy  and $request->sortBy != NULL) {
-            if ( $request->sortBy == 1) {
+            if ($request->sortBy == 1) {
                 $query->orderBy('price_tl', 'asc');
-            } elseif ( $request->sortBy == 2) {
+            } elseif ($request->sortBy == 2) {
                 $query->orderBy('price_tl', 'desc');
-            } elseif ( $request->sortBy == 3) {
+            } elseif ($request->sortBy == 3) {
                 $query->orderBy('id', 'desc');
-            } elseif ( $request->sortBy == 4) {
+            } elseif ($request->sortBy == 4) {
                 $query->orderBy('id', 'asc');
             }
         }
@@ -163,27 +171,27 @@ class HomeController extends Controller
             });
         }
 
-        if ($request->has('bedrooms')) {
+        if ($request->bedrooms) {
             $query->where('bedrooms_no', $request->bedrooms);
         }
 
-        if ($request->has('bathrooms')) {
+        if ($request->bathrooms) {
             $query->where('bathrooms_no', $request->bathrooms);
         }
 
-        if ($request->has('living_rooms')) {
+        if ($request->living_rooms) {
             $query->where('living_rooms_no', $request->living_rooms);
         }
 
-        if ($request->has('age')) {
+        if ($request->age) {
             $query->where('building_age_id', $request->age);
         }
 
-        if ($request->has('agent_id')) {
+        if ($request->agent_id) {
             $query->where('agent_id', $request->agent_id);
         }
 
-        if ($request->has('category_id')) {
+        if ($request->category_id) {
             $query->where('category_id', $request->category_id);
         }
 
@@ -213,7 +221,7 @@ class HomeController extends Controller
         $property = Property::find($id);
 
         $definitions = Definition::getActiveByType();
-        $featuresByGroup = PropertyFeatures::getFeaturesByGroup($definitions['features'] ?? new Collection());
+        $featuresByGroup = PropertyFeatures::getFeaturesByGroup($definitions['feature'] ?? new Collection());
         $propertyFeaturesByGroup = PropertyFeatures::getFeaturesByGroup($property->features);
         $featuredProperties = Property::getActiveFeatured();
         $categories = Category::select('id', 'title')->where('status', 1)->with('properties')->whereHas('properties')->get();
@@ -233,8 +241,41 @@ class HomeController extends Controller
         }
     }
 
-    public function shoContactUsPage()
+    public function showContactUsPage()
     {
         return view('frontpage.pages.contact-us');
+    }
+
+    public function showAboutUsPage()
+    {
+        $agents = Agent::where('status', 1)->get();
+
+        $definitions = Definition::getActiveByType();
+        $featuresByGroup = PropertyFeatures::getFeaturesByGroup($definitions['feature'] ?? new Collection());
+
+        return view('frontpage.pages.about-us', [
+            'agents' => $agents,
+            "propertyType" => $definitions['property_type'] ?? [],
+            "housingType" => $definitions['housing_type'] ?? [],
+            "buildingAge" => $definitions['building_age'] ?? [],
+            "features" => $featuresByGroup,
+
+        ]);
+    }
+
+    public function showCitizenshipPage()
+    {
+        $agents = Agent::where('status', 1)->get();
+
+        $definitions = Definition::getActiveByType();
+        $featuresByGroup = PropertyFeatures::getFeaturesByGroup($definitions['feature'] ?? new Collection());
+
+        return view('frontpage.pages.citizenship', [
+            'agents' => $agents,
+            "propertyType" => $definitions['property_type'] ?? [],
+            "housingType" => $definitions['housing_type'] ?? [],
+            "buildingAge" => $definitions['building_age'] ?? [],
+            "features" => $featuresByGroup,
+        ]);
     }
 }

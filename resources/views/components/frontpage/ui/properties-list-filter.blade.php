@@ -1,9 +1,11 @@
 <div class="sidebar_listing_list">
     <div class="sidebar_advanced_search_widget">
     <h4 class="mb25 d-md-none">{{__('Advanced Search')}} <a class="filter_closed_btn float-right" href="#"><small>{{__('Hide Filter')}}</small> <span class="flaticon-close"></span></a></h4>
-        <form method="get" id="filter-form">
+        <form method="get" action="{{route('home.filter')}}" id="filter-form">
             @foreach(request()->all() as $key => $value)
+            @if(!is_array($value) && $value)
             <input type="hidden" name="{{$key}}" value="{{$value}}">
+            @endif
             @endforeach
             <ul class="sasw_list mb0">
                 <li class="search_area">
@@ -134,13 +136,12 @@
                                             @foreach($featureGroup as $feature)
                                             <div class="col-12 col-lg-6 col-xl-6">
                                                 <div class="custom-control custom-checkbox">
-                                                    <input type="checkbox" name="features[]" value="{{$feature->id}}" class="custom-control-input" id="feature-{{$feature->id}}">
+                                                    <input type="checkbox" name="features[]" value="{{$feature->id}}" class="custom-control-input" id="feature-{{$feature->id}}" {{old('features') != null? (in_array($feature->id, old('features')) ? "checked": "") :  (isset(request()->features)? (in_array($feature->id, request()->features) ? 'checked' : "") :'')}}>
                                                     <label class="custom-control-label" for="feature-{{$feature->id}}">{{$feature->title}}</label>
                                                 </div>
                                             </div>
                                             @endforeach
                                             @endforeach
-
                                         </div>
                                     </div>
                                 </div>

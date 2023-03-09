@@ -7,6 +7,7 @@
 <!-- Favicon -->
 <link href="{{url('/')}}/assets/frontpage/images/favicon.ico" sizes="128x128" rel="shortcut icon" type="image/x-icon" />
 <link href="{{url('/')}}/assets/frontpage/images/favicon.ico" sizes="128x128" rel="shortcut icon" />
+<link rel="stylesheet" href="{{url('dashboard')}}/assets/vendor/fonts/fontawesome.css" />
 
 <style>
     .home5_bgi5 {
@@ -166,6 +167,145 @@
 
     header.header-nav.menu_style_home_one .ace-responsive-menu li a {
         color: {{(Route::currentRouteName() == 'home') ? '#ffffff' : '#484848'}};
+    }
+
+    .lh-10 {
+        line-height: 1 !important;
+    }
+    .lh-15 {
+        line-height: 1.5 !important;
+    }
+    .lh-20 {
+        line-height: 2 !important;
+    }
+    .lh-25 {
+        line-height: 2.5 !important;
+    }
+    .lh-30 {
+        line-height: 3 !important;
+    }
+    
+    .font-size-2 {
+        font-size: 2rem !important;
+    }
+    
+    .font-size-25 {
+        font-size: 2.5rem !important;
+    }
+    
+    .font-size-3 {
+        font-size: 3rem !important;
+    }
+    
+
+    .owl-dots {
+        max-height: 25px;
+    }
+
+    .btn-blue {
+        background-color: #013e6b !important;
+        border-color: #013e6b !important;
+        color: #ffffff !important;
+    }
+
+    .bg-blue {
+        color: #ffffff !important;
+        background-color: #013e6b !important;
+    }
+
+    .font-blue {
+        color: #013e6b !important;
+    }
+
+    .font-size-3 {
+        font-size: 3rem !important;
+    }
+
+    .font-size-4 {
+        font-size: 4rem !important;
+    }
+
+    .font-size-5 {
+        font-size: 5rem !important;
+    }
+
+    .font-sans-serif {
+        font-family: sans-serif !important;
+    }
+
+    .bg-white-34 {
+        background-color: rgb(255 255 255 / 34%) !important
+    }
+
+
+
+    .br-8 {
+        border-radius: 8px !important
+    }
+
+    .br-15 {
+        border-radius: 15px !important
+    }
+
+    .br-25 {
+        border-radius: 25px !important
+    }
+
+    .font-x-large {
+        font-size: x-large !important
+    }
+
+    .font-23px {
+        font-size: 23px !important
+    }
+
+    .mw-245 {
+        min-width: 245px !important;
+    }
+
+    .fit-cover {
+        object-fit: cover !important;
+    }
+
+    @media only screen and (min-width: 1199px) {
+        .mt-xl-242 {
+            margin-top: 242px !important;
+        }
+
+        .plr-xl-6 {
+            padding-left: 6rem !important;
+            padding-right: 6rem !important;
+        }
+
+        .font-size-xl-4 {
+            font-size: 4rem !important;
+        }
+
+        .font-size-xl-4 {
+            font-size: 4rem !important;
+        }
+    }
+
+    @media only screen and (min-width: 979px) {
+        .font-size-lg-3 {
+            font-size: 3rem !important;
+        }
+    }
+
+    .search_option_button.home5 .btn {
+        background-image: -moz-linear-gradient(0deg, rgb(250, 124, 65) 0%, rgb(255, 101, 101) 100%);
+        background-image: -webkit-linear-gradient(0deg, rgb(216 185 119) 0%, rgb(217 186 120) 100%);
+        background-image: -ms-linear-gradient(0deg, rgb(250, 124, 65) 0%, rgb(255, 101, 101) 100%);
+        border: 1px solid rgb(223 193 132);
+        color: #ffffff;
+    }
+
+    .h700 {
+        height: 700px !important;
+    }
+
+    .w-35 {
+        width: 35% !important;
     }
 </style>
 @stack('style')

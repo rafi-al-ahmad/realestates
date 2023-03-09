@@ -109,7 +109,7 @@
 				</div>
 				<div class="col-lg-4">
 					<div class="parner_reg_btn text-right tac-smd">
-                    <a class="btn btn-thm2" href="{{route('home.filter')}}">{{__('Brows Properties')}}</a>
+                    <a class="btn btn-thm2" href="{{route('home.filter')}}">{{__('Browse Properties')}}</a>
 					</div>
 				</div>
 			</div>

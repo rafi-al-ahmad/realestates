@@ -54,7 +54,9 @@
                 <form method="get" id="sortForm">
                     @csrf
                     @foreach(request()->all() as $key => $value)
+                    @if(!is_array($value) && $value)
                     <input type="hidden" name="{{$key}}" value="{{$value}}">
+                    @endif
                     @endforeach
                     <div class="row">
                         <div class="grid_list_search_result">

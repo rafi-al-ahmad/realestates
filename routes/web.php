@@ -109,10 +109,12 @@ Route::post("login", [LoginController::class, "login"]);
 
 Route::get('/', [HomeController::class, "index"])->name('home');
 Route::get('/properties', [HomeController::class, "filter"])->name('home.filter');
-Route::get('/contact', [HomeController::class, "shoContactUsPage"])->name('home.contact');
+Route::get('/contact', [HomeController::class, "showContactUsPage"])->name('home.contact');
 Route::get('/property/{id}', [HomeController::class, "showProperty"])->name('home.property');
 Route::get('/blog', [BlogController::class, "showBlog"])->name('home.blog');
 Route::get('/blog/{id}', [BlogController::class, "showArticle"])->name('home.blog.article');
 Route::get('/agents', [AgentController::class, "showAgents"])->name('home.agents');
+Route::get('/about-us', [HomeController::class, "showAboutUsPage"])->name('home.aboutUs');
+Route::get('/citizenship', [HomeController::class, "showCitizenshipPage"])->name('home.citizenship');
 
 Route::get('language/set/{locale}', [LanguageController::class, "setUserLangCookie"])->name('language.set');

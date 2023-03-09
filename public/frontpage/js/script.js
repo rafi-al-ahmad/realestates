@@ -426,10 +426,12 @@
             loop:false,
             margin:30,
             dots:false,
+            center:true,
+            rewind:true,
             nav:true,
             rtl:false,
             autoplayHoverPause:false,
-            autoplay: false,
+            autoplay: true,
             singleItem: true,
             smartSpeed: 1200,
             navText: [
