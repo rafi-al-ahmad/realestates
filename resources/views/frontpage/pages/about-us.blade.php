@@ -39,7 +39,7 @@
             <div class="col-lg-4 col-xl-5">
                 <div class="about_thumb">
                     <img class="img-fluid w100" src="{{URL('frontpage')}}/images/about/1.jpg" alt="1.jpg">
-                    <a class="popup-iframe popup-youtube color-white" href="https://www.youtube.com/watch?v=R7xbhKIiw4Y"><i class="flaticon-play"></i></a>
+                    <a class="popup-iframe popup-youtube color-white" href="https://www.youtube.com/watch?v=LNEh6MFRTz4"><i class="flaticon-play"></i></a>
                 </div>
             </div>
         </div>
