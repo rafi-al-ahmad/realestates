@@ -10,6 +10,7 @@ use App\Http\Controllers\DefinitionsController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\PropertiesController;
+use App\Http\Controllers\TestimonialController;
 use App\Http\Controllers\TinymceController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -95,6 +96,19 @@ Route::group([
         Route::get("blog/{id}/update", [BlogController::class, "showForm"])->name('blogs.update');
         Route::post("blog/{id}/update", [BlogController::class, "update"]);
         Route::get("blog/delete/{id}", [BlogController::class, "delete"])->name('blogs.delete');
+
+
+        Route::get("testimonials", [TestimonialController::class, "index"])->name('testimonials');
+        Route::get("testimonial/create", [TestimonialController::class, "showCreateForm"])->name('testimonials.create');
+        Route::get("testimonials/clone/{id}", [TestimonialController::class, "showCreateForm"])->name('testimonials.clone');
+        Route::post("testimonial/create", [TestimonialController::class, "create"]);
+        Route::post("testimonial/reorder", [TestimonialController::class, "reorder"])->name('testimonials.reorder');
+        Route::post("testimonial/update/status", [TestimonialController::class, "updateStatus"])->name('testimonial.update.status');
+        Route::post("testimonial/update/featured", [TestimonialController::class, "updateFeaturedStatus"])->name('testimonial.update.featured');
+        Route::get("testimonial/{id}/update/{locale?}", [TestimonialController::class, "showUpdateForm"])->name('testimonials.update');
+        Route::post("testimonial/{id}/update/{locale?}", [TestimonialController::class, "update"]);
+        Route::post("testimonial/translation/delete", [TestimonialController::class, "deleteTranslation"])->name('testimonial.translation.delete');
+        Route::post("testimonial/delete", [TestimonialController::class, "delete"])->name('testimonials.delete');
 
 
         Route::post("tinymce/image/upload", [TinymceController::class, "upload"])->name('tinymce.upload');

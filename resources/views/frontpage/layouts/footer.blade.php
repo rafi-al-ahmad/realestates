@@ -60,12 +60,12 @@
                 <div class="footer_menu_widget home5">
                     <ul>
                         <li class="list-inline-item"><a href="{{route('home')}}">{{__('Home')}}</a></li>
+                        <li class="list-inline-item"> <a href="{{route('home.aboutUs')}}">{{__('About Us')}}</a></li>
+                        <li class="list-inline-item"> <a href="{{route('home.citizenship')}}">{{__('Citizenship')}}</a></li>
                         <li class="list-inline-item"><a href="{{route('home.filter')}}">{{__('Listing')}}</a></li>
                         <li class="list-inline-item"> <a href="{{route('home.agents')}}">{{__('Our Team')}}</a></li>
-                        <li class="list-inline-item"><a href="{{route('home.contact')}}">{{__('Contact')}}</a></li>
-                        <li class="list-inline-item"> <a href="{{route('home.aboutUs')}}">{{__('About Us')}}</a></li>
                         <li class="list-inline-item"><a href="{{route('home.blog')}}">{{__('Blog')}}</a></li>
-
+                        <li class="list-inline-item"><a href="{{route('home.contact')}}">{{__('Contact')}}</a></li>
                     </ul>
                 </div>
             </div>

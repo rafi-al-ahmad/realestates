@@ -187,25 +187,39 @@
 </section>
 
 <!-- Get to Know Us More -->
-<section id="" class="">
+<section id="" class="mt-md-0 mt-5">
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <div class="position-relative h700">
-                    <div class="position-absolute  w-35 h-50" style="top:0; left: 0;">
+                <div class="position-relative h700 d-none-sm ">
+                    <div class="position-absolute  w-35 h-50 top-left">
                         <img class="fit-cover  w-100 h-100" src="{{url('assets/frontpage/images/home/10.jpg')}}"></img>
                     </div>
-                    <div class="position-absolute w-75 h-75" style="top:12%; left: 12%; right:12%; bottom: 12%;">
+                    <div class="position-absolute w-75 h-75 middle">
                         <img class="fit-cover w-100 h-100" src="{{url('assets/frontpage/images/home/11.jpg')}}"></img>
                     </div>
-                    <div class="position-absolute w-35 h-50" style="right:0; bottom: 0;">
+                    <div class="position-absolute w-35 h-50 bottom-right">
                         <img class="fit-cover w-100 h-100" src="{{url('assets/frontpage/images/home/12.jpg')}}"></img>
+                    </div>
+                    <div class="position-absolute w-100 h-25 bottom-right">
+                        <div class="bg-white w-50 p-3 d-flex">
+                            <div class="w-25 d-flex p-2">
+                                <i class="fa-solid font-size-2 m-auto fa-circle-play" style="color: #013e6b "></i>
+                            </div>
+                            <div class="w-75 px-2 d-flex flex-column justify-content-around">
+                                <h5 class="mb-0" style="color: #013e6b ">View House Tour</h5>
+                                <a class="color-blue" style="font-size: .8rem;" href="https://www.youtube.com/watch?v=LNEh6MFRTz4">
+                                    Watch video
+                                    <i class="px-3 fa-solid fa-chevron-right"></i>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 d-flex px-md-4">
+            <div class="col-md-6 d-flex px-md-4 mt-sm-5 mt-md-0">
                 <div class="main-title px-md-2 my-auto">
-                    <h1 class="font-size-3 font-sans-serif">{{__('Get to Know Us More')}}</h1>
+                    <h1 class="font-size-3 ">{{__('Get to Know Us More')}}</h1>
                     <p class="align-self-stretch mt-2 lh-25">{{__('Beynil Investment and Real Estate was established in order to follow up with all new real estate market information in Turkey, and allow you to smoothly start business, living in Turkey, and experience the amazing lifestyle that Turkey has to offer you.')}}</p>
                     <a href="{{route('home.aboutUs')}}" class="btn btn-lg btn-blue mt-4">{{__('Read More')}}</a>
 
@@ -217,8 +231,8 @@
 
 @if(isset($citiesByProperties))
 <!-- Property cities -->
-<section id="property-city" class="property-city mt200">
-    <div class="container-fluid">
+<section id="property-city" class="property-city">
+    <div class="container">
         <div class="row">
             <div class="col-lg-12">
                 <div class="main-title">
@@ -228,7 +242,7 @@
         </div>
         <div class="row">
             @foreach($citiesByProperties as $city)
-            <div class="col-sm-6 col-md-4 col-lg-4 col-xl" onclick="window.location = `{{route('home.filter', ['city_id' => $city->id])}}`">
+            <div class="col-sm-6 col-md-4 col-lg-4 col-xl-3" onclick="window.location = `{{route('home.filter', ['city_id' => $city->id])}}`">
                 <div class="properti_city ">
                     <div class="thumb"><img style="height: 350px; object-fit: cover;" class="img-fluid w100" src="{{ ($city->image()) != null? ($city->image()?->getUrl()) : url('assets/frontpage/images/categories/city361x350.png')}}" alt="city361x350.png"></div>
                     <div class="overlay">
@@ -249,9 +263,9 @@
     <div class="container">
         <div class="row px-3">
             <div class="col-xl-4 pr-4">
-                <h2 class="color-whitef0 font-size-3 pb-5 fw400">Invest in Bursa, and here is WHY</h2>
+                <h2 class="color-whitef0 pb-1 fw400">Invest in Bursa, and here is WHY</h2>
+                <p class="color-white">With a long history of industry, sectoral diversity, close proximity to the market, international experience, dynamic young population, qualified labor force, Bursa always offers an ideal investment environment for domestic and foreign investors as the power of the Turkish economy.</p>
                 <div class="">
-
                     <div class="bg-light bg-white-34 pl-5 pl-2 py-3 br-15 row my-4">
                         <div class="col p-1">
                             <img width="48" height="49" src="{{url('assets/frontpage/images/home/intersection-1.png')}}"></img>
@@ -320,37 +334,20 @@
     </div>
 </section>
 
-<section id="" class="my-5">
+<section id="" class="mt-5">
     <div class="container ">
-        <h3 class="font-size-2 font-sans-serif font-size-lg-3 font-size-xl-4 pb-5 font-weight-bolder text-center text-capitalized plr-xl-6">Live, work and experience amazing life in Turkey.</h3>
+        <h3 class="font-size-2  font-size-lg-3 font-size-xl-4 pb-5 font-weight-bolder text-center text-capitalized plr-xl-6">Live, work and experience amazing life in Turkey.</h3>
         <div class="row px-3">
             <div class="col-xl-6 py-4">
-                <h1 class="font-sans-serif my-4">{{__('Citizenship by Investment Overview')}}</h1>
-                <h4 class="color-black66 font-sans-serif my-4" style="line-height: inherit;">The Türkiye Citizenship by Investment Program allows investors to access both the European and Asian markets by making an investment into Türkiye’s economy.</h4>
-                <a href="{{route('home.citizenship')}}" class=" font-sans-serif my-4 text-capitalized" style="color: #005fff">
+                <h1 class=" my-4">{{__('Citizenship by Investment Overview')}}</h1>
+                <h4 class="color-black66  my-4" style="line-height: inherit;">The Türkiye Citizenship by Investment Program allows investors to access both the European and Asian markets by making an investment into Türkiye’s economy.</h4>
+                <a href="{{route('home.citizenship')}}" class="  my-4 text-capitalized" style="color: #005fff">
                     {{__('learn more')}}
                     <i class="fa-solid fa-arrow-right px-2"></i>
                 </a>
             </div>
             <div class="col-xl-6">
-                <div class="mt-xl-242">
-                    <div class="bg-light bg-white-34 pl-5 pl-2 py-3 br-15 row my-4">
-                        <div class="col p-1">
-                            <img width="48" height="49" src="{{url('assets/frontpage/images/home/intersection-3.png')}}"></img>
-                        </div>
-                        <div class="col mw-245">
-                            <h4 class="color-whitef0 font-23px mb-0 fw400 ">Strategic Geographic Location</h4>
-                        </div>
-                    </div>
-                    <div class="bg-light bg-white-34 pl-5 pl-2 py-3 br-15 row my-4">
-                        <div class="col p-1">
-                            <img width="48" height="49" src="{{url('assets/frontpage/images/home/intersection-4.png')}}"></img>
-                        </div>
-                        <div class="col mw-245">
-                            <h4 class="color-whitef0 font-23px mb-0 fw400 ">Dynamic Entrepreneurs</h4>
-                        </div>
-                    </div>
-                </div>
+
             </div>
         </div>
     </div>
@@ -549,6 +546,39 @@
 <x-frontpage.ui.our-team :agents="$agents" />
 @endif
 
+<!-- Our Testimonials -->
+<section id="our-testimonials" class="our-testimonial">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3">
+                <div class="main-title text-center">
+                    <h2 class="color-white">Testimonials</h2>
+                    <!-- <p class="color-white">Here could be a nice sub title</p> -->
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3">
+                <div class="testimonial_grid_slider">
+                    <div class="item">
+                        <div class="testimonial_grid">
+                            <div class="thumb">
+                                <img src="{{url('dashboard/assets/img/avatars/1.png')}}" alt="1.jpg">
+                            </div>
+                            <div class="details">
+                                <h4>Meryam Mousalli</h4>
+                                <!-- <p>Sales Manager</p> -->
+                                <p class="mt25">I recommend this real estate agency. very professional and available agent I am very satisfied</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
 <!-- partners -->
 <x-frontpage.ui.partners />
 
@@ -667,6 +697,12 @@
         }
     }
 
+    @media only screen and (max-width: 767px) {
+        .d-none-sm {
+            display: none !important;
+        }
+    }
+
     .search_option_button.home5 .btn {
         background-image: -moz-linear-gradient(0deg, rgb(250, 124, 65) 0%, rgb(255, 101, 101) 100%);
         background-image: -webkit-linear-gradient(0deg, rgb(216 185 119) 0%, rgb(217 186 120) 100%);
@@ -681,6 +717,31 @@
 
     .w-35 {
         width: 35% !important;
+    }
+
+    .middle {
+        top: 12%;
+        left: 12%;
+        right: 12%;
+        bottom: 12%;
+    }
+
+    .top-left {
+        top: 0%;
+        left: 0%;
+    }
+
+    .bottom-right {
+        right: 0;
+        bottom: 0;
+    }
+
+    .our-testimonial {
+        background-color: #013d6a;
+    }
+
+    .our-testimonial:before {
+        background-image: unset;
     }
 </style>
 

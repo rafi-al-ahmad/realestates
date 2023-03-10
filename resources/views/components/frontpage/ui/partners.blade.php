@@ -10,25 +10,17 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-6 col-md-4 col-lg">
-                <div class="our_partner">
-                    <img class="img-fluid" src="{{url('assets/frontpage')}}/images/partners/beyceli.png" alt="beyceli.png">
-                </div>
+            <div class="col d-flex">
+                    <img class="mx-auto img-fluid" src="{{url('assets/frontpage')}}/images/partners/beyceli.png" alt="beyceli.png">
             </div>
-            <div class="col-sm-6 col-md-4 col-lg">
-                <div class="our_partner">
-                    <img class="img-fluid" src="{{url('assets/frontpage')}}/images/partners/dag-n-deniz.png" alt="dag-n-deniz.png">
-                </div>
+            <div class="col d-flex">
+                    <img class="mx-auto img-fluid" src="{{url('assets/frontpage')}}/images/partners/dag-n-deniz.png" alt="dag-n-deniz.png">
             </div>
-            <div class="col-sm-6 col-md-4 col-lg">
-                <div class="our_partner">
-                    <img class="img-fluid" src="{{url('assets/frontpage')}}/images/partners/imaret-real-estate.png" alt="imaret-real-estate.png">
-                </div>
+            <div class="col d-flex">
+                    <img class="mx-auto img-fluid" src="{{url('assets/frontpage')}}/images/partners/imaret-real-estate.png" alt="imaret-real-estate.png">
             </div>
-            <div class="col-sm-6 col-md-4 col-lg">
-                <div class="our_partner">
-                    <img class="img-fluid" src="{{url('assets/frontpage')}}/images/partners/mandyano.png" alt="mandyano.png">
-                </div>
+            <div class="col d-flex">
+                    <img class="mx-auto img-fluid" src="{{url('assets/frontpage')}}/images/partners/mandyano.png" alt="mandyano.png">
             </div>
         </div>
     </div>

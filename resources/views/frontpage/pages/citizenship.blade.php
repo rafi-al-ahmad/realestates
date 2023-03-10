@@ -90,7 +90,7 @@
 
 
 <!-- Design -->
-<section class="my-5">
+<section class="mt-5">
     <div class="container">
         <div class="row">
             <div class="col-md-12 col-lg-6">
@@ -127,7 +127,7 @@
             </div>
 
 
-            <div class="col-md-12 col-lg-6 p-0">
+            <div class="col-md-12 col-lg-6 p-0 d-none-lg">
                 <img height="100%" class="" style="object-fit: cover;" src="{{url('assets/frontpage/images/citizenship/5.jpg')}}" alt="">
             </div>
         </div>
@@ -163,10 +163,10 @@
 
 <!-- Contact us  -->
 <section class="overflow-hidden">
-    <div class="bg-light-85">
+    <div class="bg-light bg-light-85-lg">
         <div class="container">
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-lg-4">
                     <div class=" d-flex flex-column justify-content-around h450">
                         <div class=""></div>
                         <h2 class="section-content-header">{{__('contact us today')}}</h2>
@@ -181,8 +181,8 @@
             </div>
         </div>
     </div>
-    <div class="position-relative ">
-        <img class="fit-cover  position-absolute " style="top: -380px; left: 45%; height: 450px; width: 850px;" src="{{url('assets/frontpage/images/citizenship/6.jpg')}}" alt="">
+    <div class="position-relative d-none-lg ">
+        <img class="fit-cover  position-absolute contactImage" src="{{url('assets/frontpage/images/citizenship/6.jpg')}}" alt="">
     </div>
 </section>
 <section class=" ">
@@ -257,6 +257,10 @@
         .bg-blue-light-lg {
             background: linear-gradient(to right, #013e6b 0%, #013e6b 50%, #F5F5F5 0%, #F5F5F5 50%) !important;
         }
+
+        .bg-light-85-lg {
+            background: linear-gradient(to right, #F5F5F5 0%, #F5F5F5 85%, #fff 0%, #fff 15%) !important;
+        }
     }
 
     .bg-light-85 {
@@ -268,14 +272,41 @@
     }
 
     .m-h-480 {
-       min-height: 480px !important;
+        min-height: 480px !important;
     }
 
     .w-35 {
         width: 35% !important;
     }
+
+    .contactImage {
+        top: -380px;
+        left: 45%;
+        height: 450px;
+        width: 850px;
+    }
+
     .lh-18 {
         line-height: 18px;
+    }
+
+    @media only screen and (max-width: 520px) {
+        .inner_page_breadcrumb .breadcrumb_content {
+            margin-top: 150px;
+        }
+
+        .contactImage {
+            top: -380px;
+            left: 60%;
+            height: 450px;
+            width: 850px;
+        }
+    }
+
+    @media only screen and (max-width: 992px) {
+        .d-none-lg {
+            display: none !important;
+        }
     }
 </style>
 

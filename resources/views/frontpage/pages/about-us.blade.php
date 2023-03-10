@@ -23,17 +23,17 @@
         <div class="row">
             <div class="col-lg-6 offset-lg-3">
                 <div class="main-title text-center">
-                    <h2 class="mt0">Our Mission Is To FindHouse</h2>
+                    <h2 class="mt0">Our Mission Is To Find You A Dream Place in Bursa</h2>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-lg-8 col-xl-7">
                 <div class="about_content">
-                    <p class="large">Mauris ac consectetur ante, dapibus gravida tellus. Nullam aliquet eleifend dapibus. Cras sagittis, ex euismod lacinia tempor.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis ligula eu lectus vulputate porttitor sed feugiat nunc. Mauris ac consectetur ante, dapibus gravida tellus. Nullam aliquet eleifend dapibus. Cras sagittis, ex euismod lacinia tempor, lectus orci elementum augue, eget auctor metus ante sit amet velit.</p>
-                    <p>Maecenas quis viverra metus, et efficitur ligula. Nam congue augue et ex congue, sed luctus lectus congue. Integer convallis condimentum sem. Duis elementum tortor eget condimentum tempor. Praesent sollicitudin lectus ut pharetra pulvinar. Donec et libero ligula. Vivamus semper at orci at placerat.Placeat Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod libero amet, laborum qui nulla quae alias tempora.</p>
-
+                    <p>Beynil Investment and Real Estate was established in order to follow up with all new real estate market information in Turkey, and allow you to smoothly start business, living in Turkey, and experience the amazing lifestyle that Turkey has to offer you. </p>
+                    <p>That alone dear business partners, customers, and investors, </p>
+                    <p>Turkey has been one of the most important centers of world trade for centuries with strong economic and strategic geographical location. Turkey continues its steady growth and offers powerful opportunities. Our experienced agent will lead you through all processes, and cover all from property finding, investment and legal procedures.</p>
+                    <p>Among the all beautiful cities of Turkey, we want to single out one particular one for investment and living opportunities - Bursa. Known as "Green Bursa", this province with over 3 million people stands on the lower slopes of Uludag (Mount Olympos of Mysia, 2543 meters / 8343 feet) in the Marmara region of Anatolia. The title "Green" of Bursa comes from its gardens and parks, and of course from its being in the middle of an important fruit growing region.</p>
                 </div>
             </div>
             <div class="col-lg-4 col-xl-5">
@@ -48,12 +48,13 @@
 
 
 <!-- Design -->
-<section class="home-three bg-img3 mb-3">
+<section class="home-three bg-img-3 mb-3">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8">
+            <div class="col-md-11">
                 <div class="text-light">
-                    <ul style="list-style: disc">
+                    <h1 class="text-light">Why to Invest in Bursa?</h1>
+                    <ul class="ml-3 pb-3" style="list-style: disc">
                         <li>Advanced infrastructure, dynamic entrepreneurs, the high quality of work and attractive investment climate</li>
                         <li>Sectoral clusters</li>
                         <li>Around 700 foreign companies from approximately 70 countries</li>
@@ -63,18 +64,18 @@
                         <li>The 4th most economically developed province in Turkey</li>
                         <li>2 universities and 1 foundation vocational school offering world-class education</li>
                         <li>Ranks 3rd with its R&amp;D centres in Turkey</li>
-                        <li>Globally competitive sectors of industry: Textile, automotive, agro-food, machinery metal and furniture sectors and rising sectors of railway systems, aerospace and defence sectors</li>
+                        <li>Globally competitive sectors of industry: Textile, automotive, agro-food, machinery metal and furniture sectors and rising sectors of railway systems, aerospace and defence sectors</li>
                         <li>High tourism potential in winter and nature sports tourism as well as convention, thermal, health and culture tourism</li>
                     </ul>
                 </div>
             </div>
-            <div class="col-lg-4">
+            <div class="col-md-1">
                 <div class="home3_home_content">
-                    <a class="popup_video_btn popup-iframe popup-youtube" href="https://www.youtube.com/watch?v=R7xbhKIiw4Y"><i class="flaticon-play"></i></a>
+                    <a class="popup_video_btn popup-iframe popup-youtube" href="https://www.youtube.com/watch?v=LNEh6MFRTz4"><i class="flaticon-play"></i></a>
                 </div>
             </div>
         </div>
-        <div class="row pt-4">
+        <div class="row">
             <form action="{{route('home.filter')}}" method="get">
                 <div class="col-lg-12">
                     <div class="home_adv_srch_opt home3">
@@ -105,7 +106,7 @@
                                             <div class="search_option_two">
                                                 <div class="candidate_revew_select">
                                                     <select name="housing_type" class="selectpicker w100 show-tick">
-                                                        <option  value="">{{__('Housing Type')}}</option>
+                                                        <option value="">{{__('Housing Type')}}</option>
                                                         @foreach($housingType as $type)
                                                         <option value="{{$type->id}}" {{old('housing_type') != null? (old('housing_type') == $type->id ? "selected": "") :  (isset($property)? ($property->housing_type_id  == $type->id ? 'selected' : "") :'')}}>{{__($type->title)}}</option>
                                                         @endforeach
@@ -428,6 +429,52 @@
         max-width: unset;
         height: unset;
     }
+
+
+    @media only screen and (min-width: 767px) {
+        .bg-img-3 {
+            background-attachment: scroll;
+            background-image: url("{{url('frontpage/images/background/3.jpg')}}");
+            background-position: center;
+            background-repeat: no-repeat;
+            border-radius: 8px;
+            height: 600px;
+        }
+    }
+
+    .home-three:before {
+        background-color: rgb(3 62 106);
+    }
+
+    .home_adv_srch_opt .nav-pills li.nav-item a.nav-link.active {
+        background-color: #dcbd7d;
+        border-color: #dcbd7d;
+    }
+
+    .home_adv_srch_opt .nav-pills li.nav-item a.nav-link.active:before {
+        background-color: #dcbd7d;
+    }
+
+    .home3_home_content a.popup_video_btn {
+        background: rgb(220 189 125);
+    }
+
+    .home3_home_content a.popup_video_btn:after {
+        background-color: rgb(220 189 125 / 50%);
+    }
+
+    .home1-advnc-search.home3 ul li .search_option_button button {
+        background-color: #033e69;
+    }
+
+    .about_thumb a:after {
+        background-color: rgb(220 189 125 / 20%);
+    }
+
+    .about_thumb a {
+        background: #dcbd7d;
+    }
+
 </style>
 
 @endpush

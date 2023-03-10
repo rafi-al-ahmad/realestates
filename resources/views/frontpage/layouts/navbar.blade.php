@@ -20,22 +20,23 @@
                 <li>
                     <a href="{{route('home')}}"><span class="title">{{__('Home')}}</span></a>
                 </li>
+                <li class="">
+                    <a href="{{route('home.aboutUs')}}"><span class="title">{{__('About Us')}}</span></a>
+                </li>
+                <li>
+                    <a href="{{route('home.citizenship')}}"><span class="title">{{__('Citizenship')}}</span></a>
+                </li>
                 <li>
                     <a href="{{route('home.filter')}}"><span class="title">{{__('Listing')}}</span></a>
                 </li>
                 <li>
                     <a href="{{route('home.agents')}}"><span class="title">{{__('Our Team')}}</span></a>
                 </li>
-
                 <li>
-                    <a href="{{route('home.contact')}}"><span class="title">{{__('Contact')}}</span></a>
-                </li>
-
-                <li class="">
                     <a href="{{route('home.blog')}}"><span class="title">{{__('Blog')}}</span></a>
                 </li>
                 <li class="last">
-                    <a href="{{route('home.aboutUs')}}"><span class="title">{{__('About Us')}}</span></a>
+                    <a href="{{route('home.contact')}}"><span class="title">{{__('Contact')}}</span></a>
                 </li>
                 <li class="list-inline-item home5 float-right">
                     <a href="#"><span class="title text-uppercase">{{app()->currentLocale()}}</span></a>
@@ -72,14 +73,23 @@
             <li>
                 <a href="{{route('home')}}"><span class="title">{{__('Home')}}</span></a>
             </li>
+            <li class="">
+                <a href="{{route('home.aboutUs')}}"><span class="title">{{__('About Us')}}</span></a>
+            </li>
+            <li>
+                <a href="{{route('home.citizenship')}}"><span class="title">{{__('Citizenship')}}</span></a>
+            </li>
             <li>
                 <a href="{{route('home.filter')}}"><span class="title">{{__('Listing')}}</span></a>
             </li>
             <li>
-                <a href="{{route('home.contact')}}"><span class="title">{{__('Contact')}}</span></a>
+                <a href="{{route('home.agents')}}"><span class="title">{{__('Our Team')}}</span></a>
+            </li>
+            <li>
+                <a href="{{route('home.blog')}}"><span class="title">{{__('Blog')}}</span></a>
             </li>
             <li class="last">
-                <a href="{{route('home.blog')}}"><span class="title">{{__('Blog')}}</span></a>
+                <a href="{{route('home.contact')}}"><span class="title">{{__('Contact')}}</span></a>
             </li>
             <li>
                 <a href="#"><span class="title text-uppercase">{{app()->currentLocale()}}</span></a>
