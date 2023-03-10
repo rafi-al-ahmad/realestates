@@ -79,10 +79,10 @@
 						</div>
 						<h5>{{__('Follow Us')}}</h5>
 						<ul class="contact_form_social_area">
-							<li class="list-inline-item"><a href="https://www.facebook.com/beynil.realestate"><i class="fa fa-facebook"></i></a></li>
-							<li class="list-inline-item"><a href="https://www.instagram.com/beynil.yatirim/"><i class="fa fa-instagram"></i></a></li>
-							<li class="list-inline-item"><a href="https://www.youtube.com/@beynilyatrm9003"><i class="fa fa-youtube"></i></a></li>
-							<li class="list-inline-item"><a href="https://www.linkedin.com/company/beynil/?viewAsMember=true"><i class="fa fa-linkedin"></i></a></li>
+							<li class="list-inline-item"><a href="https://www.facebook.com/beynil.realestate"><i class="fa-brands fa-facebook"></i></a></li>
+							<li class="list-inline-item"><a href="https://www.instagram.com/beynil.yatirim/"><i class="fa-brands fa-instagram"></i></a></li>
+							<li class="list-inline-item"><a href="https://www.youtube.com/@beynilyatrm9003"><i class="fa-brands fa-youtube"></i></a></li>
+							<li class="list-inline-item"><a href="https://www.linkedin.com/company/beynil/?viewAsMember=true"><i class="fa-brands fa-linkedin"></i></a></li>
 						</ul>
 					</div>
 				</div>
