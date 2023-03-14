@@ -23,17 +23,17 @@
         <div class="row">
             <div class="col-lg-6 offset-lg-3">
                 <div class="main-title text-center">
-                    <h2 class="mt0">Our Mission Is To Find You A Dream Place in Bursa</h2>
+                    <h2 class="mt0">{{__('Our Mission Is To Find You A Dream Place in Bursa')}}</h2>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-lg-8 col-xl-7">
                 <div class="about_content">
-                    <p>Beynil Investment and Real Estate was established in order to follow up with all new real estate market information in Turkey, and allow you to smoothly start business, living in Turkey, and experience the amazing lifestyle that Turkey has to offer you. </p>
-                    <p>That alone dear business partners, customers, and investors, </p>
-                    <p>Turkey has been one of the most important centers of world trade for centuries with strong economic and strategic geographical location. Turkey continues its steady growth and offers powerful opportunities. Our experienced agent will lead you through all processes, and cover all from property finding, investment and legal procedures.</p>
-                    <p>Among the all beautiful cities of Turkey, we want to single out one particular one for investment and living opportunities - Bursa. Known as "Green Bursa", this province with over 3 million people stands on the lower slopes of Uludag (Mount Olympos of Mysia, 2543 meters / 8343 feet) in the Marmara region of Anatolia. The title "Green" of Bursa comes from its gardens and parks, and of course from its being in the middle of an important fruit growing region.</p>
+                    <p>{{__('Beynil Investment and Real Estate was established in order to follow up with all new real estate market information in Turkey, and allow you to smoothly start business, living in Turkey, and experience the amazing lifestyle that Turkey has to offer you.')}} </p>
+                    <p>{{__('That alone dear business partners, customers, and investors,')}} </p>
+                    <p>{{__('Turkey has been one of the most important centers of world trade for centuries with strong economic and strategic geographical location. Turkey continues its steady growth and offers powerful opportunities. Our experienced agent will lead you through all processes, and cover all from property finding, investment and legal procedures.')}}</p>
+                    <p>{{__('Among the all beautiful cities of Turkey, we want to single out one particular one for investment and living opportunities - Bursa. Known as "Green Bursa", this province with over 3 million people stands on the lower slopes of Uludag (Mount Olympos of Mysia, 2543 meters / 8343 feet) in the Marmara region of Anatolia. The title "Green" of Bursa comes from its gardens and parks, and of course from its being in the middle of an important fruit growing region.')}}</p>
                 </div>
             </div>
             <div class="col-lg-4 col-xl-5">
@@ -53,19 +53,19 @@
         <div class="row">
             <div class="col-md-11">
                 <div class="text-light">
-                    <h1 class="text-light">Why to Invest in Bursa?</h1>
+                    <h1 class="text-light">{{__('Why to Invest in Bursa?')}}</h1>
                     <ul class="ml-3 pb-3" style="list-style: disc">
-                        <li>Advanced infrastructure, dynamic entrepreneurs, the high quality of work and attractive investment climate</li>
-                        <li>Sectoral clusters</li>
-                        <li>Around 700 foreign companies from approximately 70 countries</li>
-                        <li>Proximity to global &amp; national markets</li>
-                        <li>18 organized industrial zones, 1 free trade zone and 7 sea ports</li>
-                        <li>Strategic geographic location providing logistics connections</li>
-                        <li>The 4th most economically developed province in Turkey</li>
-                        <li>2 universities and 1 foundation vocational school offering world-class education</li>
-                        <li>Ranks 3rd with its R&amp;D centres in Turkey</li>
-                        <li>Globally competitive sectors of industry: Textile, automotive, agro-food, machinery metal and furniture sectors and rising sectors of railway systems, aerospace and defence sectors</li>
-                        <li>High tourism potential in winter and nature sports tourism as well as convention, thermal, health and culture tourism</li>
+                        <li>{{__('Advanced infrastructure, dynamic entrepreneurs, the high quality of work and attractive investment climate')}}</li>
+                        <li>{{__('Sectoral clusters')}}</li>
+                        <li>{{__('Around 700 foreign companies from approximately 70 countries')}}</li>
+                        <li>{{__('Proximity to global &amp; national markets')}}</li>
+                        <li>{{__('18 organized industrial zones, 1 free trade zone and 7 sea ports')}}</li>
+                        <li>{{__('Strategic geographic location providing logistics connections')}}</li>
+                        <li>{{__('The 4th most economically developed province in Turkey')}}</li>
+                        <li>{{__('2 universities and 1 foundation vocational school offering world-class education')}}</li>
+                        <li>{{__('Ranks 3rd with its R&amp;D centres in Turkey')}}</li>
+                        <li>{{__('Globally competitive sectors of industry: Textile, automotive, agro-food, machinery metal and furniture sectors and rising sectors of railway systems, aerospace and defence sectors')}}</li>
+                        <li>{{__('High tourism potential in winter and nature sports tourism as well as convention, thermal, health and culture tourism')}}</li>
                     </ul>
                 </div>
             </div>
@@ -311,82 +311,6 @@
 <x-frontpage.ui.our-team :agents="$agents" />
 @endif
 
-<!-- Our Blog -->
-<!-- <section class="our-blog bg-ptrn2 pb30">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6 offset-lg-3">
-                <div class="main-title text-center">
-                    <h2>Articles & Tips</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6 col-lg-4 col-xl-4">
-                <div class="for_blog feat_property">
-                    <div class="thumb">
-                        <img class="img-whp" src="{{url('frontpage')}}/images/blog/bh1.jpg" alt="bh1.jpg">
-                    </div>
-                    <div class="details">
-                        <div class="tc_content">
-                            <p class="text-thm">Business</p>
-                            <h4>Skills That You Can Learn In The Real Estate Market</h4>
-                        </div>
-                        <div class="fp_footer">
-                            <ul class="fp_meta float-left mb0">
-                                <li class="list-inline-item"><a href="{{url('frontpage')}}/#"><img src="{{url('frontpage')}}/images/property/pposter1.png" alt="pposter1.png"></a></li>
-                                <li class="list-inline-item"><a href="{{url('frontpage')}}/#">Ali Tufan</a></li>
-                            </ul>
-                            <a class="fp_pdate float-right" href="{{url('frontpage')}}/#">7 August 2019</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4 col-xl-4">
-                <div class="for_blog feat_property">
-                    <div class="thumb">
-                        <img class="img-whp" src="{{url('frontpage')}}/images/blog/bh2.jpg" alt="bh2.jpg">
-                    </div>
-                    <div class="details">
-                        <div class="tc_content">
-                            <p class="text-thm">Business</p>
-                            <h4>Bedroom Colors You’ll Never <br> Regret</h4>
-                        </div>
-                        <div class="fp_footer">
-                            <ul class="fp_meta float-left mb0">
-                                <li class="list-inline-item"><a href="{{url('frontpage')}}/#"><img src="{{url('frontpage')}}/images/property/pposter1.png" alt="pposter1.png"></a></li>
-                                <li class="list-inline-item"><a href="{{url('frontpage')}}/#">Ali Tufan</a></li>
-                            </ul>
-                            <a class="fp_pdate float-right" href="{{url('frontpage')}}/#">7 August 2019</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4 col-xl-4">
-                <div class="for_blog feat_property">
-                    <div class="thumb">
-                        <img class="img-whp" src="{{url('frontpage')}}/images/blog/bh3.jpg" alt="bh3.jpg">
-                    </div>
-                    <div class="details">
-                        <div class="tc_content">
-                            <p class="text-thm">Business</p>
-                            <h4>5 Essential Steps for Buying an Investment</h4>
-                        </div>
-                        <div class="fp_footer">
-                            <ul class="fp_meta float-left mb0">
-                                <li class="list-inline-item"><a href="{{url('frontpage')}}/#"><img src="{{url('frontpage')}}/images/property/pposter1.png" alt="pposter1.png"></a></li>
-                                <li class="list-inline-item"><a href="{{url('frontpage')}}/#">Ali Tufan</a></li>
-                            </ul>
-                            <a class="fp_pdate float-right" href="{{url('frontpage')}}/#">7 August 2019</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section> -->
-
 <!-- partners -->
 <x-frontpage.ui.partners />
 
@@ -443,7 +367,7 @@
     }
 
     .home-three:before {
-        background-color: rgb(3 62 106);
+        background-color: rgba(3, 62, 106, .702);
     }
 
     .home_adv_srch_opt .nav-pills li.nav-item a.nav-link.active {
@@ -474,7 +398,6 @@
     .about_thumb a {
         background: #dcbd7d;
     }
-
 </style>
 
 @endpush

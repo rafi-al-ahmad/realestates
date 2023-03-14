@@ -71,7 +71,7 @@
     }
 
     .inner_page_breadcrumb {
-        background-image: url("{{url('assets/frontpage/images/contact-us/1.png')}}");
+        background-image: url("{{url('assets/frontpage/images/contact-us/1.jpg')}}");
         background-repeat: no-repeat;
         height: 410px;
         position: relative;
@@ -184,19 +184,19 @@
     .lh-30 {
         line-height: 3 !important;
     }
-    
+
     .font-size-2 {
         font-size: 2rem !important;
     }
-    
+
     .font-size-25 {
         font-size: 2.5rem !important;
     }
-    
+
     .font-size-3 {
         font-size: 3rem !important;
     }
-    
+
 
     .owl-dots {
         max-height: 25px;

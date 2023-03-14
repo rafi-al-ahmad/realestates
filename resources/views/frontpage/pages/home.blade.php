@@ -263,15 +263,15 @@
     <div class="container">
         <div class="row px-3">
             <div class="col-xl-4 pr-4">
-                <h2 class="color-whitef0 pb-1 fw400">Invest in Bursa, and here is WHY</h2>
-                <p class="color-white">With a long history of industry, sectoral diversity, close proximity to the market, international experience, dynamic young population, qualified labor force, Bursa always offers an ideal investment environment for domestic and foreign investors as the power of the Turkish economy.</p>
+                <h2 class="color-whitef0 pb-1 fw400">{{__('Invest in Bursa, and here is WHY')}}</h2>
+                <p class="color-white">{{__('With a long history of industry, sectoral diversity, close proximity to the market, international experience, dynamic young population, qualified labor force, Bursa always offers an ideal investment environment for domestic and foreign investors as the power of the Turkish economy.')}}</p>
                 <div class="">
                     <div class="bg-light bg-white-34 pl-5 pl-2 py-3 br-15 row my-4">
                         <div class="col p-1">
                             <img width="48" height="49" src="{{url('assets/frontpage/images/home/intersection-1.png')}}"></img>
                         </div>
                         <div class="col mw-245">
-                            <h4 class="color-whitef0 font-23px mb-0 fw400 ">Advanced Infrastructure</h4>
+                            <h4 class="color-whitef0 font-23px mb-0 fw400 ">{{__('Advanced Infrastructure')}}</h4>
                         </div>
                     </div>
                     <div class="bg-light bg-white-34 pl-5 pl-2 py-3 br-15 row my-4">
@@ -279,7 +279,7 @@
                             <img width="48" height="49" src="{{url('assets/frontpage/images/home/intersection-2.png')}}"></img>
                         </div>
                         <div class="col mw-245">
-                            <h4 class="color-whitef0 font-23px mb-0 fw400 ">Attractive Investment Climate</h4>
+                            <h4 class="color-whitef0 font-23px mb-0 fw400 ">{{__('Attractive Investment Climate')}}</h4>
                         </div>
                     </div>
                 </div>
@@ -287,7 +287,7 @@
             </div>
             <div class="col-xl-4">
                 <div class="card br-25">
-                    <img src="{{url('assets/frontpage/images/home/b1.png')}}" class="card-img-top br-25 m-3" style="width: unset;">
+                    <img src="{{url('assets/frontpage/images/home/b1.jpg')}}" class="card-img-top br-25 m-3" style="width: unset;">
                     <div class="card-body">
                         <h6 class="card-subtitle mb-1 text-muted">Investment</h6>
                         <h2 class="card-title">Invest in Bursa</h2>
@@ -303,7 +303,7 @@
                             </svg>
                             <h5 class="mx-1">Bursa, Turkiey</h5>
                         </div>
-                        <p class="card-text">Among the all beautiful cities of Turkey, we want to single out one particular one for investment and living opportunities - Bursa, known as "Green Bursa"</p>
+                        <p class="card-text">{{__('Among the all beautiful cities of Turkey, we want to single out one particular one for investment and living opportunities - Bursa, known as "Green Bursa"')}}</p>
                         <div class="search_option_button home5">
                             <a href="{{route('home.citizenship')}}" class="btn btn-block">{{__('Read More')}}</a>
                         </div>
@@ -317,7 +317,7 @@
                             <img width="48" height="49" src="{{url('assets/frontpage/images/home/intersection-3.png')}}"></img>
                         </div>
                         <div class="col mw-245">
-                            <h4 class="color-whitef0 font-23px mb-0 fw400 ">Strategic Geographic Location</h4>
+                            <h4 class="color-whitef0 font-23px mb-0 fw400 ">{{__('Strategic Geographic Location')}}</h4>
                         </div>
                     </div>
                     <div class="bg-light bg-white-34 pl-5 pl-2 py-3 br-15 row my-4">
@@ -325,7 +325,7 @@
                             <img width="48" height="49" src="{{url('assets/frontpage/images/home/intersection-4.png')}}"></img>
                         </div>
                         <div class="col mw-245">
-                            <h4 class="color-whitef0 font-23px mb-0 fw400 ">Dynamic Entrepreneurs</h4>
+                            <h4 class="color-whitef0 font-23px mb-0 fw400 ">{{__('Dynamic Entrepreneurs')}}</h4>
                         </div>
                     </div>
                 </div>
@@ -336,11 +336,11 @@
 
 <section id="" class="mt-5">
     <div class="container ">
-        <h3 class="font-size-2  font-size-lg-3 font-size-xl-4 pb-5 font-weight-bolder text-center text-capitalized plr-xl-6">Live, work and experience amazing life in Turkey.</h3>
+        <h3 class="font-size-2  font-size-lg-3 font-size-xl-4 pb-5 font-weight-bolder text-center text-capitalized plr-xl-6">{{__('Live, work and experience amazing life in Turkey.')}}</h3>
         <div class="row px-3">
             <div class="col-xl-6 py-4">
                 <h1 class=" my-4">{{__('Citizenship by Investment Overview')}}</h1>
-                <h4 class="color-black66  my-4" style="line-height: inherit;">The Türkiye Citizenship by Investment Program allows investors to access both the European and Asian markets by making an investment into Türkiye’s economy.</h4>
+                <h4 class="color-black66  my-4" style="line-height: inherit;">{{__('The Türkiye Citizenship by Investment Program allows investors to access both the European and Asian markets by making an investment into Türkiye’s economy.')}}</h4>
                 <a href="{{route('home.citizenship')}}" class="  my-4 text-capitalized" style="color: #005fff">
                     {{__('learn more')}}
                     <i class="fa-solid fa-arrow-right px-2"></i>
@@ -569,6 +569,30 @@
                                 <h4>Meryam Mousalli</h4>
                                 <!-- <p>Sales Manager</p> -->
                                 <p class="mt25">I recommend this real estate agency. very professional and available agent I am very satisfied</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="testimonial_grid">
+                            <div class="thumb">
+                                <img src="{{url('dashboard/assets/img/avatars/1.png')}}" alt="1.jpg">
+                            </div>
+                            <div class="details">
+                                <h4>djouhar aktas</h4>
+                                <!-- <p>Agence très sérieuse</p> -->
+                                <p class="mt25">Agence très sérieuse ! Ils ont su nous orienter dans nos choix, leurs disponibilité est remarquable ! Nous avons été accompagné par Afaf une francophone très sérieuse et dévouée pour son métier ! N’hésites pas à les solliciter, car il y a beaucoup d’arnaque en Turquie.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="testimonial_grid">
+                            <div class="thumb">
+                                <img src="{{url('dashboard/assets/img/avatars/1.png')}}" alt="1.jpg">
+                            </div>
+                            <div class="details">
+                                <h4>Chorbette</h4>
+                                <!-- <p>Sales Manager</p> -->
+                                <p class="mt25">Agence très sérieuse et qui a prend vraiment en considération nos souhaits. Un accompagnement de A à Z est proposé concernant toutes les démarches administratives. Le plus du personnel francophone ce qui est très appréciable. Je recommande vraiment cette agence pour son efficacité et sa bienveillance devant toutes nos sollicitations.</p>
                             </div>
                         </div>
                     </div>

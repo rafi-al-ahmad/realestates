@@ -40,8 +40,8 @@
         <div class="row">
             <div class="col-md-12 m-h-480 col-lg-6 section-pb section-pt py-5 d-flex flex-column justify-content-around bg-blue">
                 <div class=""></div>
-                <h2 class="section-content-header text-light">Citizenship by Investment Overview</h2>
-                <p class="lead section-content-text text-light text-lead">The Türkiye Citizenship by Investment Program allows investors to access both the European and Asian markets by making an investment into Türkiye’s economy.</p>
+                <h2 class="section-content-header text-light">{{__('Citizenship by Investment Overview')}}</h2>
+                <p class="lead section-content-text text-light text-lead">{{__('The Türkiye Citizenship by Investment Program allows investors to access both the European and Asian markets by making an investment into Türkiye’s economy.')}}</p>
 
                 <div class="search_option_button home5">
                     <a href="{{route('home.contact')}}" class="btn br-0 px-5 py-2">{{__('Contact Us')}}</a>
@@ -55,8 +55,8 @@
                     </div>
                     <div class="col-9">
                         <div class="media-content">
-                            <h3 class="media-heading">Investment </h3>
-                            <p class="main-text">Minimum contribution of USD 400,000</p>
+                            <h3 class="media-heading">{{__('Investment')}} </h3>
+                            <p class="main-text">{{__('Minimum contribution of USD 400,000')}}</p>
                         </div>
                     </div>
                 </div>
@@ -66,8 +66,8 @@
                     </div>
                     <div class="col-9">
                         <div class="media-content">
-                            <h3 class="media-heading">Processing time </h3>
-                            <p class="main-text">Approximately 120 days from submission of the application to approval</p>
+                            <h3 class="media-heading">{{__('Processing time')}} </h3>
+                            <p class="main-text">{{__('Approximately 120 days from submission of the application to approval')}}</p>
                         </div>
                     </div>
                 </div>
@@ -77,8 +77,8 @@
                     </div>
                     <div class="col-9">
                         <div class="media-content">
-                            <h3 class="media-heading">Key benefit </h3>
-                            <p class="main-text">The right of free movement to Türkiye, Hong Kong, Japan, and Singapore, among others</p>
+                            <h3 class="media-heading">{{__('Key benefit')}} </h3>
+                            <p class="main-text">{{__('The right of free movement to Türkiye, Hong Kong, Japan, and Singapore, among others')}}</p>
                         </div>
                     </div>
                 </div>
@@ -100,30 +100,30 @@
 
                 <h2 class="section-content-header pt-5">{{__('Benefits of the Türkiye Citizenship by Investment Program')}}</h2>
                 <ul class="py-3 px-4" style="list-style: disc">
-                    <li>Visa-free or visa-on-arrival access to 111 destinations including Hong Kong, Japan, and Singapore</li>
-                    <li>Citizenship of a country that enjoys a mild Mediterranean climate, beautiful scenery, and a high standard of living</li>
-                    <li>Full citizenship granted to the applicant and included family members</li>
-                    <li>Eligibility for an E-2 Investor Visa in the USA for a five-year renewable period</li>
-                    <li>Access to a transcontinental Eurasian country that is a stable economic, financial, and political hub between Europe, Western Asia, and the Middle Easts</li>
+                    <li>{{__('Visa-free or visa-on-arrival access to 111 destinations including Hong Kong, Japan, and Singapore')}}</li>
+                    <li>{{__('Citizenship of a country that enjoys a mild Mediterranean climate, beautiful scenery, and a high standard of living')}}</li>
+                    <li>{{__('Full citizenship granted to the applicant and included family members')}}</li>
+                    <li>{{__('Eligibility for an E-2 Investor Visa in the USA for a five-year renewable period')}}</li>
+                    <li>{{__('Access to a transcontinental Eurasian country that is a stable economic, financial, and political hub between Europe, Western Asia, and the Middle Easts')}}</li>
                 </ul>
 
                 <h2 class="section-content-header mt-5 pt-5">{{__('Requirements of Türkiye Citizenship by investment')}}</h2>
                 <p class="pt-4">{{__('To qualify for citizenship, the main applicant should fulfil one of the following investment requirements:')}}</p>
                 <ul class="pt-3 px-4" style="list-style: disc">
-                    <li>Acquire at least USD 400,000 worth of real estate</li>
-                    <li>Invest a minimum of USD 500,000 fixed capital contribution</li>
-                    <li>Commit at least USD 500,000 or equivalent foreign currency or Turkish lira into government bonds</li>
-                    <li>Commit at least USD 500,000 or equivalent foreign currency or Turkish lira into real estate investment fund share or venture capital investment fund share</li>
-                    <li>Commit at least USD 500,000 or equivalent foreign currency or Turkish lira into a private pension system for a minimum holding period of three years</li>
-                    <li>Create jobs for at least 50 people, as attested by the Ministry of Family, Labour and Social Services</li>
+                    <li>{{__('Acquire at least USD 400,000 worth of real estate')}}</li>
+                    <li>{{__('Invest a minimum of USD 500,000 fixed capital contribution')}}</li>
+                    <li>{{__('Commit at least USD 500,000 or equivalent foreign currency or Turkish lira into government bonds')}}</li>
+                    <li>{{__('Commit at least USD 500,000 or equivalent foreign currency or Turkish lira into real estate investment fund share or venture capital investment fund share')}}</li>
+                    <li>{{__('Commit at least USD 500,000 or equivalent foreign currency or Turkish lira into a private pension system for a minimum holding period of three years')}}</li>
+                    <li>{{__('Create jobs for at least 50 people, as attested by the Ministry of Family, Labour and Social Services')}}</li>
                 </ul>
-                <p>The main applicant may include their spouse, dependent children below the age of 18, and children of any age who are living with disabilities in their application.</p>
+                <p>{{__('The main applicant may include their spouse, dependent children below the age of 18, and children of any age who are living with disabilities in their application.')}}</p>
 
 
                 <h2 class="section-content-header mt-5 pt-5">{{__('Procedures and time frame of the Türkiye Citizenship by Investment Program')}}</h2>
-                <p class="pt-3">After applicants have chosen the qualifying investment option, a residence permit application shall be made on the family’s behalf. The main applicant is then required to open a bank account in Türkiye.</p>
-                <p>Once all application documents have been prepared (including applicable certifications and translations), the investment can be completed and the documents submitted to the government. Once the application has been received by the government, the review process will begin and an interview may be requested. Applications are typically approved within 120 days, following which the citizenship documents are issued. The passport application can then be submitted.</p>
-                <p>Please note that Turkish gift and inheritance taxes apply to worldwide assets held by Turkish citizens. We recommend that you seek appropriate professional advice in this regard.</p>
+                <p class="pt-3">{{__('After applicants have chosen the qualifying investment option, a residence permit application shall be made on the family’s behalf. The main applicant is then required to open a bank account in Türkiye.')}}</p>
+                <p>{{__('Once all application documents have been prepared (including applicable certifications and translations), the investment can be completed and the documents submitted to the government. Once the application has been received by the government, the review process will begin and an interview may be requested. Applications are typically approved within 120 days, following which the citizenship documents are issued. The passport application can then be submitted.')}}</p>
+                <p>{{__('Please note that Turkish gift and inheritance taxes apply to worldwide assets held by Turkish citizens. We recommend that you seek appropriate professional advice in this regard.')}}</p>
             </div>
 
 
@@ -137,23 +137,23 @@
     <div class="container">
         <h2 class="section-content-header">{{__('Step by Step Citizenship Procedure:')}}</h2>
         <ul class="px-4" style="list-style: decimal">
-            <li class="color-black33 font-weight-bolder">Obtaining the Title Deed Document of the Real Estate Document for what is required</li>
+            <li class="color-black33 font-weight-bolder">{{__('Obtaining the Title Deed Document of the Real Estate Document for what is required')}}</li>
             <ul class="" style="list-style: disc">
-                <li>Identity document/passport (translated document in Turkish Language)</li>
-                <li>Real estate valuation report</li>
-                <li>Compulsory Earthquake insurance policy for buildings</li>
-                <li>Bio-metric photo </li>
-                <li>Real Estate Fair Value Certificate of the Real Estate</li>
-                <li>Tax Number</li>
-                <li>Bank-Approved Remittance Receipts </li>
-                <li>Commitment not to sell the Real Estate</li>
+                <li>{{__('Identity document/passport (translated document in Turkish Language)')}}</li>
+                <li>{{__('Real estate valuation report')}}</li>
+                <li>{{__('Compulsory Earthquake insurance policy for buildings')}}</li>
+                <li>{{__('Bio-metric photo ')}}</li>
+                <li>{{__('Real Estate Fair Value Certificate of the Real Estate')}}</li>
+                <li>{{__('Tax Number')}}</li>
+                <li>{{__('Bank-Approved Remittance Receipts ')}}</li>
+                <li>{{__('Commitment not to sell the Real Estate')}}</li>
             </ul>
-            <i>Note: The purpose of obtaining Turkish Citizenship should be stated in the deed.</i>
-            <li class="color-black33 font-weight-bolder">Obtaining the Certificate of Conformity</li>
-            <p>After taking a commitment not to sell the Real Estate purchased for 3 years. The department of foreign affairs issues the certificate of conformity.</p>
-            <p>Afterwards, the cover letter is sent to the General Directorate of Migration Management and the General Directorate of Population and Citizenship Affairs. The applicants are informed via email about every step carefully.</p>
-            <li class="color-black33 font-weight-bolder">Residence Permit Application and Citizenship Application</li>
-            <p>After receiving the certificate of conformity, a residence permit application must be made to the provincial Directorate of Migration Management and then a citizenship application to the provincial Directorate of population and Citizenship Affairs.The Citizenship Applications are finalized in 3-5 months on average</p>
+            <i>{{__('Note: The purpose of obtaining Turkish Citizenship should be stated in the deed.')}}</i>
+            <li class="color-black33 font-weight-bolder">{{__('Obtaining the Certificate of Conformity')}}</li>
+            <p>{{__('After taking a commitment not to sell the Real Estate purchased for 3 years. The department of foreign affairs issues the certificate of conformity.')}}</p>
+            <p>{{__('Afterwards, the cover letter is sent to the General Directorate of Migration Management and the General Directorate of Population and Citizenship Affairs. The applicants are informed via email about every step carefully.')}}</p>
+            <li class="color-black33 font-weight-bolder">{{__('Residence Permit Application and Citizenship Application')}}</li>
+            <p>{{__('After receiving the certificate of conformity, a residence permit application must be made to the provincial Directorate of Migration Management and then a citizenship application to the provincial Directorate of population and Citizenship Affairs.The Citizenship Applications are finalized in 3-5 months on average')}}</p>
         </ul>
     </div>
 
