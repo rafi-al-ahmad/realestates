@@ -229,7 +229,7 @@
     </div>
 </section>
 
-@if(isset($citiesByProperties))
+@if(isset($citiesByProperties)  && $citiesByProperties?->toArray())
 <!-- Property cities -->
 <section id="property-city" class="property-city">
     <div class="container">
@@ -352,7 +352,7 @@
         </div>
     </div>
 </section>
-
+@if(isset($categories)  && $categories?->toArray())
 <!-- Property categories -->
 <section id="feature-property" class="feature-property">
     <div class="container">
@@ -413,7 +413,9 @@
         </div>
     </div>
 </section>
+@endif
 
+@if(isset($featuredProperties) && $featuredProperties?->toArray())
 <!-- Feature Properties -->
 <section id="property-city" class="property-city pb30 bg-ptrn1">
     <div class="container ovh">
@@ -466,6 +468,7 @@
         </div>
     </div>
 </section>
+@endif
 
 <!-- Why Chose Us -->
 <section id="why-chose" class="whychose_us pb30">
@@ -517,7 +520,7 @@
 </section>
 
 
-@if(isset($articles))
+@if(isset($articles) && $articles?->toArray())
 <!-- Our Blog -->
 <section class="our-blog bgc-f7 pb30">
     <div class="container">
@@ -541,7 +544,7 @@
 @endif
 
 
-@if(isset($agents))
+@if(isset($agents) && $agents?->toArray())
 <!-- Our Team -->
 <x-frontpage.ui.our-team :agents="$agents" />
 @endif
