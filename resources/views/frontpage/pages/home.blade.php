@@ -229,7 +229,7 @@
     </div>
 </section>
 
-@if(isset($citiesByProperties)  && $citiesByProperties?->toArray())
+@if(isset($citiesByProperties) && $citiesByProperties?->toArray())
 <!-- Property cities -->
 <section id="property-city" class="property-city">
     <div class="container">
@@ -338,7 +338,7 @@
     <div class="container ">
         <h3 class="font-size-2  font-size-lg-3 font-size-xl-4 pb-5 font-weight-bolder text-center text-capitalized plr-xl-6">{{__('Live, work and experience amazing life in Turkey.')}}</h3>
         <div class="row px-3">
-            <div class="col-xl-6 py-4">
+            <div class="col-xl-6 d-flex flex-column justify-content-center order-2 order-xl-1 py-4">
                 <h1 class=" my-4">{{__('Citizenship by Investment Overview')}}</h1>
                 <h4 class="color-black66  my-4" style="line-height: inherit;">{{__('The Türkiye Citizenship by Investment Program allows investors to access both the European and Asian markets by making an investment into Türkiye’s economy.')}}</h4>
                 <a href="{{route('home.citizenship')}}" class="  my-4 text-capitalized" style="color: #005fff">
@@ -346,13 +346,13 @@
                     <i class="fa-solid fa-arrow-right px-2"></i>
                 </a>
             </div>
-            <div class="col-xl-6">
-
+            <div class="col-xl-6  order-xl-2 order-1 ">
+                <img style="height: 350px; object-fit: contain;" class="img-fluid h-100 br-15 w100" src="{{ url('assets/frontpage/images/home/1.png')}}" alt="category361x350.png">
             </div>
         </div>
     </div>
 </section>
-@if(isset($categories)  && $categories?->toArray())
+@if(isset($categories) && $categories?->toArray())
 <!-- Property categories -->
 <section id="feature-property" class="feature-property">
     <div class="container">
