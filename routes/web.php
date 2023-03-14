@@ -9,6 +9,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DefinitionsController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LanguageController;
+use App\Http\Controllers\MediaController;
 use App\Http\Controllers\PropertiesController;
 use App\Http\Controllers\TestimonialController;
 use App\Http\Controllers\TinymceController;
@@ -39,6 +40,8 @@ Route::group([
     Route::group([
         'prefix' => 'admin'
     ], function () {
+
+        Route::get('media/delete/{id}', [MediaController::class, 'destroy'])->name('media.delete');
 
         Route::get('/', [DashboardController::class, 'index'])->name('admin');
 

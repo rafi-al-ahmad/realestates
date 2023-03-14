@@ -404,7 +404,7 @@ $breadcrumbItems = [
                             <img data-dz-thumbnail="" alt="" src="{{ url($image->getUrl())}}" />
                         </div>
                     </div>
-                    <a class="dz-remove" href="{route('media.delete')}}" data-dz-remove="">{{__('Remove file')}}</a>
+                    <a class="dz-remove" href="{{route('media.delete', [$image->id])}}" data-dz-remove="">{{__('Remove file')}}</a>
                 </div>
                 @endforeach
                 @endif
