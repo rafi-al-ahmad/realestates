@@ -21,7 +21,7 @@ class CategoriesController extends Controller
             "title.*.language" => ['required', 'string', Rule::in(config('app.supported_locales'))],
             "parent_id" => ['nullable', 'exists:categories,id'],
             "slug" => ['nullable', 'string'],
-            "image" => ['nullable', 'file', 'image'],
+            "image" => ['nullable', 'file', 'max:1200', 'image'],
             "status" => ['required', "in:0,1"],
         ], $rules);
     }

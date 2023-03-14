@@ -34,13 +34,13 @@ $breadcrumbItems = [
                             <div data-repeater-list="translations">
                                 @if(null != (old("translations", isset($property)?($property?->getTranslations('title')):null)))
                                 @foreach(old("translations", isset($property)?($property?->getTranslations('title')):null) as $key => $translation)
+
                                 <div class="mb-5 border-bottom" data-repeater-item>
                                     <div class="row">
                                         <div class="col-9">
                                             <div class="mb-3">
                                                 <label for="title" class="form-label required">{{__('title')}}</label>
-                                                <input required type="text" value="{{old('translations.'.$key.'.title', isset($property)? ($property?->getTranslations('title')[$key]) : null )}}" id="title" name="title" placeholder="{{__('translation')}}" class="form-control" />
-
+                                                <input required type="text" value="{{old('translations.'.$key.'.title') != null ? old('translations.'.$key.'.title') : (isset($property)? ($property?->getTranslations('title')[$key]) : null)}}" id="title" name="title" placeholder="{{__('translation')}}" class="form-control" />
                                             </div>
                                         </div>
                                         <div class="col-3">
@@ -58,17 +58,17 @@ $breadcrumbItems = [
                                         <div class="col-12">
                                             <div class="mb-3">
                                                 <label for="description" class="form-label required">{{__('description')}}</label>
-                                                <textarea required class="form-control" name="description" id="description" rows="3">{{old('translations.'.$key.'.description', isset($property)? ($property?->getTranslations('description')[$key]) : null )}}</textarea>
+                                                <textarea required class="form-control" name="description" id="description" rows="3">{{old('translations.'.$key.'.description') != null ? old('translations.'.$key.'.description') : (isset($property)? ($property?->getTranslations('description')[$key]) : null)}}</textarea>
                                             </div>
                                         </div>
                                         <div class="col-12">
                                             <label class="form-label" for="ad-meta-title">{{__('meta title')}}</label>
-                                            <input type="text" id="ad-meta-title" value="{{old('translations.'.$key.'.meta_title', isset($property)? ($property?->getTranslations('meta_title')[$key]) : null )}}" name="meta_title" placeholder="{{__('meta title')}}" class="form-control" />
+                                            <input type="text" id="ad-meta-title" value="{{old('translations.'.$key.'.meta_title') != null ? old('translations.'.$key.'.meta_title') : (isset($property)? ($property?->getTranslations('meta_title')[$key]) : null)}}" name="meta_title" placeholder="{{__('meta title')}}" class="form-control" />
                                         </div>
                                         <div class="col-12">
                                             <div class="mb-3">
                                                 <label for="meta_description" class="form-label">{{__('meta description')}}</label>
-                                                <textarea class="form-control" name="meta_description" id="meta_description" rows="2">{{old('translations.'.$key.'.meta_title', isset($property)? ($property?->getTranslations('meta_title')[$key]) : null )}}</textarea>
+                                                <textarea class="form-control" name="meta_description" id="meta_description" rows="2">{{old('translations.'.$key.'.meta_description') != null ? old('translations.'.$key.'.meta_desc') : (isset($property)? ($property?->getTranslations('meta_desc')[$key]) : null)}}</textarea>
                                             </div>
                                         </div>
                                     </div>
@@ -375,7 +375,7 @@ $breadcrumbItems = [
                     <div class="col-md-9 mb-3">
                         <label class="form-label required" for="property-map_address">{{__('address')}}</label>
                         <textarea required class="form-control" name="address" id="property-map_address" rows="1">{{old('address') ?? (isset($property)? $property->address?->address : '')}}</textarea>
-                        <input type="hidden" value="{{old('geodata') ?? (isset($property)? json_encode($property->address?->geo ): '')}}" name="geodata" id="property-geodata" class="form-control" />
+                        <input type="hidden" value="{{(old('geodata') != null? json_encode(old('geodata')) : null ) ?? (isset($property)? json_encode($property->address?->geo ): '')}}" name="geodata" id="property-geodata" class="form-control" />
                     </div>
                 </div>
             </div>
@@ -394,6 +394,22 @@ $breadcrumbItems = [
                     </div>
                 </div>
             </div>
+            @if(isset($property))
+            <div class="card-body">
+                @if($property->media?->toArray())
+                @foreach($property->media as $image)
+                <div class="dz-preview dz-processing dz-image-preview dz-success dz-complete">
+                    <div class="dz-details">
+                        <div class="dz-thumbnail">
+                            <img data-dz-thumbnail="" alt="" src="{{ url($image->getUrl())}}" />
+                        </div>
+                    </div>
+                    <a class="dz-remove" href="{route('media.delete')}}" data-dz-remove="">{{__('Remove file')}}</a>
+                </div>
+                @endforeach
+                @endif
+            </div>
+            @endif
         </div>
 
         <div class="card mb-4">
@@ -426,7 +442,7 @@ $breadcrumbItems = [
     const dropzone = new Dropzone('#dropzone-multi', {
         previewTemplate: previewTemplate,
         parallelUploads: 1,
-        maxFilesize: 3,
+        maxFilesize: 1,
         addRemoveLinks: true,
         acceptedFiles: "image/*",
         dictFallbackMessage: "{{__('Your browser does not support drag\'n\'drop file uploads.')}}",
@@ -640,5 +656,4 @@ $breadcrumbItems = [
 @endpush
 @push('scripts')
 <link rel="stylesheet" href="{{url('dashboard')}}/assets/vendor/libs/dropzone/dropzone.css" />
-
 @endpush

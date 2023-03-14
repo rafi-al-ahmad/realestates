@@ -1,5 +1,5 @@
 @extends('dashboard.layouts.index')
-@section('title', __('definitions'))
+@section('title', __('testimonials'))
 
 @section('content')
 @php
@@ -9,21 +9,21 @@ $breadcrumbItems = [
 'title' => __('home')
 ],
 [
-'url' => route('definitions'),
-'title' => __('definitions')
+'url' => route('testimonials'),
+'title' => __('testimonials')
 ],
 [
-'title' => isset($definition)? __('update') :__('create')
+'title' => isset($testimonial)? __('update') :__('create')
 ],
 ];
 @endphp
 <x-dashboard.ui.breadcrumb :items="$breadcrumbItems" />
 <!-- Multi Column with Form Separator -->
 <div class="card mb-4">
-    <form class="card-body" action="@if(isset($definition)) {{route('definitions.update', [$definition->id])}} @else {{route('definitions.create')}} @endif" method="POST" enctype="multipart/form-data">
+    <form class="card-body" action="@if(isset($testimonial)) {{route('testimonials.update', [$testimonial->id])}} @else {{route('testimonials.create')}} @endif" method="POST" enctype="multipart/form-data">
         @csrf
-        @if(isset($definition))
-        <input type="hidden" name="id" value="{{$definition->id}}">
+        @if(isset($testimonial))
+        <input type="hidden" name="id" value="{{$testimonial->id}}">
         @endif
         <div class="row g-3">
 
@@ -33,9 +33,6 @@ $breadcrumbItems = [
                     <div class="col-12 col-sm-12">
                         <select required name="type" class="form-select" aria-label="">
                             <option value="">--</option>
-                            @foreach(\App\Models\Definition::types as $key => $type)
-                            <option value="{{$type}}" {{old('type') != null? (old('type') == $type ? "selected": "") :  (isset($definition)? ($definition->type  == $type ? 'selected' : "") :'')}}>{{__($type)}}</option>
-                            @endforeach
                         </select>
                     </div>
                 </div>
@@ -45,18 +42,18 @@ $breadcrumbItems = [
                     <label class="col-12 col-sm-12 col-form-label required">{{__("status")}}</label>
                     <div class="col-12 col-sm-12">
                         <select required name="status" class="form-select" aria-label="">
-                            <option value="1" {{old('status') != null? (old('status') == 1 ? "selected": "") :  (isset($definition)? ($definition->status  == 1 ? 'selected' : "") :'')}}>{{__("active")}}</option>
-                            <option value="0" {{old('status') != null? (old('status') == 0 ? "selected": "") :  (isset($definition)? ($definition->status  == 0 ? 'selected' : "") :'')}}>{{__("inactive")}}</option>
+                            <option value="1" {{old('status') != null? (old('status') == 1 ? "selected": "") :  (isset($testimonial)? ($testimonial->status  == 1 ? 'selected' : "") :'')}}>{{__("active")}}</option>
+                            <option value="0" {{old('status') != null? (old('status') == 0 ? "selected": "") :  (isset($testimonial)? ($testimonial->status  == 0 ? 'selected' : "") :'')}}>{{__("inactive")}}</option>
                         </select>
                     </div>
                 </div>
             </div>
             <div class="col-12 mb-3">
-                <label class="form-label required" for="add-definition-title">{{__('title')}}</label>
+                <label class="form-label required" for="add-testimonial-title">{{__('title')}}</label>
                 <div action="#" class="title-repeater" data-min-limit="1" data-max-limit="{{count(config('app.supported_locales'))}}">
                     <div data-repeater-list="title">
-                        @if(old("title", isset($definition)?($definition?->getTranslations('title')):null))
-                        @foreach(old("title", isset($definition)?($definition?->getTranslations('title')):[]) as $localeKey => $titleTranslation)
+                        @if(old("title", isset($testimonial)?($testimonial?->getTranslations('title')):null))
+                        @foreach(old("title", isset($testimonial)?($testimonial?->getTranslations('title')):[]) as $localeKey => $titleTranslation)
                         <div class="row mb-3" data-repeater-item>
                             <div class="col-6">
                                 <input required type="text" value="{{$titleTranslation}}" name="translation" placeholder="{{__('translation')}}" class="form-control" />
@@ -106,19 +103,19 @@ $breadcrumbItems = [
                 </div>
             </div>
             <div class="col-md-6">
-                <label class="form-label" for="definition-group">{{__('group')}}</label>
-                <input type="text" value="{{old('group') ?? (isset($definition)? $definition->group : '')}}" name="group" id="definition-group" class="form-control" />
+                <label class="form-label" for="testimonial-group">{{__('group')}}</label>
+                <input type="text" value="{{old('group') ?? (isset($testimonial)? $testimonial->group : '')}}" name="group" id="testimonial-group" class="form-control" />
             </div>
         </div>
 
         <div class="row">
             <div class="pt-5 col-md-6 d-flex justify-content-around justify-content-sm-start">
-                <button type="button" onclick="$(this).parents('form').append('<input type=\'hidden\' name=\'toList\' value=\'1\'>').submit()" class="mx-1 btn btn-primary">{{isset($definition)? __('update'):__('add')}}</button>
+                <button type="button" onclick="$(this).parents('form').append('<input type=\'hidden\' name=\'toList\' value=\'1\'>').submit()" class="mx-1 btn btn-primary">{{isset($testimonial)? __('update'):__('add')}}</button>
                 <button type="submit" class="mx-1 btn btn-primary">{{__('save')}}</button>
             </div>
             <div class="pt-5 col-md-6 d-flex justify-content-around justify-content-sm-end">
                 <button type="reset" class="mx-1 btn btn-label-secondary">{{__('reset')}}</button>
-                <a href="{{route('definitions')}}" class="mx-1 btn btn-label-secondary">{{__('cancel')}}</a>
+                <a href="{{route('testimonials')}}" class="mx-1 btn btn-label-secondary">{{__('cancel')}}</a>
             </div>
         </div>
     </form>

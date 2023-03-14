@@ -3,6 +3,7 @@
 namespace App\DataTables;
 
 use App\Models\Testimonial;
+use App\Traits\DatatableHelpers;
 use Illuminate\Database\Eloquent\Builder as QueryBuilder;
 use Yajra\DataTables\EloquentDataTable;
 use Yajra\DataTables\Html\Builder as HtmlBuilder;
@@ -14,6 +15,8 @@ use Yajra\DataTables\Services\DataTable;
 
 class TestimonialsDataTable extends DataTable
 {
+    use DatatableHelpers;
+
     /**
      * Build DataTable class.
      *
@@ -112,60 +115,25 @@ class TestimonialsDataTable extends DataTable
                 'responsive' => true,
                 'autoWidth' => false,
                 'lengthMenu' => [[10, 25, 50, 100], ['10', '25', '50', '100']],
-
                 "order" => [],
-                "rowReorder" => [
-                    "update" => false,
-                    "dataSrc" => 'order',
-                    "selector" => 'td.orderable'
-                ],
+                "initComplete" => "function () {
+                    $('.dataTables_filter .form-control').removeClass('form-control-sm');
+                    $('.dataTables_length .form-select').removeClass('form-select-sm');
+                    //$('div.dt-toolbar').html('<b>Custom tool bar! Text/images etc.</b>');
+            }
+            ",
                 'buttons' => [
                     [
-                        "extend" => "collection",
-                        "text" => __("actions"),
-                        "order" => [[5]],
-                        "className" => "btn bg-gradient-primary btn-sm dropdown-toggle",
-                        "buttons" => [
-                            [
-                                'extend' => 'collection',
-                                "text" => __("status"),
-                                "buttons" => [
-                                    [
-                                        "text" => __("activate"),
-                                        "action" => '
-                                        function(e, dt, node, config) {
-                                            updateSelectedRecordsStatus(1);
-                                        }'
-                                    ],
-                                    [
-                                        "text" =>  __("deactivate"),
-                                        "action" => '
-                                        function(e, dt, node, config) {
-                                            updateSelectedRecordsStatus(0);
-                                        }'
-                                    ],
-                                ],
-                            ],
-                            [
-                                "text" => __("delete"),
-                                "action" => '
-                                        function(e, dt, node, config) {
-                                            ids = [];
-                                            $("input:checkbox[name=selected_rows]:checked").each(function() {
-                                                ids.push($(this).val());
-                                            });
-                                            deleteRows(ids);
-                                        }'
-                            ],
-                        ],
-                    ],
-                ],
-                "language" => [
-                    'paginate' => [
-                        'previous' => '<i class="fa-solid fa-angle-left"></i>',
-                        'next' => '<i class="fa-solid fa-angle-right"></i>'
+                        "text" => '<i class="ti ti-plus me-0 me-sm-1 ti-xs"></i><span class="d-none d-sm-inline-block">' . __("Add Testimonial") . '</span>',
+                        "className" => 'add-new btn btn-primary ms-3',
+                        "action" => "function () {
+                                    window.location.href = '" . route('testimonials.create') . "';
+                                }"
+
                     ]
-                ]
+                ],
+                "language" => $this->getTranslations()
+
             ]);
     }
 

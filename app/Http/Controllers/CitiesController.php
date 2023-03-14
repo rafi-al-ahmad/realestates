@@ -16,7 +16,7 @@ class CitiesController extends Controller
     {
         return array_merge([
             "name" => ['required', 'string'],
-            "image" => ['nullable', 'file', 'image'],
+            "image" => ['nullable', 'file', 'max:1200', 'image'],
             "status" => ['required', "in:0,1"],
         ], $rules);
     }

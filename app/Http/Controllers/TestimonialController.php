@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\DataTables\TestimonialDataTable;
+use App\DataTables\TestimonialsDataTable;
 use App\Models\Testimonial;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
@@ -23,19 +24,19 @@ class TestimonialController extends Controller
         ], $rules);
     }
 
-    public function index(TestimonialDataTable $testimonialDataTable)
+    public function index(TestimonialsDataTable $testimonialsDataTable)
     {
-        return $testimonialDataTable->render("dashboard.pages.testimonials.index");
+        return $testimonialsDataTable->render("dashboard.pages.testimonials.testimonials-listing");
     }
 
 
-    public function showCreateForm($id = null)
+    public function showForm($id = null)
     {
         if ($id) {
             $testimonial = Testimonial::find($id);
-            return view("admin.pages.testimonials.create_testimonial", ["testimonial" => $testimonial]);
+            return view("dashboard.pages.testimonials.testimonial-form", ["testimonial" => $testimonial]);
         }
-        return view("admin.pages.testimonials.create_testimonial");
+        return view("dashboard.pages.testimonials.testimonial-form");
     }
 
     public function create(Request $request)

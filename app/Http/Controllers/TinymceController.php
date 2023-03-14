@@ -9,6 +9,9 @@ class TinymceController extends Controller
 {
     public function upload(Request $request)
     {
+        $request->validate([
+            "file" => ['max:1200']
+        ]);
         $fileName = rand(0, 999999999). '-' . $request->file('file')->getClientOriginalName();
         $path = $request->file('file')->storeAs('uploads', $fileName, 'public');
         return response()->json(['location' => Storage::url($path)]);

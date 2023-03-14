@@ -19,7 +19,6 @@ class PropertiesController extends Controller
     {
         return array_merge([
             'translations' => ['required', 'array'],
-            'translations' => ['required', 'array'],
             'translations.*.title' => ['required', 'max:250'],
             'translations.*.meta_title' => ['required', 'max:250'],
             'translations.*.description' => ['required', 'max:4000'],
@@ -52,7 +51,7 @@ class PropertiesController extends Controller
             'building_floors' => ['required', 'numeric'],
             'floor_number' => ['required', 'numeric'],
             'photos' => ['nullable', 'array'],
-            'photos.*' => ['nullable', 'file', 'image'],
+            'photos.*' => ['nullable', 'file', 'max:1200', 'image'],
         ], $rules);
     }
 
@@ -86,9 +85,8 @@ class PropertiesController extends Controller
 
         $property = null;
         if ($id) {
-            $property = Property::with('features')->find($id);
+            $property = Property::with(['features', 'media'])->find($id);
         }
-
 
         return view('dashboard.pages.properties.property-form', [
             "propertyType" => $definitions['property_type'] ?? [],

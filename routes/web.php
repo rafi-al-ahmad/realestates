@@ -99,13 +99,13 @@ Route::group([
 
 
         Route::get("testimonials", [TestimonialController::class, "index"])->name('testimonials');
-        Route::get("testimonial/create", [TestimonialController::class, "showCreateForm"])->name('testimonials.create');
-        Route::get("testimonials/clone/{id}", [TestimonialController::class, "showCreateForm"])->name('testimonials.clone');
+        Route::get("testimonial/create", [TestimonialController::class, "showForm"])->name('testimonials.create');
+        Route::get("testimonials/clone/{id}", [TestimonialController::class, "showForm"])->name('testimonials.clone');
         Route::post("testimonial/create", [TestimonialController::class, "create"]);
         Route::post("testimonial/reorder", [TestimonialController::class, "reorder"])->name('testimonials.reorder');
         Route::post("testimonial/update/status", [TestimonialController::class, "updateStatus"])->name('testimonial.update.status');
         Route::post("testimonial/update/featured", [TestimonialController::class, "updateFeaturedStatus"])->name('testimonial.update.featured');
-        Route::get("testimonial/{id}/update/{locale?}", [TestimonialController::class, "showUpdateForm"])->name('testimonials.update');
+        Route::get("testimonial/{id}/update/{locale?}", [TestimonialController::class, "showForm"])->name('testimonials.update');
         Route::post("testimonial/{id}/update/{locale?}", [TestimonialController::class, "update"]);
         Route::post("testimonial/translation/delete", [TestimonialController::class, "deleteTranslation"])->name('testimonial.translation.delete');
         Route::post("testimonial/delete", [TestimonialController::class, "delete"])->name('testimonials.delete');

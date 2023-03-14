@@ -13,7 +13,7 @@
 
     @include("frontpage.layouts.styles")
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-66Q2ENPCLZ"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-T87LFL4GQN"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
 
@@ -21,7 +21,7 @@
             dataLayer.push(arguments);
         }
         gtag('js', new Date());
-        gtag('config', 'G-66Q2ENPCLZ');
+        gtag('config', 'G-T87LFL4GQN');
     </script>
 </head>
 
