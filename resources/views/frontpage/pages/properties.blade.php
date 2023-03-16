@@ -43,6 +43,7 @@
         <div class="row">
             <div class="col-lg-4 col-xl-4">
                 <div class="sidebar_listing_grid1 dn-991">
+
                     <x-frontpage.ui.properties-list-filter :buildingAge="$buildingAge" :features="$features" :propertyType="$propertyType" />
                     <x-frontpage.ui.featured-properties :properties="$featuredProperties" />
 
