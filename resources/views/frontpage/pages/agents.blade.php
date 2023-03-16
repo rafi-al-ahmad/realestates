@@ -88,7 +88,7 @@
                     <div class="col-lg-12">
                         <div class="feat_property list style2 agent">
                             <div class="thumb">
-                                <img class="img-whp" src="{{ $agent->photo != null ? (Storage::url($agent->photo)) : url('assets/frontpage/images/agents/av-man.png')}}" alt="{{$agent->name}}">
+                                <img width="340px" height="260px" class="img-whp fit-cover" src="{{ $agent->photo != null ? (Storage::url($agent->photo)) : url('assets/frontpage/images/agents/av-man.png')}}" alt="{{$agent->name}}">
 
                                 <div class="thmb_cntnt">
                                     <ul class="tag mb0">

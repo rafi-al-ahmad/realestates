@@ -18,7 +18,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $agents = Agent::select('id', 'name', 'surname')->where('status', 1)->get();
+        $agents = Agent::select('id', 'name', 'surname', 'photo')->where('status', 1)->get();
         $categories = Category::select('id', 'title')->where('status', 1)->get();
         $allDefinitions = Definition::select('id', 'title', 'type', 'group')->where('status', 1)->get();
         $citiesByProperties = City::select('cities.id', 'cities.name', DB::raw('COUNT(properties.id) as properties_count'))

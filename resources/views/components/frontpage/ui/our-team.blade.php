@@ -1,4 +1,3 @@
-
 <section class="our-team bgc-f7">
     <div class="container">
         <div class="row">
@@ -14,15 +13,17 @@
                 <div class="team_slider">
                     @foreach($agents as $agent)
                     <div class="item">
-                        <div class="team_member">
-                            <div class="thumb">
-                                <img class="img-fluid" src="{{ $agent->photo != null ? (Storage::url($agent->photo)) : url('assets/frontpage/images/agents/av-man.png')}}" alt="{{$agent->name}}">
+                        <a href="{{route('home.agents')}}">
+                            <div class="team_member">
+                                <div class="thumb">
+                                    <img height="250px" width="242px" class="fit-cover" src="{{ $agent->photo != null ? (Storage::url($agent->photo)) : url('assets/frontpage/images/agents/av-man.png')}}" alt="{{$agent->name}}">
+                                </div>
+                                <div class="details">
+                                    <h4>{{$agent->name}} {{$agent->surname}}</h4>
+                                    <!-- <p>Broker</p> -->
+                                </div>
                             </div>
-                            <div class="details">
-                                <h4>{{$agent->name}} {{$agent->surname}}</h4>
-                                <!-- <p>Broker</p> -->
-                            </div>
-                        </div>
+                        </a>
                     </div>
                     @endforeach
                 </div>
