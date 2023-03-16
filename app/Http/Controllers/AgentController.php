@@ -93,7 +93,7 @@ class AgentController extends Controller
         $agent->mobile_phone = $data['phone'];
         if ($request->has('photo')) {
             $photo_path = $request->file('photo')?->store('agents');
-            if (Storage::exists($agent->photo)) {
+            if ($agent->photo && Storage::exists($agent->photo)) {
                 Storage::delete($agent->photo);
             }
             $agent->photo = $photo_path;
