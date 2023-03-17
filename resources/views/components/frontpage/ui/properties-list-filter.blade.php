@@ -25,7 +25,7 @@
                     <div class="search_option_two">
                         <div class="candidate_revew_select">
                             <select name="property_type" class="selectpicker w100 show-tick">
-                                <option>{{__('Property Type')}}</option>
+                                <option value="">{{__('Property Type')}}</option>
                                 @foreach($propertyType as $type)
                                 <option value="{{$type->id}}" {{old('property_type') != null? (old('property_type') == $type->id ? "selected": "") :  (request()->property_type  == $type->id ? 'selected' : "")}}>{{__($type->title)}}</option>
                                 @endforeach
@@ -46,14 +46,11 @@
                 <li>
                     <div class="search_option_two">
                         <div class="candidate_revew_select">
-                            <select name="bathrooms" value="{{request()->bathrooms}}" class="selectpicker w100 show-tick">
-                                <option>{{__('Bathrooms')}}</option>
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                                <option>6</option>
+                            <select name="bathrooms" class="selectpicker w100 show-tick">
+                                <option value="">{{__('Bathrooms')}}</option>
+                                @for($i = 1; $i < 8; $i++)
+                                <option value="{{$i}}" {{request()->bathrooms == $i? 'selected':''}}>{{$i}}</option>
+                                @endfor
                             </select>
                         </div>
                     </div>
@@ -61,16 +58,11 @@
                 <li>
                     <div class="search_option_two">
                         <div class="candidate_revew_select">
-                            <select name="bedrooms" value="{{request()->bedrooms}}" class="selectpicker w100 show-tick">
-                                <option>{{__('Bedrooms')}}</option>
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                                <option>6</option>
-                                <option>7</option>
-                                <option>8</option>
+                            <select name="bedrooms" class="selectpicker w100 show-tick">
+                                <option value="">{{__('Bedrooms')}}</option>
+                                @for($i = 1; $i < 8; $i++)
+                                <option value="{{$i}}" {{request()->bedrooms == $i? 'selected':''}}>{{$i}}</option>
+                                @endfor
                             </select>
                         </div>
                     </div>
@@ -78,16 +70,11 @@
                 <li>
                     <div class="search_option_two">
                         <div class="candidate_revew_select">
-                            <select name="living_rooms" value="{{request()->living_rooms}}" class="selectpicker w100 show-tick">
-                                <option>{{__('Living Rooms')}}</option>
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                                <option>6</option>
-                                <option>7</option>
-                                <option>8</option>
+                            <select name="living_rooms" class="selectpicker w100 show-tick">
+                                <option value="">{{__('Living Rooms')}}</option>
+                                @for($i = 1; $i < 8; $i++)
+                                <option value="{{$i}}" {{request()->living_rooms == $i? 'selected':''}}>{{$i}}</option>
+                                @endfor
                             </select>
                         </div>
                     </div>
@@ -96,9 +83,9 @@
                     <div class="search_option_two">
                         <div class="candidate_revew_select">
                             <select name="age" value="{{request()->age}}" class="selectpicker w100 show-tick">
-                                <option>{{__('age')}}</option>
+                                <option value="">{{__('age')}}</option>
                                 @foreach($buildingAge as $age)
-                                <option value="{{$age->id}}" {{old('building_age') != null? (old('building_age') == $age->id ? "selected": "") :  (isset($property)? ($property->building_age_id  == $age->id ? 'selected' : "") :'')}}>{{__($age->title)}}</option>
+                                <option value="{{$age->id}}" {{old('building_age') != null? (old('building_age') == $age->id ? "selected": "") :  (request()->age  == $age->id ? 'selected' : "")}}>{{__($age->title)}}</option>
                                 @endforeach
                             </select>
                         </div>
