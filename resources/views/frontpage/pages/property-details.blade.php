@@ -36,8 +36,8 @@
                         </div>
                     </div>
                     @for($i = 5; $i < count($property->media); $i++)
-                    <a class="popup-img" href="{{isset($property->media[$i]) ? $property->media[$i]?->getUrl() : url('assets/frontpage/images/properties/480x300.jpg')}}"></a>
-                    @endfor
+                        <a class="popup-img" href="{{isset($property->media[$i]) ? $property->media[$i]?->getUrl() : url('assets/frontpage/images/properties/480x300.jpg')}}"></a>
+                        @endfor
                 </div>
             </div>
         </div>
@@ -79,7 +79,7 @@
                                 <h2>{{$property->title}}</h2>
                                 <p>{{$property->address?->address}}</p>
                             </div>
-                            <div class="single_property_social_share style2">
+                            <div class="single_property_social_share style2 ml-4">
                                 <div class="price">
                                     <h2>₺{{number_format($property->price_tl, 2, ',', '.')}}</h2>
                                 </div>
@@ -298,268 +298,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="col-lg-12">
-                        <div class="whats_nearby mt30">
-                            <h4 class="mb10">What's Nearby</h4>
-                            <div class="education_distance mb15">
-                                <h5><span class="flaticon-college-graduation"></span> Education</h5>
-                                <div class="single_line">
-                                    <p class="para">Eladia's Kids <span>(3.13 miles)</span></p>
-                                    <ul class="review">
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li class="list-inline-item"><span class="total_rive_count">8895 reviews</span></li>
-                                    </ul>
-                                </div>
-                                <div class="single_line">
-                                    <p class="para">Gear Up With ACLS <span>(4.66 miles)</span></p>
-                                    <ul class="review">
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li class="list-inline-item"><span class="total_rive_count">7475 reviews</span></li>
-                                    </ul>
-                                </div>
-                                <div class="single_line">
-                                    <p class="para">Brooklyn Brainery <span>(3.31 miles)</span></p>
-                                    <ul class="review">
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li class="list-inline-item"><span class="total_rive_count">3579 reviews</span></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="education_distance mb15 style2">
-                                <h5><span class="flaticon-heartbeat"></span> Health & Medical</h5>
-                                <div class="single_line">
-                                    <p class="para">Eladia's Kids <span>(3.13 miles)</span></p>
-                                    <ul class="review">
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li class="list-inline-item"><span class="total_rive_count">8895 reviews</span></li>
-                                    </ul>
-                                </div>
-                                <div class="single_line">
-                                    <p class="para">Gear Up With ACLS <span>(4.66 miles)</span></p>
-                                    <ul class="review">
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li class="list-inline-item"><span class="total_rive_count">7475 reviews</span></li>
-                                    </ul>
-                                </div>
-                                <div class="single_line">
-                                    <p class="para">Brooklyn Brainery <span>(3.31 miles)</span></p>
-                                    <ul class="review">
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li class="list-inline-item"><span class="total_rive_count">3579 reviews</span></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="education_distance style3">
-                                <h5><span class="flaticon-front-of-bus"></span> Transportation</h5>
-                                <div class="single_line">
-                                    <p class="para">Eladia's Kids <span>(3.13 miles)</span></p>
-                                    <ul class="review">
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li class="list-inline-item"><span class="total_rive_count">8895 reviews</span></li>
-                                    </ul>
-                                </div>
-                                <div class="single_line">
-                                    <p class="para">Gear Up With ACLS <span>(4.66 miles)</span></p>
-                                    <ul class="review">
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li class="list-inline-item"><span class="total_rive_count">7475 reviews</span></li>
-                                    </ul>
-                                </div>
-                                <div class="single_line">
-                                    <p class="para">Brooklyn Brainery <span>(3.31 miles)</span></p>
-                                    <ul class="review">
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li class="list-inline-item"><span class="total_rive_count">3579 reviews</span></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
-                    <!-- <div class="col-lg-12">
-                        <h4 class="mt30 mb30">Similar Properties</h4>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="feat_property">
-                            <div class="thumb">
-                                <img class="img-whp" src="images/property/fp1.jpg" alt="fp1.jpg">
-                                <div class="thmb_cntnt">
-                                    <ul class="tag mb0">
-                                        <li class="list-inline-item"><a href="#">For Rent</a></li>
-                                        <li class="list-inline-item"><a href="#">Featured</a></li>
-                                    </ul>
-                                    <ul class="icon mb0">
-                                        <li class="list-inline-item"><a href="#"><span class="flaticon-transfer-1"></span></a></li>
-                                        <li class="list-inline-item"><a href="#"><span class="flaticon-heart"></span></a></li>
-                                    </ul>
-                                    <a class="fp_price" href="#">$13,000<small>/mo</small></a>
-                                </div>
-                            </div>
-                            <div class="details">
-                                <div class="tc_content">
-                                    <p class="text-thm">Apartment</p>
-                                    <h4>Renovated Apartment</h4>
-                                    <p><span class="flaticon-placeholder"></span> 1421 San Pedro St, Los Angeles, CA 90015</p>
-                                    <ul class="prop_details mb0">
-                                        <li class="list-inline-item"><a href="#">Beds: 4</a></li>
-                                        <li class="list-inline-item"><a href="#">Baths: 2</a></li>
-                                        <li class="list-inline-item"><a href="#">Sq Ft: 5280</a></li>
-                                    </ul>
-                                </div>
-                                <div class="fp_footer">
-                                    <ul class="fp_meta float-left mb0">
-                                        <li class="list-inline-item"><a href="#"><img src="images/property/pposter1.png" alt="pposter1.png"></a></li>
-                                        <li class="list-inline-item"><a href="#">Ali Tufan</a></li>
-                                    </ul>
-                                    <div class="fp_pdate float-right">4 years ago</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="feat_property">
-                            <div class="thumb">
-                                <img class="img-whp" src="images/property/fp2.jpg" alt="fp2.jpg">
-                                <div class="thmb_cntnt">
-                                    <ul class="tag mb0">
-                                        <li class="list-inline-item"><a href="#">For Rent</a></li>
-                                    </ul>
-                                    <ul class="icon mb0">
-                                        <li class="list-inline-item"><a href="#"><span class="flaticon-transfer-1"></span></a></li>
-                                        <li class="list-inline-item"><a href="#"><span class="flaticon-heart"></span></a></li>
-                                    </ul>
-                                    <a class="fp_price" href="#">$13,000<small>/mo</small></a>
-                                </div>
-                            </div>
-                            <div class="details">
-                                <div class="tc_content">
-                                    <p class="text-thm">Apartment</p>
-                                    <h4>Renovated Apartment</h4>
-                                    <p><span class="flaticon-placeholder"></span> 1421 San Pedro St, Los Angeles, CA 90015</p>
-                                    <ul class="prop_details mb0">
-                                        <li class="list-inline-item"><a href="#">Beds: 4</a></li>
-                                        <li class="list-inline-item"><a href="#">Baths: 2</a></li>
-                                        <li class="list-inline-item"><a href="#">Sq Ft: 5280</a></li>
-                                    </ul>
-                                </div>
-                                <div class="fp_footer">
-                                    <ul class="fp_meta float-left mb0">
-                                        <li class="list-inline-item"><a href="#"><img src="images/property/pposter1.png" alt="pposter1.png"></a></li>
-                                        <li class="list-inline-item"><a href="#">Ali Tufan</a></li>
-                                    </ul>
-                                    <div class="fp_pdate float-right">4 years ago</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="feat_property">
-                            <div class="thumb">
-                                <img class="img-whp" src="images/property/fp3.jpg" alt="fp3.jpg">
-                                <div class="thmb_cntnt">
-                                    <ul class="tag mb0">
-                                        <li class="list-inline-item"><a href="#">For Sale</a></li>
-                                    </ul>
-                                    <ul class="icon mb0">
-                                        <li class="list-inline-item"><a href="#"><span class="flaticon-transfer-1"></span></a></li>
-                                        <li class="list-inline-item"><a href="#"><span class="flaticon-heart"></span></a></li>
-                                    </ul>
-                                    <a class="fp_price" href="#">$13,000<small>/mo</small></a>
-                                </div>
-                            </div>
-                            <div class="details">
-                                <div class="tc_content">
-                                    <p class="text-thm">Apartment</p>
-                                    <h4>Renovated Apartment</h4>
-                                    <p><span class="flaticon-placeholder"></span> 1421 San Pedro St, Los Angeles, CA 90015</p>
-                                    <ul class="prop_details mb0">
-                                        <li class="list-inline-item"><a href="#">Beds: 4</a></li>
-                                        <li class="list-inline-item"><a href="#">Baths: 2</a></li>
-                                        <li class="list-inline-item"><a href="#">Sq Ft: 5280</a></li>
-                                    </ul>
-                                </div>
-                                <div class="fp_footer">
-                                    <ul class="fp_meta float-left mb0">
-                                        <li class="list-inline-item"><a href="#"><img src="images/property/pposter1.png" alt="pposter1.png"></a></li>
-                                        <li class="list-inline-item"><a href="#">Ali Tufan</a></li>
-                                    </ul>
-                                    <div class="fp_pdate float-right">4 years ago</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="feat_property">
-                            <div class="thumb">
-                                <img class="img-whp" src="images/property/fp1.jpg" alt="fp1.jpg">
-                                <div class="thmb_cntnt">
-                                    <ul class="tag mb0">
-                                        <li class="list-inline-item"><a href="#">For Rent</a></li>
-                                        <li class="list-inline-item"><a href="#">Featured</a></li>
-                                    </ul>
-                                    <ul class="icon mb0">
-                                        <li class="list-inline-item"><a href="#"><span class="flaticon-transfer-1"></span></a></li>
-                                        <li class="list-inline-item"><a href="#"><span class="flaticon-heart"></span></a></li>
-                                    </ul>
-                                    <a class="fp_price" href="#">$13,000<small>/mo</small></a>
-                                </div>
-                            </div>
-                            <div class="details">
-                                <div class="tc_content">
-                                    <p class="text-thm">Apartment</p>
-                                    <h4>Renovated Apartment</h4>
-                                    <p><span class="flaticon-placeholder"></span> 1421 San Pedro St, Los Angeles, CA 90015</p>
-                                    <ul class="prop_details mb0">
-                                        <li class="list-inline-item"><a href="#">Beds: 4</a></li>
-                                        <li class="list-inline-item"><a href="#">Baths: 2</a></li>
-                                        <li class="list-inline-item"><a href="#">Sq Ft: 5280</a></li>
-                                    </ul>
-                                </div>
-                                <div class="fp_footer">
-                                    <ul class="fp_meta float-left mb0">
-                                        <li class="list-inline-item"><a href="#"><img src="images/property/pposter1.png" alt="pposter1.png"></a></li>
-                                        <li class="list-inline-item"><a href="#">Ali Tufan</a></li>
-                                    </ul>
-                                    <div class="fp_pdate float-right">4 years ago</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
                 </div>
             </div>
             <div class="col-lg-4 col-xl-4 mt50">
@@ -633,8 +371,15 @@
     header.header-nav.menu_style_home_one .ace-responsive-menu li a {
         color: #484848;
     }
-    header.header-nav.menu_style_home_one a.navbar_brand span, header.header-nav.menu_style_home_three a.navbar_brand span, header.header-nav.menu_style_home_five a.navbar_brand span {
-    color: #484848;
-}
+
+    header.header-nav.menu_style_home_one a.navbar_brand span,
+    header.header-nav.menu_style_home_three a.navbar_brand span,
+    header.header-nav.menu_style_home_five a.navbar_brand span {
+        color: #484848;
+    }
+
+    .single_property_social_share.style2 {
+        position: initial;
+    }
 </style>
 @endpush

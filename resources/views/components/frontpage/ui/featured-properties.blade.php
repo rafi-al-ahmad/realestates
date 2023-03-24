@@ -11,7 +11,7 @@
                                 <li class="list-inline-item color-white">{{$property->propertyType->title}}</li>
                                 <li class="list-inline-item color-white">{{__('Featured')}}</li>
                             </ul>
-                            <a class="fp_price" href="{{route('home.property', [$property->id])}}">₺{{number_format($property->price_tl, 2, ',', '.')}}<small></small></a>
+                            <a class="fp_price mb-2" href="{{route('home.property', [$property->id])}}">₺{{number_format($property->price_tl, 2, ',', '.')}}<small></small></a>
                             <h4 class="posr color-white">{{$property->title}}</h4>
                         </div>
                     </div>
