@@ -22,14 +22,14 @@
                         <!-- <div class="blog_sp_tag"><a href="#">Construction</a></div> -->
                         <h3 class="blog_sp_title">{{$article->title}}</h3>
                         <ul class="blog_sp_post_meta">
-                            <li class="list-inline-item"><a href="#"><img width="40px" height="40px" src="{{ $article->agent?->photo != null ? (Storage::url($article->agent?->photo)) : url('assets/frontpage/images/agents/av-man.png')}}" alt="av-man.png"></a></li>
+                            <li class="list-inline-item"><a href="#"><img width="40px" height="40px" class=" lazy" data-src="{{ $article->agent?->photo != null ? (Storage::url($article->agent?->photo)) : url('assets/frontpage/images/agents/av-man.png')}}" alt="av-man.png"></a></li>
                             <li class="list-inline-item"><a href="#">{{$article->agent?->name .' '. $article->agent?->surname}}</a></li>
                             <li class="list-inline-item"><span class="flaticon-calendar"></span></li>
                             <li class="list-inline-item"><a href="#">{{$article->date?->toFormattedDateString()}}</a></li>
 
                         </ul>
                         <div class="thumb">
-                            <img class="img-fluid" src="{{ $article->photo != null ? (Storage::url($article->photo)) : url('assets/frontpage/images/blog/1.jpg')}}" alt="1.jpg">
+                            <img class="img-fluid lazy" data-src="{{ $article->photo != null ? (Storage::url($article->photo)) : url('assets/frontpage/images/blog/1.jpg')}}" alt="1.jpg">
                         </div>
                         <div class="details">
                             <?php echo $article->content ?>

@@ -92,14 +92,16 @@
                             <div class="thumb">
                                 <div class="fp_single_item_slider">
                                     @if($property->media?->toArray())
+                                    @php $i=0 @endphp
                                     @foreach($property->media as $image)
                                     <div class="item">
-                                        <img style="height: 230px" class="img-whp" src="{{ url($image->getUrl())}}">
+                                        <img style="height: 230px" class="img-whp lazy" data-src="{{ url($image->getUrl())}}">
                                     </div>
+                                    @php if($i++ >=3) break; @endphp
                                     @endforeach
                                     @else
                                     <div class="item">
-                                        <img style="height: 230px" class="img-whp" src="{{url('assets/frontpage/images/properties/480x300.jpg')}}">
+                                        <img style="height: 230px" class="img-whp lazy" data-src="{{url('assets/frontpage/images/properties/480x300.jpg')}}">
                                     </div>
                                     @endif
                                 </div>

@@ -16,7 +16,7 @@
                         <a href="{{route('home.agents')}}">
                             <div class="team_member">
                                 <div class="thumb">
-                                    <img height="250px" width="242px" class="fit-cover" src="{{ $agent->photo != null ? (Storage::url($agent->photo)) : url('assets/frontpage/images/agents/av-man.png')}}" alt="{{$agent->name}}">
+                                    <img height="250px" width="242px" class="fit-cover lazy" data-src="{{ $agent->photo != null ? (Storage::url($agent->photo)) : url('assets/frontpage/images/agents/av-man.png')}}" alt="{{$agent->name}}">
                                 </div>
                                 <div class="details">
                                     <h4>{{$agent->name}} {{$agent->surname}}</h4>

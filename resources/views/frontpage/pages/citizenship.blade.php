@@ -20,7 +20,7 @@
 <!-- About Text Content -->
 <section class="about-section">
     <div class="container">
-        <img class="logo1 img-fluid" style="height: 82px;" src="{{url('/assets/frontpage/images/logo/logo.png')}}" alt="logo.png">
+        <img class="logo1 img-fluid lazy" style="height: 82px;" data-src="{{url('/assets/frontpage/images/logo/logo.png')}}" alt="logo.png">
         <div class="row mt-4">
             <div class="col-lg-12 col-xl-12">
                 <div class="about_content">
@@ -51,7 +51,7 @@
             <div class="col-md-12 col-lg-6 section-pt p-5" style="background-color: #F5F5F5">
                 <div class="row my-5 ml-4">
                     <div class="col-3">
-                        <img width="76px" src="{{url('assets/frontpage/images/citizenship/4.png')}}" alt="">
+                        <img width="76px" class="lazy" data-src="{{url('assets/frontpage/images/citizenship/4.png')}}" alt="">
                     </div>
                     <div class="col-9">
                         <div class="media-content">
@@ -62,7 +62,7 @@
                 </div>
                 <div class="row my-5 ml-4">
                     <div class="col-3">
-                        <img width="76px" src="{{url('assets/frontpage/images/citizenship/2.png')}}" alt="">
+                        <img width="76px" class="lazy" data-src="{{url('assets/frontpage/images/citizenship/2.png')}}" alt="">
                     </div>
                     <div class="col-9">
                         <div class="media-content">
@@ -73,7 +73,7 @@
                 </div>
                 <div class="row my-5 ml-4">
                     <div class="col-3">
-                        <img width="76px" src="{{url('assets/frontpage/images/citizenship/3.png')}}" alt="">
+                        <img width="76px" class="lazy" data-src="{{url('assets/frontpage/images/citizenship/3.png')}}" alt="">
                     </div>
                     <div class="col-9">
                         <div class="media-content">
@@ -128,12 +128,12 @@
 
 
             <div class="col-md-12 col-lg-6 p-0 d-none-lg">
-                <img height="100%" class="" style="object-fit: cover;" src="{{url('assets/frontpage/images/citizenship/5.jpg')}}" alt="">
+                <img height="100%" class="lazy" style="object-fit: cover;" data-src="{{url('assets/frontpage/images/citizenship/5.jpg')}}" alt="">
             </div>
         </div>
 
     </div>
-    <img height="100%" class="my-4 " style="object-fit: cover;" src="{{url('assets/frontpage/images/citizenship/7.jpg')}}" alt="">
+    <img height="100%" class="my-4 lazy" style="object-fit: cover;" data-src="{{url('assets/frontpage/images/citizenship/7.jpg')}}" alt="">
     <div class="container">
         <h2 class="section-content-header">{{__('Step by Step Citizenship Procedure:')}}</h2>
         <ul class="px-4" style="list-style: decimal">
@@ -182,7 +182,7 @@
         </div>
     </div>
     <div class="position-relative d-none-lg ">
-        <img class="fit-cover  position-absolute contactImage" src="{{url('assets/frontpage/images/citizenship/6.jpg')}}" alt="">
+        <img class="fit-cover  position-absolute contactImage lazy" data-src="{{url('assets/frontpage/images/citizenship/6.jpg')}}" alt="">
     </div>
 </section>
 <section class=" ">

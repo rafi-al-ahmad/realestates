@@ -5,7 +5,7 @@
             <div class="item">
                 <div class="feat_property home7">
                     <div class="thumb" href="{{route('home.property', [$property->id])}}" onclick="window.location = `{{route('home.property', [$property->id])}}`">
-                        <img class="img-whp" src="{{$property->image()?->getUrl()}}">
+                        <img class="img-whp lazy" data-src="{{$property->image()?->getUrl()}}">
                         <div class="thmb_cntnt">
                             <ul class="tag mb0">
                                 <li class="list-inline-item color-white">{{$property->propertyType->title}}</li>

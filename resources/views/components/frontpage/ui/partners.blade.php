@@ -11,16 +11,16 @@
         </div>
         <div class="row">
             <div class="col d-flex">
-                    <img class="mx-auto img-fluid" src="{{url('assets/frontpage')}}/images/partners/beyceli.png" alt="beyceli.png">
+                    <img class="mx-auto img-fluid lazy" data-src="{{url('assets/frontpage')}}/images/partners/beyceli.png" alt="beyceli.png">
             </div>
             <div class="col d-flex">
-                    <img class="mx-auto img-fluid" src="{{url('assets/frontpage')}}/images/partners/dag-n-deniz.png" alt="dag-n-deniz.png">
+                    <img class="mx-auto img-fluid lazy" data-src="{{url('assets/frontpage')}}/images/partners/dag-n-deniz.png" alt="dag-n-deniz.png">
             </div>
             <div class="col d-flex">
-                    <img class="mx-auto img-fluid" src="{{url('assets/frontpage')}}/images/partners/imaret-real-estate.png" alt="imaret-real-estate.png">
+                    <img class="mx-auto img-fluid lazy" data-src="{{url('assets/frontpage')}}/images/partners/imaret-real-estate.png" alt="imaret-real-estate.png">
             </div>
             <div class="col d-flex">
-                    <img class="mx-auto img-fluid" src="{{url('assets/frontpage')}}/images/partners/mandyano.png" alt="mandyano.png">
+                    <img class="mx-auto img-fluid lazy" data-src="{{url('assets/frontpage')}}/images/partners/mandyano.png" alt="mandyano.png">
             </div>
         </div>
     </div>

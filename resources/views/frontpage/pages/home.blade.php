@@ -193,13 +193,13 @@
             <div class="col-md-6">
                 <div class="position-relative h700 d-none-sm ">
                     <div class="position-absolute  w-35 h-50 top-left">
-                        <img class="fit-cover  w-100 h-100" src="{{url('assets/frontpage/images/home/10.jpg')}}"></img>
+                        <img class="fit-cover  w-100 h-100 lazy" data-src="{{url('assets/frontpage/images/home/10.jpg')}}"></img>
                     </div>
                     <div class="position-absolute w-75 h-75 middle">
-                        <img class="fit-cover w-100 h-100" src="{{url('assets/frontpage/images/home/11.jpg')}}"></img>
+                        <img class="fit-cover w-100 h-100 lazy" data-src="{{url('assets/frontpage/images/home/11.jpg')}}"></img>
                     </div>
                     <div class="position-absolute w-35 h-50 bottom-right">
-                        <img class="fit-cover w-100 h-100" src="{{url('assets/frontpage/images/home/12.jpg')}}"></img>
+                        <img class="fit-cover w-100 h-100 lazy" data-src="{{url('assets/frontpage/images/home/12.jpg')}}"></img>
                     </div>
                     <div class="position-absolute w-100 h-25 bottom-right">
                         <div class="bg-white w-50 p-3 d-flex">
@@ -244,7 +244,7 @@
             @foreach($citiesByProperties as $city)
             <div class="col-sm-6 col-md-4 col-lg-4 col-xl-3" onclick="window.location = `{{route('home.filter', ['city_id' => $city->id])}}`">
                 <div class="properti_city ">
-                    <div class="thumb"><img style="height: 350px; object-fit: cover;" class="img-fluid w100" src="{{ ($city->image()) != null? ($city->image()?->getUrl()) : url('assets/frontpage/images/categories/city361x350.png')}}" alt="city361x350.png"></div>
+                    <div class="thumb"><img style="height: 350px; object-fit: cover;" class="img-fluid w100 lazy" data-src="{{ ($city->image()) != null? ($city->image()?->getUrl()) : url('assets/frontpage/images/categories/city361x350.png')}}" alt="city361x350.png"></div>
                     <div class="overlay">
                         <div class="details">
                             <h4>{{$city->name}}</h4>
@@ -268,7 +268,7 @@
                 <div class="">
                     <div class="bg-light bg-white-34 pl-5 pl-2 py-3 br-15 row my-4">
                         <div class="col p-1">
-                            <img width="48" height="49" src="{{url('assets/frontpage/images/home/intersection-1.png')}}"></img>
+                            <img width="48" height="49" class="lazy" data-src="{{url('assets/frontpage/images/home/intersection-1.png')}}"></img>
                         </div>
                         <div class="col mw-245">
                             <h4 class="color-whitef0 font-23px mb-0 fw400 ">{{__('Advanced Infrastructure')}}</h4>
@@ -276,7 +276,7 @@
                     </div>
                     <div class="bg-light bg-white-34 pl-5 pl-2 py-3 br-15 row my-4">
                         <div class="col p-1">
-                            <img width="48" height="49" src="{{url('assets/frontpage/images/home/intersection-2.png')}}"></img>
+                            <img width="48" height="49" class="lazy" data-src="{{url('assets/frontpage/images/home/intersection-2.png')}}"></img>
                         </div>
                         <div class="col mw-245">
                             <h4 class="color-whitef0 font-23px mb-0 fw400 ">{{__('Attractive Investment Climate')}}</h4>
@@ -287,7 +287,7 @@
             </div>
             <div class="col-xl-4">
                 <div class="card br-25">
-                    <img src="{{url('assets/frontpage/images/home/b1.jpg')}}" class="card-img-top br-25 m-3" style="width: unset;">
+                    <img data-src="{{url('assets/frontpage/images/home/b1.jpg')}}" class="card-img-top br-25 m-3 lazy" style="width: unset;">
                     <div class="card-body">
                         <h6 class="card-subtitle mb-1 text-muted">Investment</h6>
                         <h2 class="card-title">Invest in Bursa</h2>
@@ -314,7 +314,7 @@
                 <div class="mt-xl-242">
                     <div class="bg-light bg-white-34 pl-5 pl-2 py-3 br-15 row my-4">
                         <div class="col p-1">
-                            <img width="48" height="49" src="{{url('assets/frontpage/images/home/intersection-3.png')}}"></img>
+                            <img width="48" height="49" class="lazy" data-src="{{url('assets/frontpage/images/home/intersection-3.png')}}"></img>
                         </div>
                         <div class="col mw-245">
                             <h4 class="color-whitef0 font-23px mb-0 fw400 ">{{__('Strategic Geographic Location')}}</h4>
@@ -322,7 +322,7 @@
                     </div>
                     <div class="bg-light bg-white-34 pl-5 pl-2 py-3 br-15 row my-4">
                         <div class="col p-1">
-                            <img width="48" height="49" src="{{url('assets/frontpage/images/home/intersection-4.png')}}"></img>
+                            <img width="48" height="49" class="lazy" data-src="{{url('assets/frontpage/images/home/intersection-4.png')}}"></img>
                         </div>
                         <div class="col mw-245">
                             <h4 class="color-whitef0 font-23px mb-0 fw400 ">{{__('Dynamic Entrepreneurs')}}</h4>
@@ -347,7 +347,7 @@
                 </a>
             </div>
             <div class="col-xl-6  order-xl-2 order-1 ">
-                <img style="height: 350px; object-fit: contain;" class="img-fluid h-100 br-15 w100" src="{{ url('assets/frontpage/images/home/1.png')}}" alt="category361x350.png">
+                <img style="height: 350px; object-fit: contain;" class="img-fluid h-100 br-15 w100 lazy" data-src="{{ url('assets/frontpage/images/home/1.png')}}" alt="category361x350.png">
             </div>
         </div>
     </div>
@@ -373,7 +373,7 @@
             @if($wideCategoryDesign)
             <div class="col-lg-4 col-xl-4" onclick="window.location = `{{route('home.filter', ['category_id' => $category->id])}}`">
                 <div class="properti_city home5">
-                    <div class="thumb"><img style="height: 350px; object-fit: cover;" class="img-fluid w100" src="{{ ($category->image()) != null? ($category->image()?->getUrl()) : url('assets/frontpage/images/categories/category361x350.png')}}" alt="category361x350.png"></div>
+                    <div class="thumb"><img style="height: 350px; object-fit: cover;" class="img-fluid w100 lazy" data-src="{{ ($category->image()) != null? ($category->image()?->getUrl()) : url('assets/frontpage/images/categories/category361x350.png')}}" alt="category361x350.png"></div>
                     <div class="overlay">
                         <div class="details">
                             <div class="left">
@@ -387,7 +387,7 @@
             @else
             <div class="col-lg-8 col-xl-8" onclick="window.location = `{{route('home.filter', ['category_id' => $category->id])}}`">
                 <div class="properti_city home5">
-                    <div class="thumb"><img style="height: 350px; object-fit: cover;" class="img-fluid w100" src="{{ ($category->image()) != null? ($category->image()?->getUrl()) : url('assets/frontpage/images/categories/categories-default748x350.png')}}" alt="categories-default748x350.png"></div>
+                    <div class="thumb"><img style="height: 350px; object-fit: cover;" class="img-fluid w100 lazy" data-src="{{ ($category->image()) != null? ($category->image()?->getUrl()) : url('assets/frontpage/images/categories/categories-default748x350.png')}}" alt="categories-default748x350.png"></div>
                     <div class="overlay">
                         <div class="details">
                             <div class="left">
@@ -432,7 +432,7 @@
                     <div class="item">
                         <div class="feat_property" onclick="window.location = `{{route('home.property', [$property->id])}}`">
                             <div class="thumb">
-                                <img style="height: 230px" class="img-whp" src="{{isset($property->media[0])? url($property->media[0]->getUrl()) : url('frontpage/images/property/fp1.jpg')}}">
+                                <img style="height: 230px" class="img-whp lazy" data-src="{{isset($property->media[0])? url($property->media[0]->getUrl()) : url('frontpage/images/property/fp1.jpg')}}">
                                 <div class="thmb_cntnt">
                                     <ul class="tag mb0">
                                         <li class="list-inline-item"><a href="">{{$property->propertyType->title}}</a></li>
@@ -454,7 +454,7 @@
                                 </div>
                                 <div class="fp_footer">
                                     <ul class="fp_meta float-left mb0">
-                                        <li class="list-inline-item"><a href=""><img style="height: 40px; width: 40px; object-fit: cover;" src="{{ $property->agent->photo != null ? (Storage::url($property->agent->photo)) : url('assets/frontpage/images/agents/av-man.png')}}" alt=""></a></li>
+                                        <li class="list-inline-item"><a href=""><img style="height: 40px; width: 40px; object-fit: cover;" class="lazy" data-src="{{ $property->agent->photo != null ? (Storage::url($property->agent->photo)) : url('assets/frontpage/images/agents/av-man.png')}}" alt=""></a></li>
                                         <li class="list-inline-item"><a href="">{{$property->agent->name}} {{$property->agent->surname}}</a></li>
                                     </ul>
                                     <div class="fp_pdate float-right">{{$property->created_at?->diffForHumans()}}</div>
@@ -566,7 +566,7 @@
                     <div class="item">
                         <div class="testimonial_grid">
                             <div class="thumb">
-                                <img src="{{url('dashboard/assets/img/avatars/1.png')}}" alt="1.jpg">
+                                <img class="lazy" data-src="{{url('dashboard/assets/img/avatars/1.png')}}" alt="1.jpg">
                             </div>
                             <div class="details">
                                 <h4>Meryam Mousalli</h4>
@@ -578,7 +578,7 @@
                     <div class="item">
                         <div class="testimonial_grid">
                             <div class="thumb">
-                                <img src="{{url('dashboard/assets/img/avatars/1.png')}}" alt="1.jpg">
+                                <img class="lazy" data-src="{{url('dashboard/assets/img/avatars/1.png')}}" alt="1.jpg">
                             </div>
                             <div class="details">
                                 <h4>djouhar aktas</h4>
@@ -590,7 +590,7 @@
                     <div class="item">
                         <div class="testimonial_grid">
                             <div class="thumb">
-                                <img src="{{url('dashboard/assets/img/avatars/1.png')}}" alt="1.jpg">
+                                <img class="lazy" data-src="{{url('dashboard/assets/img/avatars/1.png')}}" alt="1.jpg">
                             </div>
                             <div class="details">
                                 <h4>Chorbette</h4>

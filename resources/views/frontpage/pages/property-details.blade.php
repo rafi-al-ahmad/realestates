@@ -8,7 +8,7 @@
                 <div class="row m0">
                     <div class="col-lg-12 p0">
                         <div class="spls_style_one pr1 1px">
-                            <img class="img-fluid w100" src="{{isset($property->media[0]) ? $property->media[0]?->getUrl() : url('assets/frontpage/images/properties/959x600.jpg')}}" alt="959x600.jpg">
+                            <img class="img-fluid w100 lazy" data-src="{{isset($property->media[0]) ? $property->media[0]?->getUrl() : url('assets/frontpage/images/properties/959x600.jpg')}}" alt="959x600.jpg">
                         </div>
                     </div>
                 </div>
@@ -17,22 +17,22 @@
                 <div class="row m0">
                     <div class="col-sm-6 col-lg-6 p0">
                         <div class="spls_style_one">
-                            <a class="popup-img" href="{{isset($property->media[1]) ? $property->media[1]?->getUrl() : url('assets/frontpage/images/properties/480x300.jpg')}}"><img class="img-fluid w100" src="{{isset($property->media[1]) ? $property->media[1]?->getUrl() : url('assets/frontpage/images/properties/480x300.jpg')}}" alt="ls2.jpg"></a>
+                            <a class="popup-img" href="{{isset($property->media[1]) ? $property->media[1]?->getUrl() : url('assets/frontpage/images/properties/480x300.jpg')}}"><img class="img-fluid w100 lazy" data-src="{{isset($property->media[1]) ? $property->media[1]?->getUrl() : url('assets/frontpage/images/properties/480x300.jpg')}}" alt="ls2.jpg"></a>
                         </div>
                     </div>
                     <div class="col-sm-6 col-lg-6 p0">
                         <div class="spls_style_one">
-                            <a class="popup-img" href="{{isset($property->media[2]) ? $property->media[2]?->getUrl() : url('assets/frontpage/images/properties/480x300.jpg')}}"><img class="img-fluid w100" src="{{isset($property->media[2]) ? $property->media[2]?->getUrl() : url('assets/frontpage/images/properties/480x300.jpg')}}" alt="ls3.jpg"></a>
+                            <a class="popup-img" href="{{isset($property->media[2]) ? $property->media[2]?->getUrl() : url('assets/frontpage/images/properties/480x300.jpg')}}"><img class="img-fluid w100 lazy" data-src="{{isset($property->media[2]) ? $property->media[2]?->getUrl() : url('assets/frontpage/images/properties/480x300.jpg')}}" alt="ls3.jpg"></a>
                         </div>
                     </div>
                     <div class="col-sm-6 col-lg-6 p0">
                         <div class="spls_style_one">
-                            <a class="popup-img" href="{{isset($property->media[3]) ? $property->media[3]?->getUrl() : url('assets/frontpage/images/properties/480x300.jpg')}}"><img class="img-fluid w100" src="{{isset($property->media[3]) ? $property->media[3]?->getUrl() : url('assets/frontpage/images/properties/480x300.jpg')}}" alt="ls4.jpg"></a>
+                            <a class="popup-img" href="{{isset($property->media[3]) ? $property->media[3]?->getUrl() : url('assets/frontpage/images/properties/480x300.jpg')}}"><img class="img-fluid w100 lazy" data-src="{{isset($property->media[3]) ? $property->media[3]?->getUrl() : url('assets/frontpage/images/properties/480x300.jpg')}}" alt="ls4.jpg"></a>
                         </div>
                     </div>
                     <div class="col-sm-6 col-lg-6 p0">
                         <div class="spls_style_one">
-                            <a class="popup-img" href="{{isset($property->media[4]) ? $property->media[4]?->getUrl() : url('assets/frontpage/images/properties/480x300.jpg')}}"><img class="img-fluid w100" src="{{isset($property->media[4]) ? $property->media[4]?->getUrl() : url('assets/frontpage/images/properties/480x300.jpg')}}" alt="ls5.jpg"></a>
+                            <a class="popup-img" href="{{isset($property->media[4]) ? $property->media[4]?->getUrl() : url('assets/frontpage/images/properties/480x300.jpg')}}"><img class="img-fluid w100 lazy" data-src="{{isset($property->media[4]) ? $property->media[4]?->getUrl() : url('assets/frontpage/images/properties/480x300.jpg')}}" alt="ls5.jpg"></a>
                         </div>
                     </div>
                     @for($i = 5; $i < count($property->media); $i++)
@@ -306,7 +306,7 @@
                         <div class="sl_creator">
                             <h4 class="mb25">{{__('Listed By')}}</h4>
                             <div class="media">
-                                <img class="mr-3" style="height: 90px; width: 90px;" src="{{$property->agent->photo != null ? (Storage::url($property->agent->photo)) : url('assets/frontpage/images/agents/av-man.png')}}" alt="{{__('agent image')}}">
+                                <img class="mr-3 lazy" style="height: 90px; width: 90px;" data-src="{{$property->agent->photo != null ? (Storage::url($property->agent->photo)) : url('assets/frontpage/images/agents/av-man.png')}}" alt="{{__('agent image')}}">
                                 <div class="media-body">
                                     <h5 class="mt-0 mb0">{{$property->agent?->name}} {{$property->agent?->surname}}</h5>
                                     <p class="mb0">{{$property->agent?->mobile_phone}}</p>
