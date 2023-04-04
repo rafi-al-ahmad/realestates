@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\CitiesController;
+use App\Http\Controllers\ContactRequestsController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DefinitionsController;
 use App\Http\Controllers\HomeController;
@@ -57,6 +58,8 @@ Route::group([
         Route::post('agent/update/{id}', [AgentController::class, 'update']);
         Route::get('agent/delete/{id}', [AgentController::class, 'delete'])->name('agents.delete');
 
+
+        Route::get('contact/requests', [ContactRequestsController::class, 'index'])->name('contact');
 
         Route::get('categories', [CategoriesController::class, 'listCategories'])->name('categories');
         Route::post('category/create', [CategoriesController::class, 'store'])->name('categories.create');
@@ -123,6 +126,7 @@ Route::post("login", [LoginController::class, "login"]);
 Route::get('/', [HomeController::class, "index"])->name('home');
 Route::get('/properties', [HomeController::class, "filter"])->name('home.filter');
 Route::get('/contact', [HomeController::class, "showContactUsPage"])->name('home.contact');
+Route::post('/contact', [ContactRequestsController::class, "store"]);
 Route::get('/property/{id}', [HomeController::class, "showProperty"])->name('home.property');
 Route::get('/blog', [BlogController::class, "showBlog"])->name('home.blog');
 Route::get('/blog/{id}', [BlogController::class, "showArticle"])->name('home.blog.article');

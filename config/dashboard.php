@@ -10,6 +10,15 @@ return [
             "url" => null,
         ],
         [
+            "name" => "contact",
+            "icon" => "menu-icon tf-icons ti ti-message",
+            "slug" => [
+                "contact",
+            ],
+            "route" => 'contact',
+            "url" => null,
+        ],
+        [
             "name" => "users",
             "icon" => "menu-icon tf-icons ti ti-users",
             "slug" => [

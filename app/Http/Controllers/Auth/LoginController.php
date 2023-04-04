@@ -30,7 +30,7 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
-    
+
     public function redirectTo()
     {
         return route('admin');
@@ -44,7 +44,7 @@ class LoginController extends Controller
         return redirect($this->redirectTo());
     }
 
-    
+
     /**
      * Handle a login request to the application.
      *
