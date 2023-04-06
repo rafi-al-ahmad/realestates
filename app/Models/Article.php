@@ -5,10 +5,13 @@ namespace App\Models;
 use App\Traits\ModelTranslations;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
+use RalphJSmit\Laravel\SEO\Support\HasSEO;
+use RalphJSmit\Laravel\SEO\Support\SEOData;
 
 class Article extends Model
 {
-    use HasFactory;
+    use HasFactory, HasSEO;
 
     protected $fillable = [
         "title",
@@ -39,4 +42,13 @@ class Article extends Model
         return $this->hasOne(Agent::class, 'id', 'agent_id');
     }
 
+
+    public function getDynamicSEOData(): SEOData
+    {
+        return new SEOData(
+            title: $this->meta_title,
+            description: $this->meta_desc,
+            image: $this->photo? url(Storage::url($this->photo)) : null,
+        );
+    }
 }

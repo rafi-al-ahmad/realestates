@@ -1,4 +1,7 @@
 @extends('frontpage.layouts.index')
+@push('seo')
+{!! seo($article ?? null) !!}
+@endpush
 @section('content')
 
 <!-- Main Blog Post Content -->
