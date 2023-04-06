@@ -1,10 +1,9 @@
-<div class="for_blog feat_property">
+<div class="for_blog feat_property"  onclick="window.location = `{{route('home.blog.article', [$article->id])}}`">
     <div class="thumb">
     <img width="340px" height="230px" class="img-whp lazy" data-src="{{ $article->photo != null ? (Storage::url($article->photo)) : url('assets/frontpage/images/blog/1.jpg')}}" alt="1.jpg">
     </div>
     <div class="details">
         <div class="tc_content">
-            <!-- <p class="text-thm">Business</p> -->
             <h4>{{$article->title}}</h4>
         </div>
         <div class="fp_footer">
