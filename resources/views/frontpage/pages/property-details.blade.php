@@ -8,7 +8,7 @@
                 <div class="row m0">
                     <div class="col-lg-12 p0">
                         <div class="spls_style_one pr1 1px">
-                            <img class="img-fluid w100 lazy" data-src="{{isset($property->media[0]) ? $property->media[0]?->getUrl() : url('assets/frontpage/images/properties/959x600.jpg')}}"  style="object-fit: cover;  width:'959px'; height:'600px',"  alt="959x600.jpg">
+                            <img class="img-fluid w100 lazy" data-src="{{isset($property->media[0]) ? $property->media[0]?->getUrl() : url('assets/frontpage/images/properties/959x600.jpg')}}"  style="object-fit: cover;  width:959px; height:600px,"  alt="959x600.jpg">
                         </div>
                     </div>
                 </div>
@@ -17,22 +17,22 @@
                 <div class="row m0">
                     <div class="col-sm-6 col-lg-6 p0">
                         <div class="spls_style_one">
-                            <a class="popup-img" href="{{isset($property->media[1]) ? $property->media[1]?->getUrl() : url('assets/frontpage/images/properties/480x300.jpg')}}"><img class="img-fluid w100 lazy" data-src="{{isset($property->media[1]) ? $property->media[1]?->getUrl() : url('assets/frontpage/images/properties/480x300.jpg')}}" style="object-fit: cover;  width:'480px'; height:'300px'," alt="ls2.jpg"></a>
+                            <a class="popup-img" href="{{isset($property->media[1]) ? $property->media[1]?->getUrl() : url('assets/frontpage/images/properties/480x300.jpg')}}"><img class="img-fluid w100 lazy" data-src="{{isset($property->media[1]) ? $property->media[1]?->getUrl() : url('assets/frontpage/images/properties/480x300.jpg')}}" style="object-fit: cover;  width:480px; height:300px," alt="ls2.jpg"></a>
                         </div>
                     </div>
                     <div class="col-sm-6 col-lg-6 p0">
                         <div class="spls_style_one">
-                            <a class="popup-img" href="{{isset($property->media[2]) ? $property->media[2]?->getUrl() : url('assets/frontpage/images/properties/480x300.jpg')}}"><img class="img-fluid w100 lazy" data-src="{{isset($property->media[2]) ? $property->media[2]?->getUrl() : url('assets/frontpage/images/properties/480x300.jpg')}}" style="object-fit: cover;  width:'480px'; height:'300px'," alt="ls3.jpg"></a>
+                            <a class="popup-img" href="{{isset($property->media[2]) ? $property->media[2]?->getUrl() : url('assets/frontpage/images/properties/480x300.jpg')}}"><img class="img-fluid w100 lazy" data-src="{{isset($property->media[2]) ? $property->media[2]?->getUrl() : url('assets/frontpage/images/properties/480x300.jpg')}}" style="object-fit: cover;  width:480px; height:300px," alt="ls3.jpg"></a>
                         </div>
                     </div>
                     <div class="col-sm-6 col-lg-6 p0">
                         <div class="spls_style_one">
-                            <a class="popup-img" href="{{isset($property->media[3]) ? $property->media[3]?->getUrl() : url('assets/frontpage/images/properties/480x300.jpg')}}"><img class="img-fluid w100 lazy" data-src="{{isset($property->media[3]) ? $property->media[3]?->getUrl() : url('assets/frontpage/images/properties/480x300.jpg')}}" style="object-fit: cover;  width:'480px'; height:'300px'," alt="ls4.jpg"></a>
+                            <a class="popup-img" href="{{isset($property->media[3]) ? $property->media[3]?->getUrl() : url('assets/frontpage/images/properties/480x300.jpg')}}"><img class="img-fluid w100 lazy" data-src="{{isset($property->media[3]) ? $property->media[3]?->getUrl() : url('assets/frontpage/images/properties/480x300.jpg')}}" style="object-fit: cover;  width:480px; height:300px," alt="ls4.jpg"></a>
                         </div>
                     </div>
                     <div class="col-sm-6 col-lg-6 p0">
                         <div class="spls_style_one">
-                            <a class="popup-img" href="{{isset($property->media[4]) ? $property->media[4]?->getUrl() : url('assets/frontpage/images/properties/480x300.jpg')}}"><img class="img-fluid w100 lazy" data-src="{{isset($property->media[4]) ? $property->media[4]?->getUrl() : url('assets/frontpage/images/properties/480x300.jpg')}}" style="object-fit: cover;  width:'480px'; height:'300px'," alt="ls5.jpg"></a>
+                            <a class="popup-img" href="{{isset($property->media[4]) ? $property->media[4]?->getUrl() : url('assets/frontpage/images/properties/480x300.jpg')}}"><img class="img-fluid w100 lazy" data-src="{{isset($property->media[4]) ? $property->media[4]?->getUrl() : url('assets/frontpage/images/properties/480x300.jpg')}}" style="object-fit: cover;  width:480px; height:300px," alt="ls5.jpg"></a>
                         </div>
                     </div>
                     @for($i = 5; $i < count($property->media); $i++)
