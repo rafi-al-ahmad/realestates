@@ -1,4 +1,7 @@
 @extends('frontpage.layouts.index')
+@push('seo')
+{!! seo($property ?? null) !!}
+@endpush
 @section('content')
 
 <div class="single_page_listing_style" style="width: 96.6%;">
@@ -8,7 +11,7 @@
                 <div class="row m0">
                     <div class="col-lg-12 p0">
                         <div class="spls_style_one pr1 1px">
-                            <img class="img-fluid w100 lazy" data-src="{{isset($property->media[0]) ? $property->media[0]?->getUrl() : url('assets/frontpage/images/properties/959x600.jpg')}}"  style="object-fit: cover;  width:959px; height:600px;"  alt="959x600.jpg">
+                            <img class="img-fluid w100 lazy" data-src="{{isset($property->media[0]) ? $property->media[0]?->getUrl() : url('assets/frontpage/images/properties/959x600.jpg')}}" style="object-fit: cover;  width:959px; height:600px;" alt="959x600.jpg">
                         </div>
                     </div>
                 </div>

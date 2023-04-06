@@ -6,6 +6,8 @@ use App\Traits\ModelTranslations;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use RalphJSmit\Laravel\SEO\Support\HasSEO;
+use RalphJSmit\Laravel\SEO\Support\SEOData;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\Image\Manipulations;
@@ -13,7 +15,7 @@ use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 class Property extends Model implements HasMedia
 {
-    use HasFactory, ModelTranslations, InteractsWithMedia;
+    use HasFactory, ModelTranslations, InteractsWithMedia, HasSEO;
 
     protected $fillable = [
         "title",
@@ -175,4 +177,13 @@ class Property extends Model implements HasMedia
         ])->limit($limit)->get();
     }
 
+    public function getDynamicSEOData(): SEOData
+    {
+        return new SEOData(
+            title: $this->meta_title,
+            description: $this->meta_desc,
+            author: $this->agent?->fullName,
+            image: $this->image()?->getUrl()
+        );
+    }
 }
