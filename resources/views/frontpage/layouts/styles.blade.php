@@ -8,6 +8,7 @@
 <link href="{{url('/')}}/assets/frontpage/images/favicon.ico" sizes="128x128" rel="shortcut icon" type="image/x-icon" />
 <link href="{{url('/')}}/assets/frontpage/images/favicon.ico" sizes="128x128" rel="shortcut icon" />
 <link rel="stylesheet" href="{{url('dashboard')}}/assets/vendor/fonts/fontawesome.css" />
+<link rel="stylesheet" href="{{url('dashboard')}}/assets/vendor/libs/toastr/toastr.css" />
 
 <style>
     .home5_bgi5 {
