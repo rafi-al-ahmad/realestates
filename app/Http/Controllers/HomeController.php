@@ -219,7 +219,7 @@ class HomeController extends Controller
     public function showProperty($id)
     {
         $property = Property::find($id);
-
+        $property->increment('views');
         $definitions = Definition::getActiveByType();
         $featuresByGroup = PropertyFeatures::getFeaturesByGroup($definitions['feature'] ?? new Collection());
         $propertyFeaturesByGroup = PropertyFeatures::getFeaturesByGroup($property->features);
