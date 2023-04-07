@@ -55,7 +55,7 @@ return [
             "url" => null,
         ],
         [
-            "name" => "blog",
+            "name" => "Blog and Contact",
             "icon" => "menu-icon tf-icons ti ti-article",
             "slug" => [
                 "blogs",
