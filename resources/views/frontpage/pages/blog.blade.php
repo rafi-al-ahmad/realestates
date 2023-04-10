@@ -1,4 +1,5 @@
 @extends('frontpage.layouts.index')
+@section('title', 'Blog')
 @section('content')
 
 <!-- Main Blog Post Content -->

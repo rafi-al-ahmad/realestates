@@ -8,7 +8,7 @@
     <meta name="CreativeLayers" content="ATFN">
     @stack('seo')
 
-    <title>@yield('title') - {{env('APP_NAME')}}</title>
+    <title>@yield('title') | {{env('APP_NAME')}}</title>
 
     @include("frontpage.layouts.styles")
     <!-- Google tag (gtag.js) -->

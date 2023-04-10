@@ -1,4 +1,5 @@
 @extends('frontpage.layouts.index')
+@section('title', 'About Us')
 @section('content')
 
 <section class="inner_page_breadcrumb">

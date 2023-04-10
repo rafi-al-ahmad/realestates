@@ -1,4 +1,5 @@
 @extends('frontpage.layouts.index')
+@section('title', 'Agents')
 @section('content')
 
 
