@@ -167,21 +167,31 @@
     }
 
     header.header-nav.menu_style_home_one .ace-responsive-menu li a {
-        color: {{(Route::currentRouteName() == 'home') ? '#ffffff' : '#484848'}};
+        color: {
+                {
+                (Route::currentRouteName()=='home') ? '#ffffff': '#484848'
+            }
+        }
+
+        ;
     }
 
     .lh-10 {
         line-height: 1 !important;
     }
+
     .lh-15 {
         line-height: 1.5 !important;
     }
+
     .lh-20 {
         line-height: 2 !important;
     }
+
     .lh-25 {
         line-height: 2.5 !important;
     }
+
     .lh-30 {
         line-height: 3 !important;
     }
@@ -307,6 +317,10 @@
 
     .w-35 {
         width: 35% !important;
+    }
+
+    .feat_property .details .tc_content {
+        min-height: 190px;
     }
 </style>
 @stack('style')
