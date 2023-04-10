@@ -158,6 +158,7 @@
     "date (newer first)": "Tarih (yeniden eskiye)",
     "date (older first)": "Tarih (eskiden yenide)",
     "Contact": "İletişim",
+    "contact": "İletişim",
     "Contact Us": "Bize Ulaşın",
     "Send Us An Email": "Bize E-posta Gönder",
     "Thank you for visiting our page, and we hope that you liked property listing that we are offering you. In the case that you have different inquiry or more questions don’t  hesitate to contact us.": "Sayfamızı ziyaret ettiğiniz için teşekkür ederiz ve size sunduğumuz emlak listelemerini beğendinizi umuyoruz. Farklı bir sorunuz veya daha fazla sorunuz olması durumunda bizimle iletişime geçmekten çekinmeyin",
@@ -236,7 +237,7 @@
     "Türkiye Citizenship by Investment": "Yatırım Yolu ile Türkiye Vatandaşlığı",
     "Benefits of the Türkiye Citizenship by Investment Program": "Yatırım Yoluyla Türkiye Vatandaşlığı Programının Faydaları",
     "Requirements of Türkiye Citizenship by investment": "Yatırım Yoluyla Türkiye Vatandaşlığı Şartları",
-    "Step by Step Citizenship Procedure: ": "Adım Adım Vatandaşlık Prosedürü: ",
+    "Step by Step Citizenship Procedure:": "Adım Adım Vatandaşlık Prosedürü:",
     "contact us today": "Bizimle İletişime Geçin",
     "Should you have any questions, or if you would like a detailed breakdown of the exact costs for your family, kindly contact us and we will be delighted to help you.": "Eğer herhangi bir sorunuz varsa veya siz ve ailenize özel kesin maliyetlerin detaylı bir açıklamasını isterseniz, bize ulaşın. Size yardımcı olmaktan mutluluk duyacağız.",
     "Add Testimonial": "Referans Ekle",
@@ -305,5 +306,8 @@
     "Among the all beautiful cities of Turkey, we want to single out one particular one for investment and living opportunities - Bursa, known as \"Green Bursa\"": "Türkiye'nin güzel şehirleri arasında, yatırım ve yaşam fırsatları için özellikle bir şehri vurgulamak istiyoruz - 'Yeşil Bursa' olarak da bilinen Bursa.",
     "Strategic Geographic Location": "Stratejik Coğrafi Konum",
     "Dynamic Entrepreneurs": "Dinamik Girişimciler",
-    "Testimonials": "Referanslar"
+    "Testimonials": "Referanslar",
+    "Citizenship": "Vatandaşlığı",
+    "To qualify for citizenship, the main applicant should fulfil one of the following investment requirements:":"Vatandaşlığa hak kazanmak için, ana başvuru sahibinin aşağıdaki yatırım koşullarından birini karşılaması gerekir:",
+    "Procedures and time frame of the Türkiye Citizenship by Investment Program":"Yatırım Yoluyla Türk Vatandaşlığı Programının prosedürleri ve zaman çerçevesi"
 }
