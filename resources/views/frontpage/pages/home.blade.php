@@ -258,6 +258,7 @@
             <div class="col-lg-12">
                 <div class="main-title">
                     <h2>{{__('Find Properties in These Cities')}}</h2>
+                    <p>{{__("High-rise apartments, Penthouses for sale, Holiday Homes, Resort Properties and so much more to offer.")}}</p>
                 </div>
             </div>
         </div>
