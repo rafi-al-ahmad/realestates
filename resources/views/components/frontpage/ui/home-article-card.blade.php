@@ -3,7 +3,7 @@
         <img width="340px" height="230px" class="img-whp lazy" data-src="{{ $article->photo != null ? (Storage::url($article->photo)) : url('assets/frontpage/images/blog/1.jpg')}}" alt="1.jpg">
     </div>
     <div class="details">
-        <div class="tc_content">
+        <div class="tc_content" style="min-height: unset;">
             <h4>{{$article->title}}</h4>
             <p style="min-height: 75px; -webkit-line-clamp: 3; display: -webkit-box; -webkit-box-orient: vertical; overflow: hidden;">{{$article->banner}}</p>
 
