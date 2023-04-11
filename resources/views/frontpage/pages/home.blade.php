@@ -1,6 +1,25 @@
 @extends('frontpage.layouts.index')
 @section('title', 'Home')
+@push('seo')
+<!-- Primary Meta Tags -->
+<title>Home | Beynil</title>
+<meta name="title" content="Home | Beynil">
+<meta name="description" content="Beynil is a reliable and prestigious real estate agency established to meet the needs of people such as houses, land, shops, offices, and also to provide consultancy to those who want to evaluate their real estate profitably.">
 
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://metatags.io/">
+<meta property="og:title" content="Home | Beynil">
+<meta property="og:description" content="Beynil is a reliable and prestigious real estate agency established to meet the needs of people such as houses, land, shops, offices, and also to provide consultancy to those who want to evaluate their real estate profitably.">
+<meta property="og:image" content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://metatags.io/">
+<meta property="twitter:title" content="Home | Beynil">
+<meta property="twitter:description" content="Beynil is a reliable and prestigious real estate agency established to meet the needs of people such as houses, land, shops, offices, and also to provide consultancy to those who want to evaluate their real estate profitably.">
+<meta property="twitter:image" content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png">
+@endpush
 @section('content')
 
 <!-- Home Design -->
@@ -611,7 +630,71 @@
 <!-- partners -->
 <x-frontpage.ui.partners />
 
-<section class="start-partners home5 pt50 pb50">
+<section class="start-partners home5 pt80 pb80">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-7 col-md-12">
+                <div class="contact p-5" style="background: #033f6b;">
+                    <div class="section_header py-3">
+                        <h1 class="text-white">{{__("Contact Us To get all the assistant you need")}}</h1>
+                        <p class="text-white">{{__("By purchasing property in Bursa, Turkey, you primarily invest money in your well-being. Coming to your cozy apartment with a view of the sea or a country house with a wonderful garden, you will enjoy the tranquility of your place.")}}</p>
+                    </div>
+                    <form class="contact_form" action="{{route('home.contact')}}" method="post">
+                        @csrf
+                        <div class="form-container pt-4 py-3">
+                            <div class="row">
+                                <div class="col-md-6 col-lg-6">
+                                    <div class="form-group">
+                                        <input type="text" name="name" class="form-control" placeholder="{{__('Name')}}" required="">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-6">
+                                    <div class="form-group">
+                                        <input type="email" name="email" class="form-control" placeholder="{{__('Email')}}" required="">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-6">
+                                    <div class="form-group">
+                                        <input type="phone" name="phone" class="form-control" placeholder="{{__('Phone')}}" required="">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-6">
+                                    <div class="form-group">
+                                        <select name="subject" required name="language" class="form-control form-select" aria-label="">
+                                            <option value="">{{__('Subject')}}</option>
+                                            <option value="I want to buy Apartment">{{__('I want to buy Apartment')}}</option>
+                                            <option value="I want to buy House">{{__('I want to buy House')}}</option>
+                                            <option value="I want to buy Plot">{{__('I want to buy Plot')}}</option>
+                                            <option value="I want to buy Villa">{{__('I want to buy Villa')}}</option>
+                                            <option value="I want to obtain Citizenship">{{__('I want to obtain Citizenship')}}</option>
+                                            <option value="How to Purchase Property">{{__('How to Purchase Property')}}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-12">
+                                    <div class="form-group">
+                                        <textarea name="message" rows="6" class="form-control" placeholder="Text..." required=""></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-12">
+                                    <div class="parner_reg_btn home5 text-left tac-smd">
+                                        <button class="btn">{{__('Get in touch')}}</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-5 col-md-12 contact">
+                <div class="contact_side_image" data-aos="overlay-right">
+                    <img src="{{url('assets/frontpage/images/home/contact.jpg')}}" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- <section class="start-partners home5 pt50 pb50">
     <div class="container">
         <div class="row">
             <div class="col-lg-8">
@@ -627,11 +710,46 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
+
 
 @endsection
 @push('style')
 <style>
+    .parner_reg_btn.home5 button.btn {
+        background-color: #dfc588;
+        color: #fff;
+    }
+
+    .contact .contact_side_image {
+        display: inline-block;
+        margin-left: -50px;
+    }
+
+    .parner_reg_btn button.btn {
+        border-radius: 8px;
+        background-color: rgb(255, 120, 124);
+        -webkit-box-shadow: 0px 1px 4px 0px rgba(255, 90, 95, 0.3);
+        -moz-box-shadow: 0px 1px 4px 0px rgba(255, 90, 95, 0.3);
+        -o-box-shadow: 0px 1px 4px 0px rgba(255, 90, 95, 0.3);
+        box-shadow: 0px 1px 4px 0px rgba(255, 90, 95, 0.3);
+        height: 60px;
+        line-height: 50px;
+        width: 200px;
+        -webkit-transition: all 0.3s ease;
+        -moz-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+    }
+
+    .parner_reg_btn.home5 button.btn:hover,
+    .parner_reg_btn.home5 button.btn:active,
+    .parner_reg_btn.home5 button.btn:focus {
+        background-color: #232733;
+        border: 1px solid #ffffff;
+        color: #ffffff;
+    }
+
     .owl-dots {
         max-height: 25px;
     }
