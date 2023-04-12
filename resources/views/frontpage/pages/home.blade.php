@@ -8,17 +8,17 @@
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://metatags.io/">
+<meta property="og:url" content="{{url('/')}}">
 <meta property="og:title" content="Home | Beynil">
 <meta property="og:description" content="Beynil is a reliable and prestigious real estate agency established to meet the needs of people such as houses, land, shops, offices, and also to provide consultancy to those who want to evaluate their real estate profitably.">
-<meta property="og:image" content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png">
+<meta property="og:image" content="{{url('assets/frontpage/images/logo/logo-image.jpg')}}">
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content="https://metatags.io/">
+<meta property="twitter:url" content="{{url('/')}}">
 <meta property="twitter:title" content="Home | Beynil">
 <meta property="twitter:description" content="Beynil is a reliable and prestigious real estate agency established to meet the needs of people such as houses, land, shops, offices, and also to provide consultancy to those who want to evaluate their real estate profitably.">
-<meta property="twitter:image" content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png">
+<meta property="twitter:image" content="{{url('assets/frontpage/images/logo/logo-image.jpg')}}">
 @endpush
 @section('content')
 
@@ -646,17 +646,17 @@
                             <div class="row">
                                 <div class="col-md-6 col-lg-6">
                                     <div class="form-group">
-                                        <input type="text" name="name" class="form-control" placeholder="{{__('Name')}}" required="">
+                                        <input type="text" name="name" class="form-control" placeholder="{{__('Name')}}" required>
                                     </div>
                                 </div>
                                 <div class="col-md-6 col-lg-6">
                                     <div class="form-group">
-                                        <input type="email" name="email" class="form-control" placeholder="{{__('Email')}}" required="">
+                                        <input type="email" name="email" class="form-control" placeholder="{{__('Email')}}" required>
                                     </div>
                                 </div>
                                 <div class="col-md-6 col-lg-6">
                                     <div class="form-group">
-                                        <input type="phone" name="phone" class="form-control" placeholder="{{__('Phone')}}" required="">
+                                        <input type="phone" name="phone" class="form-control" placeholder="{{__('Phone')}}" required>
                                     </div>
                                 </div>
                                 <div class="col-md-6 col-lg-6">
