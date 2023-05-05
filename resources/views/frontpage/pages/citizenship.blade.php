@@ -4,8 +4,8 @@
 
 <section class="inner_page_breadcrumb">
     <div class="container">
-        <div class="row">
-            <div class="col-xl-6">
+        <div class="row position-relative">
+            <div class="col-xxl-6">
                 <div class="breadcrumb_content">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="{{route('home')}}">{{__('Home')}}</a></li>
@@ -38,7 +38,7 @@
 <!-- Design -->
 <section class=" bg-blue-light-lg py-0">
     <div class="container">
-        <div class="row">
+        <div class="row ">
             <div class="col-md-12 m-h-480 col-lg-6 section-pb section-pt py-5 d-flex flex-column justify-content-around bg-blue">
                 <div class=""></div>
                 <h2 class="section-content-header text-light">{{__('Citizenship by Investment Overview')}}</h2>
@@ -214,101 +214,12 @@
 @endpush
 @push('style')
 <style>
-    .owl-dots {
-        max-height: 25px;
-    }
 
-    .dd_content2 {
-        width: 350px !important;
-        max-width: unset;
-        height: unset;
-    }
 
     .inner_page_breadcrumb {
         background-image: url("{{url('assets/frontpage/images/citizenship/1.jpg')}}");
     }
 
-    .font20 {
-        font-size: 20px;
-    }
-
-    .font20 {
-        font-size: 15px;
-    }
-
-    .br-0 {
-        border-radius: 0 !important;
-    }
-
-    .min-vh-50 {
-        min-height: 50vh !important;
-    }
-
-    .mr200 {
-        margin-right: 200px !important;
-    }
-
-    @media (max-width: 768px) {
-        .d-md-none {
-            display: none !important;
-        }
-    }
-
-    @media (min-width: 992px) {
-        .bg-blue-light-lg {
-            background: linear-gradient(to right, #013e6b 0%, #013e6b 50%, #F5F5F5 0%, #F5F5F5 50%) !important;
-        }
-
-        .bg-light-85-lg {
-            background: linear-gradient(to right, #F5F5F5 0%, #F5F5F5 85%, #fff 0%, #fff 15%) !important;
-        }
-    }
-
-    .bg-light-85 {
-        background: linear-gradient(to right, #F5F5F5 0%, #F5F5F5 85%, #fff 0%, #fff 15%) !important;
-    }
-
-    .h-480 {
-        height: 480px !important;
-    }
-
-    .m-h-480 {
-        min-height: 480px !important;
-    }
-
-    .w-35 {
-        width: 35% !important;
-    }
-
-    .contactImage {
-        top: -380px;
-        left: 45%;
-        height: 450px;
-        width: 850px;
-    }
-
-    .lh-18 {
-        line-height: 18px;
-    }
-
-    @media only screen and (max-width: 520px) {
-        .inner_page_breadcrumb .breadcrumb_content {
-            margin-top: 150px;
-        }
-
-        .contactImage {
-            top: -380px;
-            left: 60%;
-            height: 450px;
-            width: 850px;
-        }
-    }
-
-    @media only screen and (max-width: 992px) {
-        .d-none-lg {
-            display: none !important;
-        }
-    }
 </style>
 
 @endpush

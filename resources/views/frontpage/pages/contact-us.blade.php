@@ -5,7 +5,7 @@
 
 <!-- Inner Page Breadcrumb -->
 <section class="inner_page_breadcrumb">
-    <div class="container">
+    <div class="container position-relative">
         <div class="row">
             <div class="col-xl-6">
                 <div class="breadcrumb_content">
@@ -30,6 +30,7 @@
                     <p>{{__('Thank you for visiting our page, and we hope that you liked property listing that we are offering you. In the case that you have different inquiry or more questions don’t  hesitate to contact us.')}}</p>
                     <form class="contact_form" id="contact_form" name="contact_form" action="{{route('home.contact')}}" method="post" novalidate="novalidate">
                         @csrf
+                        <input type="hidden" name="page" value="contact">
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
@@ -61,7 +62,7 @@
                             </div>
                             <div class="col-sm-12">
                                 <div class="form-group">
-                                    <textarea id="message" name="message" class="form-control required" rows="5" required placeholder="{{__('Your Message')}}"></textarea>
+                                    <textarea id="message" name="message" style="height: auto;" class="form-control required" rows="5" required placeholder="{{__('Your Message')}}"></textarea>
                                 </div>
                                 <div class="form-group mb0">
                                     <button type="submit" class="btn btn-lg btn-thm">{{__('Send Message')}}</button>

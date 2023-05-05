@@ -246,6 +246,11 @@ class HomeController extends Controller
         return view('frontpage.pages.contact-us');
     }
 
+    public function showContactMessagePage()
+    {
+        return view('frontpage.pages.contact-message');
+    }
+
     public function showAboutUsPage()
     {
         $agents = Agent::where('status', 1)->get();

@@ -197,7 +197,7 @@
                                 </div>
                             </div>
                             <div class="search_option_button home5">
-                                <button type="submit" class="btn btn-block">{{__('Search')}}</button>
+                                <button type="submit" class="btn w-100 btn-block">{{__('Search')}}</button>
                             </div>
                         </form>
                     </div>
@@ -312,6 +312,7 @@
                     <div class="card-body py-4">
                         <form class="contact_form" id="contact_form" name="contact_form" action="{{route('home.contact')}}" method="post" novalidate="novalidate">
                             @csrf
+                            <input type="hidden" name="page" value="home-first">
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
@@ -603,7 +604,7 @@
         <div class="row">
             <div class="col-lg-6 offset-lg-3">
                 <div class="main-title text-center">
-                    <h2 class="color-white">Testimonials</h2>
+                    <h2 class="color-white">{{__('Testimonials')}}</h2>
                     <!-- <p class="color-white">Here could be a nice sub title</p> -->
                 </div>
             </div>
@@ -668,6 +669,7 @@
                     </div>
                     <form class="contact_form" action="{{route('home.contact')}}" method="post">
                         @csrf
+                        <input type="hidden" name="page" value="home-second">
                         <div class="form-container pt-4 py-3">
                             <div class="row">
                                 <div class="col-md-6 col-lg-6">

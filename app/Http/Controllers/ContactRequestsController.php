@@ -39,6 +39,6 @@ class ContactRequestsController extends Controller
             'message' => $data['message'],
         ]);
 
-        return back()->with('success', __("new contact request added successfully"));
+        return redirect(route('home.contact.message', ['page' => $request->page]));
     }
 }

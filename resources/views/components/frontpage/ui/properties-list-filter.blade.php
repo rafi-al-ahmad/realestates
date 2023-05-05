@@ -143,7 +143,7 @@
                 </li>
                 <li>
                     <div class="search_option_button">
-                        <button type="submit" class="btn btn-block btn-thm">{{__('Search')}}</button>
+                        <button type="submit" class="w-100 btn btn-block btn-thm">{{__('Search')}}</button>
                     </div>
                 </li>
             </ul>

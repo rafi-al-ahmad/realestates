@@ -71,7 +71,7 @@
             </div>
             <div class="col-lg-6 col-xl-6">
                 <div class="copyright-widget home5 text-right">
-                    <p>© {{\Carbon\Carbon::now()->format('Y')}} <a class="color-white" target="blank" href="https://oneitsol.com">One IT Solution</a>. Made with love.</p>
+                    <p style="direction: ltr;">© {{\Carbon\Carbon::now()->format('Y')}} <a class="color-white" target="blank" href="https://oneitsol.com">One IT Solution</a>. Made with love.</p>
                 </div>
             </div>
         </div>

@@ -5,7 +5,7 @@
         <nav>
             <!-- Menu Toggle btn-->
             <div class="menu-toggle">
-                <img class="nav_logo_img img-fluid" src="{{url('frontpage')}}/images/header-logo.png" alt="header-logo.png">
+                <img class="nav_logo_img img-fluid" src="{{url('/')}}/assets/frontpage/images/logo/logo.png" alt="header-logo.png">
                 <button type="button" id="menu-btn">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -16,7 +16,7 @@
                 <img class="logo1 img-fluid" style="height: 60px;" src="{{url('/')}}/assets/frontpage/images/logo/{{ request()->route()->getName() == 'home' ?'beynil-logo-white.png' : 'logo.png'}}" alt="header-logo.png">
                 <img class="logo2 img-fluid" style="height: 60px;" src="{{url('/')}}/assets/frontpage/images/logo/logo.png" alt="header-logo2.png">
             </a>
-            <ul id="respMenu" class="ace-responsive-menu text-left" data-menu-style="horizontal">
+            <ul id="respMenu" class="ace-responsive-menu nav-menu d-flex w-auto text-left" data-menu-style="horizontal">
                 <li>
                     <a href="{{route('home')}}"><span class="title">{{__('Home')}}</span></a>
                 </li>
@@ -38,7 +38,7 @@
                 <li class="last">
                     <a href="{{route('home.contact')}}"><span class="title">{{__('Contact')}}</span></a>
                 </li>
-                <li class="list-inline-item home5 float-right">
+                <li class="list-inline-item home5 nav-lang ml-auto">
                     <a href="#"><span class="title text-uppercase">{{app()->currentLocale()}}</span></a>
                     <ul style="margin-left: -30px !important">
                         @foreach(config('app.supported_locales') ?? [] as $locale)

@@ -127,6 +127,7 @@ Route::get('/', [HomeController::class, "index"])->name('home');
 Route::get('/properties', [HomeController::class, "filter"])->name('home.filter');
 Route::get('/contact', [HomeController::class, "showContactUsPage"])->name('home.contact');
 Route::post('/contact', [ContactRequestsController::class, "store"]);
+Route::get('/contact/message', [HomeController::class, "showContactMessagePage"])->name('home.contact.message');
 Route::get('/property/{id}', [HomeController::class, "showProperty"])->name('home.property');
 Route::get('/blog', [BlogController::class, "showBlog"])->name('home.blog');
 Route::get('/blog/{id}', [BlogController::class, "showArticle"])->name('home.blog.article');

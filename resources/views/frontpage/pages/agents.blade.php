@@ -117,7 +117,7 @@
                                         @endif
                                     </ul>
                                 </div>
-                                <div class="fp_footer mt-auto">
+                                <div class="fp_footer mt-auto" style ="direction: ltr;">
                                     <div class="fp_pdate float-right text-thm"><a href="{{route('home.filter', ['agent_id' => $agent->id])}}">{{__('View My Listings')}}</a><i class="fa fa-angle-right"></i></div>
                                 </div>
                             </div>

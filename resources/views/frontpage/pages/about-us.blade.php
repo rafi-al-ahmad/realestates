@@ -3,7 +3,7 @@
 @section('content')
 
 <section class="inner_page_breadcrumb">
-    <div class="container">
+    <div class="container position-relative">
         <div class="row">
             <div class="col-xl-6">
                 <div class="breadcrumb_content">
@@ -52,7 +52,7 @@
 <section class="home-three bg-img-3 mb-3">
     <div class="container">
         <div class="row">
-            <div class="col-md-11">
+            <div class="col-md-11 position-relative">
                 <div class="text-light">
                     <h1 class="text-light">{{__('Why to Invest in Bursa?')}}</h1>
                     <ul class="ml-3 pb-3" style="list-style: disc">
@@ -317,7 +317,7 @@
 
 <!-- Start Partners -->
 <section class="start-partners home5 pt50 pb50">
-    <div class="container">
+    <div class="container ">
         <div class="row">
             <div class="col-lg-8">
                 <div class="start_partner tac-smd">
@@ -326,7 +326,7 @@
                 </div>
             </div>
             <div class="col-lg-4">
-                <div class="parner_reg_btn home5 text-right tac-smd">
+                <div class="parner_reg_btn home5 text-right tac-smd d-flex justify-content-end">
                     <a class="btn" href="{{route('home.filter')}}">{{__('Browse Properties')}}</a>
                 </div>
             </div>
