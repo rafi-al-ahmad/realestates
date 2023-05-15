@@ -147,8 +147,8 @@ $breadcrumbItems = [
                                 </div>
                             </div>
                             <div class="from-group mb-3">
-                                <label class="form-label required">{{__("property type")}}</label>
-                                <select required name="property_type" class="form-select" aria-label="">
+                                <label class="form-label ">{{__("property type")}}</label>
+                                <select  name="property_type" class="form-select" aria-label="">
                                     <option value="">--</option>
                                     @foreach($propertyType as $type)
                                     <option value="{{$type->id}}" {{old('property_type') != null? (old('property_type') == $type->id ? "selected": "") :  (isset($property)? ($property->property_type_id  == $type->id ? 'selected' : "") :'')}}>{{__($type->title)}}</option>
@@ -235,8 +235,8 @@ $breadcrumbItems = [
             <div class="card-body">
                 <div class="row g-3">
                     <div class="col-md-4">
-                        <label class="form-label required">{{__("housing type")}}</label>
-                        <select required name="housing_type" class="form-select" aria-label="">
+                        <label class="form-label ">{{__("housing type")}}</label>
+                        <select  name="housing_type" class="form-select" aria-label="">
                             <option value="">--</option>
                             @foreach($housingType as $type)
                             <option value="{{$type->id}}" {{old('housing_type') != null? (old('housing_type') == $type->id ? "selected": "") :  (isset($property)? ($property->housing_type_id  == $type->id ? 'selected' : "") :'')}}>{{__($type->title)}}</option>
@@ -244,8 +244,8 @@ $breadcrumbItems = [
                         </select>
                     </div>
                     <div class="col-md-4">
-                        <label class="form-label required">{{__("heating type")}}</label>
-                        <select required name="heating_type" class="form-select" aria-label="">
+                        <label class="form-label ">{{__("heating type")}}</label>
+                        <select  name="heating_type" class="form-select" aria-label="">
                             <option value="">--</option>
                             @foreach($heatingType as $type)
                             <option value="{{$type->id}}" {{old('heating_type') != null? (old('heating_type') == $type->id ? "selected": "") :  (isset($property)? ($property->heating_type_id  == $type->id ? 'selected' : "") :'')}}>{{__($type->title)}}</option>
@@ -253,8 +253,8 @@ $breadcrumbItems = [
                         </select>
                     </div>
                     <div class="col-md-4">
-                        <label class="form-label required">{{__("building age")}}</label>
-                        <select required name="building_age" class="form-select" aria-label="">
+                        <label class="form-label ">{{__("building age")}}</label>
+                        <select  name="building_age" class="form-select" aria-label="">
                             <option value="">--</option>
                             @foreach($buildingAge as $age)
                             <option value="{{$age->id}}" {{old('building_age') != null? (old('building_age') == $age->id ? "selected": "") :  (isset($property)? ($property->building_age_id  == $age->id ? 'selected' : "") :'')}}>{{__($age->title)}}</option>
@@ -262,8 +262,8 @@ $breadcrumbItems = [
                         </select>
                     </div>
                     <div class="col-md-4">
-                        <label class="form-label required">{{__("user status")}}</label>
-                        <select required name="user_status" class="form-select" aria-label="">
+                        <label class="form-label ">{{__("user status")}}</label>
+                        <select  name="user_status" class="form-select" aria-label="">
                             <option value="">--</option>
                             @foreach($userStatus as $status)
                             <option value="{{$status->id}}" {{old('user_status') != null? (old('user_status') == $status->id ? "selected": "") :  (isset($property)? ($property->user_status_id  == $status->id ? 'selected' : "") :'')}}>{{__($status->title)}}</option>
@@ -283,32 +283,32 @@ $breadcrumbItems = [
                         <input type="number" value="{{old('dues') ?? (isset($property)? $property->dues : '')}}" name="dues" id="property-dues" class="form-control" />
                     </div>
                     <div class="col-md-4">
-                        <label class="form-label required" for="property-net_area">{{__('net area')}}</label>
-                        <input required type="number" value="{{old('net_area') ?? (isset($property)? $property->net_area : '')}}" name="net_area" id="property-net_area" class="form-control" />
+                        <label class="form-label " for="property-net_area">{{__('net area')}}</label>
+                        <input  type="number" value="{{old('net_area') ?? (isset($property)? $property->net_area : '')}}" name="net_area" id="property-net_area" class="form-control" />
                     </div>
                     <div class="col-md-4">
-                        <label class="form-label required" for="property-gross_area">{{__('gross area')}}</label>
-                        <input type="number" required value="{{old('gross_area') ?? (isset($property)? $property->gross_area : '')}}" name="gross_area" id="property-gross_area" class="form-control" />
+                        <label class="form-label " for="property-gross_area">{{__('gross area')}}</label>
+                        <input type="number"  value="{{old('gross_area') ?? (isset($property)? $property->gross_area : '')}}" name="gross_area" id="property-gross_area" class="form-control" />
                     </div>
                     <div class="col-md-4">
-                        <label class="form-label required" for="property-living_rooms_no">{{__('living rooms no')}}</label>
-                        <input required type="number" value="{{old('living_rooms_no') ?? (isset($property)? $property->living_rooms_no : '')}}" name="living_rooms_no" id="property-living_rooms_no" class="form-control" />
+                        <label class="form-label " for="property-living_rooms_no">{{__('living rooms no')}}</label>
+                        <input  type="number" value="{{old('living_rooms_no') ?? (isset($property)? $property->living_rooms_no : '')}}" name="living_rooms_no" id="property-living_rooms_no" class="form-control" />
                     </div>
                     <div class="col-md-4">
-                        <label class="form-label required" for="property-bedrooms_no">{{__('bedrooms no')}}</label>
-                        <input required type="number" value="{{old('bedrooms_no') ?? (isset($property)? $property->bedrooms_no : '')}}" name="bedrooms_no" id="property-bedrooms_no" class="form-control" />
+                        <label class="form-label " for="property-bedrooms_no">{{__('bedrooms no')}}</label>
+                        <input  type="number" value="{{old('bedrooms_no') ?? (isset($property)? $property->bedrooms_no : '')}}" name="bedrooms_no" id="property-bedrooms_no" class="form-control" />
                     </div>
                     <div class="col-md-4">
-                        <label class="form-label required" for="property-bathrooms_no">{{__('bathrooms no')}}</label>
-                        <input required type="number" value="{{old('bathrooms_no') ?? (isset($property)? $property->bathrooms_no : '')}}" name="bathrooms_no" id="property-bathrooms_no" class="form-control" />
+                        <label class="form-label " for="property-bathrooms_no">{{__('bathrooms no')}}</label>
+                        <input  type="number" value="{{old('bathrooms_no') ?? (isset($property)? $property->bathrooms_no : '')}}" name="bathrooms_no" id="property-bathrooms_no" class="form-control" />
                     </div>
                     <div class="col-md-4">
-                        <label class="form-label required" for="property-building_floors">{{__('building floors')}}</label>
-                        <input required type="number" value="{{old('building_floors') ?? (isset($property)? $property->building_floors : '')}}" name="building_floors" id="property-building_floors" class="form-control" />
+                        <label class="form-label " for="property-building_floors">{{__('building floors')}}</label>
+                        <input  type="number" value="{{old('building_floors') ?? (isset($property)? $property->building_floors : '')}}" name="building_floors" id="property-building_floors" class="form-control" />
                     </div>
                     <div class="col-md-4">
-                        <label class="form-label required" for="property-floor_number">{{__('floor number')}}</label>
-                        <input required type="number" value="{{old('floor_number') ?? (isset($property)? $property->floor_number : '')}}" name="floor_number" id="property-floor_number" class="form-control" />
+                        <label class="form-label " for="property-floor_number">{{__('floor number')}}</label>
+                        <input  type="number" value="{{old('floor_number') ?? (isset($property)? $property->floor_number : '')}}" name="floor_number" id="property-floor_number" class="form-control" />
                     </div>
                     <div class="col-md-4">
                         <label class="form-label required">{{__("city")}}</label>
@@ -442,7 +442,7 @@ $breadcrumbItems = [
     const dropzone = new Dropzone('#dropzone-multi', {
         previewTemplate: previewTemplate,
         parallelUploads: 1,
-        maxFilesize: 1,
+        maxFilesize: 2,
         addRemoveLinks: true,
         acceptedFiles: "image/*",
         dictFallbackMessage: "{{__('Your browser does not support drag\'n\'drop file uploads.')}}",

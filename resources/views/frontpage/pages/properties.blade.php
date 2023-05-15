@@ -121,7 +121,7 @@
                             </div>
                             <div class="details">
                                 <div class="tc_content">
-                                    <p class="text-thm">{{$property->housingType->title}}</p>
+                                    <p class="text-thm">{{$property->housingType?->title}}</p>
                                     <h4>{{$property->title}}</h4>
                                     <p><span class="flaticon-placeholder">{{$property->address?->address}}</span></p>
                                     <ul class="prop_details mb0">

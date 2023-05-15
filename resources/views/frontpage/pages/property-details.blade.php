@@ -93,10 +93,18 @@
                         <div class="listing_single_description style2">
                             <div class="lsd_list">
                                 <ul class="mb0">
-                                    <li class="list-inline-item"><a href="">{{$property->propertyType->title}}</a></li>
+                                    @if($property->propertyType?->title)
+                                    <li class="list-inline-item"><a href="">{{$property->propertyType?->title}}</a></li>
+                                    @endif
+                                    @if($property->bedrooms_no)
                                     <li class="list-inline-item"><a href="">{{__('Beds')}}: {{ $property->bedrooms_no}}</a></li>
+                                    @endif
+                                    @if($property->bathrooms_no)
                                     <li class="list-inline-item"><a href="">{{__('Baths')}}: {{ $property->bathrooms_no}}</a></li>
+                                    @endif
+                                    @if($property->gross_area)
                                     <li class="list-inline-item"><a href="">{{__('Square')}} m<sup>2</sup>: {{$property->gross_area}}</a></li>
+                                    @endif
                                 </ul>
                             </div>
                             <h4 class="mb30">{{__('Description')}}</h4>
@@ -128,12 +136,16 @@
                                         <li>
                                             <p>{{__('Price')}} :</p>
                                         </li>
+                                        @if($property->gross_area)
                                         <li>
                                             <p>{{__('Property Size')}} :</p>
                                         </li>
+                                        @endif
+                                        @if($property->buildingAge)
                                         <li>
                                             <p>{{__('building age')}} :</p>
                                         </li>
+                                        @endif
                                     </ul>
                                     <ul class="list-inline-item">
                                         <li>
@@ -142,54 +154,78 @@
                                         <li>
                                             <p><span>₺{{number_format($property->price_tl, 2, ',', '.')}}</span></p>
                                         </li>
+                                        @if($property->gross_area)
                                         <li>
                                             <p><span>{{$property->gross_area}}</span></p>
                                         </li>
+                                        @endif
+                                        @if($property->buildingAge)
                                         <li>
                                             <p><span>{{$property->buildingAge?->title}}</span></p>
                                         </li>
+                                        @endif
                                     </ul>
                                 </div>
                                 <div class="col-md-6 col-lg-6 col-xl-4">
                                     <ul class="list-inline-item">
+                                        @if($property->bedrooms_no)
                                         <li>
                                             <p>{{__('Bedrooms')}} :</p>
                                         </li>
+                                        @endif
+                                        @if($property->bathrooms_no)
                                         <li>
                                             <p>{{__('Bathrooms')}} :</p>
                                         </li>
+                                        @endif
+                                        @if($property->living_rooms_no)
                                         <li>
                                             <p>{{__('Living Rooms')}} :</p>
                                         </li>
+                                        @endif
                                     </ul>
                                     <ul class="list-inline-item">
+                                        @if($property->bedrooms_no)
                                         <li>
                                             <p><span>{{$property->bedrooms_no}}</span></p>
                                         </li>
+                                        @endif
+                                        @if($property->bathrooms_no)
                                         <li>
                                             <p><span>{{$property->bathrooms_no}}</span></p>
                                         </li>
+                                        @endif
+                                        @if($property->living_rooms_no)
                                         <li>
                                             <p><span>{{$property->living_rooms_no}}</span></p>
                                         </li>
+                                        @endif
                                     </ul>
                                 </div>
                                 <div class="col-md-6 col-lg-6 col-xl-4">
                                     <ul class="list-inline-item">
+                                        @if($property->housingType)
                                         <li>
                                             <p>{{__('housing type')}} :</p>
                                         </li>
+                                        @endif
+                                        @if($property->propertyType)
                                         <li>
                                             <p>{{__('Property Status')}} :</p>
                                         </li>
+                                        @endif
                                     </ul>
                                     <ul class="list-inline-item">
+                                        @if($property->housingType)
                                         <li>
                                             <p><span>{{$property->housingType?->title}}</span></p>
                                         </li>
+                                        @endif
+                                        @if($property->propertyType)
                                         <li>
                                             <p><span>{{$property->propertyType?->title}}</span></p>
                                         </li>
+                                        @endif
                                     </ul>
                                 </div>
                             </div>
@@ -203,14 +239,18 @@
                                 </div>
                                 <div class="col-md-6 col-lg-6">
                                     <ul class="list-inline-item">
+                                        @if($property->rent_deposit)
                                         <li>
                                             <p>Deposit :</p>
                                         </li>
+                                        @endif
                                     </ul>
                                     <ul class="list-inline-item">
+                                        @if($property->rent_deposit)
                                         <li>
                                             <p><span>{{$property->rent_deposit}}</span></p>
                                         </li>
+                                        @endif
                                     </ul>
                                 </div>
                                 <!-- <div class="col-md-6 col-lg-6">

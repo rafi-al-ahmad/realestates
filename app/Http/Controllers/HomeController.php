@@ -16,6 +16,8 @@ use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
+    protected $paginationLimit = 14;
+
     public function index()
     {
         $agents = Agent::select('id', 'name', 'surname', 'photo')->where('status', 1)->get();
@@ -196,7 +198,7 @@ class HomeController extends Controller
         }
 
 
-        $properties = $query->paginate($request->limit);
+        $properties = $query->paginate($request->limit ?? $this->paginationLimit);
 
 
         $categories = Category::select('id', 'title')->where('status', 1)->with('properties')->whereHas('properties')->get();
