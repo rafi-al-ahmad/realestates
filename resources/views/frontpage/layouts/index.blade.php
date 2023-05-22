@@ -63,21 +63,20 @@
 
 
     <!-- Smartsupp Live Chat script -->
-    <script type="text/javascript">
+    <script type=“text/javascript”>
         var _smartsupp = _smartsupp || {};
-        _smartsupp.key = 'da9b549793f518ad4c8cef0ce0dbb9809d51af7a';
+        _smartsupp.key = ‘54 c366f1af7851284a722297e2cf516ba4339e77’;
         window.smartsupp || (function(d) {
             var s, c, o = smartsupp = function() {
                 o._.push(arguments)
             };
             o._ = [];
-            s = d.getElementsByTagName('script')[0];
-            c = d.createElement('script');
-            c.type = 'text/javascript';
-            c.charset = 'utf-8';
+            s = d.getElementsByTagName(‘script’)[0];
+            c = d.createElement(‘script’);
+            c.type = ‘text / javascript’;
+            c.charset = ‘utf - 8’;
             c.async = true;
-            c.src = 'https://www.smartsuppchat.com/loader.js?';
-            s.parentNode.insertBefore(c, s);
+            c.src = ’https: //www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
         })(document);
     </script>
 </head>
