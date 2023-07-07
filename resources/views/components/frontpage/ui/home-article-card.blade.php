@@ -10,7 +10,7 @@
         </div>
         <div class="fp_footer">
             <ul class="fp_meta float-left mb0">
-                <li class="list-inline-item"><a href="#"><img width="40px" height="40px" class="lazy" data-src="{{ $article->agent?->photo != null ? (Storage::url($article->agent?->photo)) : url('assets/frontpage/images/agents/av-man.png')}}" alt="{{$article->agent->name}}"></a></li>
+                <li class="list-inline-item"><a href="#"><img width="40px" height="40px" class="lazy" data-src="{{ $article->agent?->photo != null ? (Storage::url($article->agent?->photo)) : url('assets/frontpage/images/agents/av-man.png')}}" alt="{{$article->agent?->name}}"></a></li>
                 <li class="list-inline-item"><a href="#">{{$article->agent?->name .' '. $article->agent?->surname}}</a></li>
             </ul>
             <a class="fp_pdate float-right" href="#">{{$article->date?->toFormattedDateString()}}</a>

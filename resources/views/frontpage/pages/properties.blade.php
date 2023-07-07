@@ -132,8 +132,8 @@
                                 </div>
                                 <div class="fp_footer">
                                     <ul class="fp_meta float-left mb0">
-                                        <li class="list-inline-item"><a href=""><img style="height: 40px; width: 40px; object-fit: cover;" src="{{ $property->agent->photo != null ? (Storage::url($property->agent->photo)) : url('assets/frontpage/images/agents/av-man.png')}}" alt=""></a></li>
-                                        <li class="list-inline-item"><a href="">{{$property->agent->name}} {{$property->agent->surname}}</a></li>
+                                        <li class="list-inline-item"><a href=""><img style="height: 40px; width: 40px; object-fit: cover;" src="{{ $property?->agent?->photo != null ? (Storage::url($property?->agent?->photo)) : url('assets/frontpage/images/agents/av-man.png')}}" alt=""></a></li>
+                                        <li class="list-inline-item"><a href="">{{$property?->agent?->name}} {{$property?->agent?->surname}}</a></li>
                                     </ul>
                                     <div class="fp_pdate float-right">{{$property->created_at?->diffForHumans()}}</div>
                                 </div>

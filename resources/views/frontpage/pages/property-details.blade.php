@@ -349,7 +349,7 @@
                         <div class="sl_creator">
                             <h4 class="mb25">{{__('Listed By')}}</h4>
                             <div class="media">
-                                <img class="mr-3 lazy" style="height: 90px; width: 90px;" data-src="{{$property->agent->photo != null ? (Storage::url($property->agent->photo)) : url('assets/frontpage/images/agents/av-man.png')}}" alt="{{__('agent image')}}">
+                                <img class="mr-3 lazy" style="height: 90px; width: 90px;" data-src="{{$property->agent?->photo != null ? (Storage::url($property->agent?->photo)) : url('assets/frontpage/images/agents/av-man.png')}}" alt="{{__('agent image')}}">
                                 <div class="media-body">
                                     <h5 class="mt-0 mb0">{{$property->agent?->name}} {{$property->agent?->surname}}</h5>
                                     <p class="mb0">{{$property->agent?->mobile_phone}}</p>
