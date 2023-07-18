@@ -197,6 +197,10 @@ class HomeController extends Controller
             $query->where('category_id', $request->category_id);
         }
 
+        if ($request->city_id) {
+            $query->where('city_id', $request->city_id);
+        }
+
 
         $properties = $query->paginate($request->limit ?? $this->paginationLimit);
 

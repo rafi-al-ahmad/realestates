@@ -22,7 +22,7 @@ class Property extends Model implements HasMedia
         "description",
         "meta_title",
         "meta_desc",
-        // "url",
+        "city_id",
         "price_tl",
         "price_usd",
         "rent_deposit",
