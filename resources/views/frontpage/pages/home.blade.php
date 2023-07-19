@@ -262,9 +262,9 @@
                 </div>
             </div>
         </div>
-        <div class="row">
+        <div class=" city-slider">
             @foreach($citiesByProperties as $city)
-            <div class="col-sm-6 col-md-4 col-lg-4 col-xl-3" onclick="window.location = `{{route('home.filter', ['city_id' => $city->id])}}`">
+            <div class=" item" onclick="window.location = `{{route('home.filter', ['city_id' => $city->id])}}`">
                 <div class="properti_city ">
                     <div class="thumb"><img style="height: 350px; object-fit: cover;" class="img-fluid w100 lazy" data-src="{{ ($city->image()) != null? ($city->image()?->getUrl()) : url('assets/frontpage/images/categories/city361x350.png')}}" alt="city361x350.png"></div>
                     <div class="overlay">

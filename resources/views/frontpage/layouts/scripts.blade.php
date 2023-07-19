@@ -28,5 +28,56 @@
     $(function() {
         $('.lazy').lazy();
     });
+
+    $('.city-slider').owlCarousel({
+        loop:false,
+            margin:30,
+            dots:false,
+            center:true,
+            rewind:true,
+            nav:true,
+            rtl:false,
+            autoplayHoverPause:false,
+            autoplay: true,
+            singleItem: true,
+            smartSpeed: 1200,
+            navText: [
+              '<i class="flaticon-left-arrow"></i>',
+              '<i class="flaticon-right-arrow"></i>'
+            ],
+            responsive: {
+                0: {
+                    items: 1,
+                    center: false
+                },
+                480:{
+                    items:1,
+                    center: false
+                },
+                520:{
+                    items:2,
+                    center: false
+                },
+                600: {
+                    items: 2,
+                    center: false
+                },
+                768: {
+                    items: 2
+                },
+                992: {
+                    items: 3
+                },
+                1200: {
+                    items: 4
+                },
+                1366: {
+                    items: 4
+                },
+                1400: {
+                    items: 4
+                }
+            }
+        })
 </script>
 @stack('scripts')

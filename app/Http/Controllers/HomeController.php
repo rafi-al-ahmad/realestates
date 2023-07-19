@@ -28,7 +28,7 @@ class HomeController extends Controller
             ->groupBy('cities.id')
             ->groupBy('cities.name')
             ->orderBy('properties_count', 'DESC')
-            ->limit(4)
+            // ->limit(4)
             ->with(['media'])
             ->get();
 
